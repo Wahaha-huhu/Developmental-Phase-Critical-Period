@@ -1,0 +1,8 @@
+model,transition,step,n_metric_module_votes,mean_candidate_strength,modules,metrics
+EleutherAI/pythia-70m-deduped,1000→2000,2000,7,0.3298079908869482,attention.dense;mlp.dense_4h_to_h;mlp.dense_h_to_4h,alpha_tail_frac_0.3;effective_rank;stable_rank;subspace_stability_topk
+EleutherAI/pythia-70m-deduped,128→512,512,4,1.2149315908699991,attention.query_key_value;mlp.dense_h_to_4h,alpha_tail_frac_0.3;mp_outliers_x1;stable_rank;subspace_stability_topk
+EleutherAI/pythia-70m-deduped,0→128,128,3,5.333333333301333,attention.dense;attention.query_key_value;mlp.dense_4h_to_h,mp_outliers_x1
+EleutherAI/pythia-70m-deduped,512→1000,1000,2,0.37664302557023216,attention.dense,alpha_tail_frac_0.3;subspace_stability_topk
+EleutherAI/pythia-70m-deduped,3000→8000,8000,2,0.17696262363653856,mlp.dense_4h_to_h;mlp.dense_h_to_4h,effective_rank;stable_rank
+EleutherAI/pythia-70m-deduped,16000→64000,64000,1,0.15329248531060038,attention.query_key_value,effective_rank
+EleutherAI/pythia-70m-deduped,64000→143000,143000,1,0.015768023727729754,mlp.dense_4h_to_h,effective_rank

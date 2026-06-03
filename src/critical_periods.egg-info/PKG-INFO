@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: critical-periods
+Version: 0.1.0
+Summary: Experiments for developmental phases and critical periods in LLM pretraining
+Requires-Python: >=3.10

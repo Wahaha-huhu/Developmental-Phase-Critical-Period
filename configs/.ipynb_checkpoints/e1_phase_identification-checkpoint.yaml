@@ -1,0 +1,47 @@
+experiment_id: e1_phase_identification
+thesis_section: "Chapter 4, E1: Phase identification and validation"
+
+# Start with pythia-70m-deduped. Add larger models after the pipeline is validated.
+models:
+  - EleutherAI/pythia-70m-deduped
+  # - EleutherAI/pythia-160m-deduped
+  # - EleutherAI/pythia-410m-deduped
+
+# Early checkpoints emphasize the proposed 0-500 / 500-2000 / 2000+ transition.
+checkpoints:
+  - step0
+  - step128
+  - step512
+  - step1000
+  - step2000
+  - step3000
+  - step8000
+  - step16000
+  - step64000
+  - step143000
+
+module_suffixes:
+  - attention.query_key_value.weight
+  - attention.dense.weight
+  - mlp.dense_h_to_4h.weight
+  - mlp.dense_4h_to_h.weight
+
+svd:
+  top_k_vectors: 8
+  # Sensitivity values for MP outlier edge: count eigvals > multiplier * estimated_MP_edge.
+  mp_edge_multipliers: [1.0, 1.1, 1.25]
+  # Fractions of largest eigenvalues used for heavy-tail alpha sensitivity.
+  alpha_tail_fracs: [0.2, 0.3, 0.5]
+  center_weights: false
+
+runtime:
+  device: cuda
+  dtype: float32
+  trust_remote_code: false
+  cache_dir: null
+  local_files_only: false
+
+outputs:
+  root: results/e1_phase_identification
+  raw_metrics_csv: raw/e1_spectral_metrics.csv
+  manifest_csv: manifests/artifact_manifest.csv
