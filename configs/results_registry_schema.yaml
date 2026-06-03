@@ -1,0 +1,11 @@
+artifact_manifest_columns:
+  - timestamp_utc
+  - experiment_id
+  - artifact_type        # raw_csv, processed_csv, figure, table, report
+  - path
+  - thesis_section
+  - caption_draft
+  - source_data
+  - code_entrypoint
+  - status               # draft, validated, thesis_candidate, deprecated
+  - notes
