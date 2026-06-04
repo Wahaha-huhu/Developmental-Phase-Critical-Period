@@ -1,0 +1,55 @@
+# Faster E2-lite larger-model extension.
+# Runs only the two probe families that were useful in the 70M/160M pilot:
+# fixed-text NLL and syntax-regularity margins.
+
+models:
+  - EleutherAI/pythia-410m-deduped
+  - EleutherAI/pythia-1b-deduped
+
+checkpoints:
+  - step0
+  - step128
+  - step512
+  - step1000
+  - step2000
+  - step3000
+  - step8000
+  - step16000
+  - step64000
+  - step143000
+
+runtime:
+  device: auto
+  dtype: auto
+  max_length: 512
+  batch_size: 1
+  trust_remote_code: false
+
+outputs:
+  root: results/e2_functional_grounding
+
+lm_loss_texts:
+  - "Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of common patterns."
+  - "A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests whether the pattern matters."
+  - "The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet."
+  - "In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggregate loss."
+  - "Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated alternatives."
+
+multiple_choice:
+  syntax_regularities:
+    - prompt: "The cat sat on the"
+      choices: [" mat", " quickly", " blue", " seven"]
+      answer_index: 0
+    - prompt: "She opened the book and began to"
+      choices: [" read", " table", " purple", " eleven"]
+      answer_index: 0
+    - prompt: "The capital city is located near the"
+      choices: [" river", " because", " running", " eight"]
+      answer_index: 0
+
+analysis:
+  candidate_window:
+    start_step: 128
+    core_start_step: 512
+    core_end_step: 2000
+    post_window_step: 3000

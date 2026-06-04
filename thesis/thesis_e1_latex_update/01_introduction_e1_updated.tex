@@ -1,0 +1,127 @@
+% ===========================================================================
+% chapters/01_introduction.tex
+% ===========================================================================
+\chapter{Introduction}
+\label{ch:introduction}
+
+We can now predict, before training begins, how much a large language model's loss will fall
+as its parameters, data, and compute are scaled, through the neural scaling laws that have
+become a central tool for planning large-scale training~\cite{kaplan2020scaling,hoffmann2022chinchilla}.
+A scaling law, however, describes \emph{how much} a model will improve, not \emph{what} it is
+learning or \emph{when} during training each capability and internal structure takes shape.
+That internal trajectory---the order and manner in which a model's representations are laid
+down beneath a smoothly falling loss---is the subject of training-dynamics research, and it is
+the subject of this thesis. Understanding it matters: it would let us reason about when a
+capability appears, design data and curricula that bring useful structure forward, anticipate
+emergent behaviour, and---as this thesis emphasizes---reason about \emph{when} during training
+the model is most amenable to being shaped.
+
+Viewed at the level of internal structure rather than aggregate loss, training is far less
+smooth than the loss curve suggests. Generalization can appear abruptly long after the loss
+has plateaued~\cite{power2022grokking}; such plateaus often conceal a continuously improving
+internal quantity, so that the eventual breakthrough is the surfacing of hidden progress
+rather than a sudden change~\cite{barak2022hidden,nanda2023progress}; and capabilities have
+been reported to appear suddenly with scale, although part of this apparent abruptness is an
+artifact of harsh evaluation metrics rather than of the underlying
+competence~\cite{wei2022emergent,schaeffer2023mirage}. Analyses of the internal geometry of
+real pre-training runs reinforce the picture: representations pass through a sequence of
+qualitatively distinct phases over training~\cite{representation_geometry_phases}. These
+findings establish that pre-training has a rich \emph{developmental structure}---phases,
+transitions, and hidden accumulation---beneath the monotone loss.
+
+Most of this work, however, describes the trajectory of a \emph{single} capability or of
+\emph{global} geometry, and treats the phases as something to characterize rather than as
+something with consequences. A different and largely open question is whether the phases are
+\emph{functionally} different: whether the model is differently malleable at different points
+in training, such that the same input leaves a different lasting mark depending on when it
+arrives. This is the defining idea of a \emph{critical} or \emph{sensitive period}---a window
+during which a developing system is maximally and durably shaped by its input---a concept
+central to biological learning and demonstrated in artificial networks, where perturbations
+early in training leave lasting effects that the identical perturbation applied later does
+not~\cite{achille2019critical}. Whether large language model pre-training has analogous
+windows, and whether they can be located from the model's own internal indicators, is the gap
+this thesis addresses.
+
+The question has an immediate and consequential application. Contemporary alignment follows a
+\emph{post-hoc} paradigm: models pre-train on massive, largely unfiltered corpora, after which
+safety is imposed by fine-tuning. There is mounting evidence that this produces \emph{fragile}
+alignment---small quantities of poisoned data can implant durable backdoors~\cite{poisoning2025},
+and narrow fine-tuning can induce broad ``emergent misalignment''~\cite{betley2025emergent}.
+If pre-training contains a developmental window during which signal is more deeply and durably
+internalized, then \emph{when} alignment-relevant signal is introduced---not only how much of
+it the model sees---would matter, with direct implications for training recipes. We are careful
+throughout to treat this as motivation and as a downstream implication, gated on the
+developmental result, rather than as a claim the thesis assumes.
+
+This project originates in exactly this question. We began by tracking weight-spectral
+indicators---effective rank, stable rank, spectral and Frobenius norms, the count of
+eigenvalues separating from the random-initialization bulk, eigenspectrum decay, and the
+stability of singular vectors across checkpoints---across the public Pythia checkpoint
+suite~\cite{biderman2023pythia}, layer by layer and module by module, asking whether
+pre-training has separable phases. The first completed experiment in this thesis identifies a
+reproducible early weight-space reorganisation across Pythia-70M, 160M, 410M, and 1B,
+concentrated in the first few thousand optimisation steps and strongest between approximately
+512 and 2000 steps. This observational result defines the candidate window; the rest of the
+thesis asks whether that window is functionally meaningful and whether it marks a period of
+heightened durable plasticity. The research questions are therefore:
+
+\begin{researchquestion}[Phases]
+\label{rq:phases}
+Does language model pre-training pass through identifiable developmental phases, detectable
+from internal weight-spectral indicators, and are those phases \emph{functionally meaningful}
+in the sense of coinciding with changes in what the model can do?
+\end{researchquestion}
+
+\begin{researchquestion}[Critical period]
+\label{rq:critical}
+Is there a window during pre-training in which a signal injected into the model is more durably
+internalized---surviving subsequent training and resisting later degradation---than the same
+signal injected later, and does this window's boundary coincide with the indicator-defined
+consolidation transition rather than merely with the learning-rate schedule?
+\end{researchquestion}
+
+\begin{researchquestion}[Structure and generality]
+\label{rq:structure}
+Is any such window global or module-specific; does it replicate across distinct signal types
+(making it a property of the developmental stage rather than of the signal); and, as the
+structured case, is alignment-style signal injected within the window more robust to
+degradation and poisoning-style attack than post-hoc alignment?
+\end{researchquestion}
+
+The thesis pursues these questions in a deliberately tiered way. The developmental phases are
+located from internal indicators measured across real Pythia checkpoints, independently of any
+injected signal; the critical-period claim is then tested \emph{causally} by using the
+checkpoints as injection points---introducing a defined signal at different training stages and
+measuring how durably it is retained. Because the window is defined from weight geometry and
+durability is measured behaviourally, the central test compares two independent measurements,
+which is what protects it from circularity. Controlled toy models, in which a phase transition
+is known by construction, are used to calibrate the interpretation of the indicators and to
+supply mechanistic vignettes; they are not relied upon to establish the claim at scale.
+
+Contingent on the results, the contributions are as follows. First, a characterization of
+pre-training as a phased developmental process, established from convergent weight-spectral
+indicators across model sizes, including the global phase structure and its module- and
+layer-wise heterogeneity. Second, a test of whether these phases are functionally meaningful by
+aligning them with loss and downstream-capability trajectories. Third, the central
+contribution: a causal test of the critical-period hypothesis via stage-resolved signal
+injection, with the discriminating prediction that durability exhibits a \emph{break} at the
+indicator-defined consolidation boundary rather than a trivial monotone decay, evaluated against
+learning-rate and cumulative-exposure baselines. Fourth, an analysis of whether the window is
+module-specific and whether it generalizes across signal types, with alignment durability as the
+applied case connecting the developmental finding to the fragility of post-hoc alignment. The
+design ties each outcome to a defensible claim: a clean window that closes at the consolidation
+boundary would establish a critical period; a monotone decay would constitute an honest negative
+that the effect is the trivial ``early matters'' phenomenon; and a module-resolved window would
+refine the account into a statement about \emph{where} as well as \emph{when} signal is durably
+acquired.
+
+The remainder of the thesis proceeds as follows. \Cref{ch:background} reviews scaling and
+emergence, the hypotheses on the temporal structure of training (quantization, hidden progress,
+implicit curriculum), critical learning periods, the geometry of pre-training, the fragility of
+post-hoc alignment, and the spectral tools used to locate phases, and positions the contribution.
+\Cref{ch:methodology} specifies the indicators and phase-identification procedure, the
+intervention and durability measures, the role of toy models, and the justification design that
+makes each result defensible. \Cref{ch:results} reports the completed E1 phase-identification
+result and then lays out the functional-grounding and intervention experiments that test the
+stronger behavioural claims. \Cref{ch:conclusion} synthesizes the claims, their boundaries, and
+their implications.

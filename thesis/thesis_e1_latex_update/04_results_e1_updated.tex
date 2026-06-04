@@ -1,0 +1,288 @@
+% ===========================================================================
+% chapters/04_results.tex
+% Updated after E1 multi-model results: Pythia-70M, 160M, 410M, 1B
+% ===========================================================================
+\chapter{Evaluation: Results and Discussion}
+\label{ch:results}
+
+This chapter reports the first completed observational experiment, E1, and then states the
+remaining experiments in the order in which they will be used to test the stronger claims of the
+thesis. E1 addresses the phase-identification premise: whether the weight space of a language
+model passes through a reproducible early reorganisation during pre-training. The later experiments
+ask whether that reorganisation is functionally meaningful (E2) and whether it marks a period of
+heightened durable plasticity under intervention (E3--E6). Thus the evidence is deliberately
+layered: E1 locates a candidate developmental window, E2 asks whether it has behavioural
+correlates, and E3 tests the causal sensitive-period claim.
+
+The current results establish the E1 observation across four Pythia-deduped model sizes. The
+remaining sections are therefore still partly prospective, but the chapter is no longer only a
+protocol: it now contains the first substantive result of the thesis.
+
+\section{E1 finding: a reproducible early weight-space reorganisation}
+\label{sec:res-prelim}
+
+Tracking the weight-spectral indicators of \cref{sec:meth-indicators} across the Pythia checkpoint
+schedule reveals a reproducible early reorganisation of weight space. The result appears in
+Pythia-70M, 160M, 410M, and 1B, and is concentrated between roughly 128 and 2000 optimisation steps,
+with the largest changes usually occurring between 512 and 2000 steps. This pattern is visible most
+clearly in stable-rank collapse, spectral concentration, Marchenko--Pastur outlier growth in
+rectangular matrices, changes in heavy-tail estimates, and instability of the leading singular
+subspaces.
+
+This result should be read carefully. It does not imply that the model has a single universal phase
+boundary at one checkpoint. Rather, E1 identifies a short early developmental window during which
+many modules rapidly depart from their near-initial spectral state. The precise peak interval shifts
+with model size and module. Pythia-70M has its strongest broad stable-rank change between 1000 and
+2000 steps, whereas Pythia-160M, 410M, and 1B peak most strongly between 512 and 1000 steps, with
+continued reorganisation into 1000--2000 steps. The transition is therefore better described as a
+window than as a point.
+
+\begin{figure}[t]
+  \centering
+  \IfFileExists{figures/e1_multimodel_stable_rank_relative_early_8000.png}{%
+    \includegraphics[width=0.92\linewidth]{figures/e1_multimodel_stable_rank_relative_early_8000.png}%
+  }{%
+    \fbox{\parbox[c][0.28\textheight][c]{0.88\linewidth}{\centering\itshape
+    Figure placeholder: relative stable-rank trajectories for Pythia-70M, 160M, 410M, and 1B up to
+    step 8000. Source artifact: \texttt{e1\_multimodel\_stable\_rank\_relative\_early\_8000.png}.}}%
+  }
+  \caption{Relative stable-rank trajectories during the early checkpoint window. Across four Pythia
+  model sizes, most modules remain close to their initial spectral dimensionality at the earliest
+  checkpoints and then undergo a sharp collapse before or around step 2000.}
+  \label{fig:e1-stable-rank-relative}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \IfFileExists{figures/e1_multimodel_interval_mean_stable_rank_drop.png}{%
+    \includegraphics[width=0.82\linewidth]{figures/e1_multimodel_interval_mean_stable_rank_drop.png}%
+  }{%
+    \fbox{\parbox[c][0.24\textheight][c]{0.82\linewidth}{\centering\itshape
+    Figure placeholder: mean adjacent-checkpoint stable-rank drop by model and interval. Source
+    artifact: \texttt{e1\_multimodel\_interval\_mean\_stable\_rank\_drop.png}.}}%
+  }
+  \caption{Adjacent-checkpoint stable-rank change by model size. The largest mean drops are
+  concentrated in the intervals 128--512, 512--1000, and 1000--2000, with the strongest interval
+  shifting slightly with model size.}
+  \label{fig:e1-interval-drop}
+\end{figure}
+
+The module-level structure is as important as the global timing. Attention and MLP modules do not
+move in lockstep. The attention query/key/value matrices tend to develop strong outlier structure
+early. The MLP expansion projection, \texttt{mlp.dense\_h\_to\_4h}, often remains close to its
+initial stable rank through the earliest checkpoints and then collapses sharply between 512 and
+2000 steps. In the 1B model, for example, its mean stable rank is approximately 913.6 at step 0,
+913.4 at step 128, and 853.3 at step 512, before dropping to about 209.5 at step 1000 and 59.7 at
+step 2000. This pattern argues against a simple monotone-drift interpretation: at least some large
+weight matrices remain near-initial for several released checkpoints before undergoing a rapid
+spectral reorganisation.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{lrrrr}
+    \toprule
+    Model & Matrix--checkpoint rows & Layers & Modules & Checkpoints \\
+    \midrule
+    Pythia-70M  & 240 & 6  & 4 & 10 \\
+    Pythia-160M & 480 & 12 & 4 & 10 \\
+    Pythia-410M & 960 & 24 & 4 & 10 \\
+    Pythia-1B   & 640 & 16 & 4 & 10 \\
+    \midrule
+    Total & 2320 & -- & -- & -- \\
+    \bottomrule
+  \end{tabular}
+  \caption{Coverage of the E1 multi-model spectral analysis. Each row corresponds to one module
+  matrix at one checkpoint. The checkpoint grid is \texttt{step0}, \texttt{step128},
+  \texttt{step512}, \texttt{step1000}, \texttt{step2000}, \texttt{step3000}, \texttt{step8000},
+  \texttt{step16000}, \texttt{step64000}, and \texttt{step143000}.}
+  \label{tab:e1-coverage}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{lccc}
+    \toprule
+    Model & Strongest interval & Mean stable-rank drop & Modules $>10\%$ drop \\
+    \midrule
+    Pythia-70M  & 1000--2000 & 43.1\% & 4/4 \\
+    Pythia-160M & 512--1000  & 49.3\% & 4/4 \\
+    Pythia-410M & 512--1000  & 51.0\% & 4/4 \\
+    Pythia-1B   & 512--1000  & 58.9\% & 4/4 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Strongest adjacent-checkpoint stable-rank drops by model size. The exact peak interval
+  varies, but the strongest changes consistently occur inside the early 512--2000-step window.}
+  \label{tab:e1-peak-intervals}
+\end{table}
+
+Two caveats bound the interpretation. First, these are weight-space phases, not direct claims about
+activation geometry. They may correspond to representation-space transitions, but that
+correspondence is not assumed here. Second, E1 is observational. It identifies a candidate
+developmental window; it does not by itself establish that the model is more durably plastic during
+that window. That stronger statement requires the behavioural and intervention experiments that
+follow.
+
+\section{E1 --- Phase identification and validation}
+\label{sec:res-e1}
+
+\noindent\textbf{Hypothesis.} \Cref{hyp:phases}. \quad\textbf{Status.} Completed as an
+observational experiment across Pythia-70M, 160M, 410M, and 1B; causal interpretation deferred to
+E3.
+
+\noindent\textbf{Protocol.} E1 computes the full indicator panel over the Pythia checkpoint grid,
+per layer and per module, for \texttt{attention.query\_key\_value}, \texttt{attention.dense},
+\texttt{mlp.dense\_h\_to\_4h}, and \texttt{mlp.dense\_4h\_to\_h}. The analysis uses both absolute
+and relative trajectories, adjacent-checkpoint change scores, linear-step plots, and log-step plots.
+The checkpoint grid is fixed across the four model sizes: step 0, 128, 512, 1000, 2000, 3000, 8000,
+16000, 64000, and 143000.
+
+\noindent\textbf{Result.} The phase-identification hypothesis is supported at the level of
+weight-space geometry. Across all four model sizes, the largest stable-rank drops concentrate before
+step 2000, especially in the 512--1000 and 1000--2000 intervals. The result survives the most
+important visual validation: it is visible on the early-window linear axis and is not merely a
+log-axis artefact. It also replicates across size: the exact peak interval changes, but the early
+window itself is stable.
+
+The clearest primary signal is stable-rank collapse. Effective rank moves less sharply, especially
+at larger scale, and should therefore be treated as a weaker corroborating measure rather than as
+the main boundary detector. MP-outlier counts are informative for the rectangular QKV and MLP
+matrices, but not equally useful for every module shape. This is why the boundary is credited only
+from convergence across several indicators and not from any one spectral statistic.
+
+\noindent\textbf{Interpretation.} E1 supports the existence of a candidate developmental window
+rather than a single global boundary. It also supports the module-specific direction of the thesis:
+attention and MLP matrices reorganise at different times, and the MLP expansion projection shows a
+particularly clear delayed collapse. The candidate checkpoint grid for later intervention is
+therefore
+\[
+  \{0, 128, 512, 1000, 2000, 3000, 8000\},
+\]
+which covers the near-initial period, the rising edge of reorganisation, the strongest transition
+intervals, and a post-window control.
+
+\noindent\textbf{Claim supported.} E1 establishes a replicated observational result: early
+pre-training contains a short, module-staggered weight-space reorganisation across Pythia model
+sizes from 70M to 1B. It does not establish a sensitive or critical period. It supplies the
+independent geometric window that later experiments must test behaviourally.
+
+\section{E2 --- Functional grounding}
+\label{sec:res-e2}
+
+\noindent\textbf{Hypothesis.} \Cref{hyp:functional}. \quad\textbf{Status.} Planned next.
+
+\noindent\textbf{Protocol.} Align the E1 window with loss and lightweight behavioural probes over
+the identical checkpoints (\cref{sec:meth-functional}). The first pass uses fixed-text next-token
+loss and simple local probes, rather than making the result depend on large external evaluation
+suites.
+
+\noindent\textbf{Discriminating prediction / outcomes.} If loss curvature or probe performance
+changes in the same early window, then the weight-space transition is functionally grounded. If the
+curves are smooth or unrelated to the E1 window, the E1 phases remain valid as geometric phases but
+are not yet functionally consequential.
+
+\resultplaceholder{Overlay of E1 phase windows on loss and per-probe trajectories; quantitative test
+of boundary--acquisition coincidence.}
+
+\section{E3 --- The critical-period intervention (causal core)}
+\label{sec:res-e3}
+
+\noindent\textbf{Hypothesis.} \Cref{hyp:critical}. \quad\textbf{Status.} Planned after E2.
+
+\noindent\textbf{Protocol.} Inject a defined signal at checkpoints spanning the E1 window; measure
+uptake, retention after fixed subsequent training, and degradation-resistance
+(\cref{sec:meth-intervention}); plot durability against injection step and overlay the E1 window.
+
+\noindent\textbf{Discriminating prediction.} A genuine sensitive period predicts a break in
+durability aligned with the E1 consolidation boundary, exceeding the learning-rate,
+cumulative-exposure, and monotone ``earlier is better'' baselines (\cref{sec:meth-justification}).
+
+\noindent\textbf{Pre-registered outcomes.} A boundary-aligned durability break, beating baselines,
+would support the critical-period hypothesis. A smooth monotone decay would be an honest negative:
+it would show that early training matters, but not that there is a period. No dependence on
+injection time would count against the sensitive-period interpretation.
+
+\resultplaceholder{Durability-vs-injection-step curves for uptake, retention, and
+regradation-resistance, with the E1 window overlaid; baseline comparisons; confidence intervals over
+seeds and checkpoints.}
+
+\section{E4 --- Generality across signal types}
+\label{sec:res-e4}
+
+\noindent\textbf{Hypothesis.} Generality clause of \cref{hyp:structure}. \quad\textbf{Status.}
+Planned.
+
+\noindent\textbf{Protocol.} Repeat E3 with two or three distinct signal types, such as a synthetic
+factual signal, an algorithmic or capability signal, and an alignment-style proxy; compare window
+locations.
+
+\noindent\textbf{Discriminating prediction / outcomes.} A shared window across signal types would
+support the interpretation that sensitivity is a property of developmental stage. Signal-specific
+windows would imply a weaker but still informative conclusion: that the timing of durable
+plasticity depends on the kind of signal.
+
+\resultplaceholder{Durability-vs-step curves per signal type on common axes; test of shared versus
+distinct boundaries.}
+
+\section{E5 --- Module-specific plasticity}
+\label{sec:res-e5}
+
+\noindent\textbf{Hypothesis.} Module-specificity clause of \cref{hyp:structure}.
+\quad\textbf{Status.} Planned.
+
+\noindent\textbf{Protocol.} The first version treats E5 as an analysis attached to E3 rather than as
+an expensive separate intervention. During injection, per-module gradient and update norms are
+recorded. The analysis then asks whether retention is better predicted by the consolidation timing
+of the most-affected module than by the global E1 window.
+
+\noindent\textbf{Discriminating prediction / outcomes.} If durability tracks each component's own
+consolidation timing, this would support a module-resolved sensitive period. If no module dependence
+appears, the data support a single global window or no window at all.
+
+\resultplaceholder{Per-module update norms, per-module consolidation times, and regression relating
+module-specific consolidation to durability.}
+
+\section{E6 --- Alignment-style durability case}
+\label{sec:res-e6}
+
+\noindent\textbf{Hypothesis.} Application clause of \cref{hyp:structure}. \quad\textbf{Status.}
+Planned as a scoped application, not as a load-bearing safety claim.
+
+\noindent\textbf{Protocol.} Inject an alignment-style proxy signal across the E1 window and compare
+its retention with late/post-hoc injection. At this scale, the degradation test is framed as
+conflicting or adversarially directed fine-tuning of the proxy behaviour, not as a claim about
+frontier-model safety.
+
+\noindent\textbf{Discriminating prediction / outcomes.} If in-window alignment-style signal is more
+retained after degradation than late signal, the developmental result has a safety-relevant
+application. If not, the developmental E3 result can still stand without the alignment application.
+
+\resultplaceholder{Proxy robustness metrics for in-window versus post-hoc alignment-style signal,
+with explicit small-scale caveats.}
+
+\section{Toy-model calibration and mechanism}
+\label{sec:res-toy}
+
+\noindent\textbf{T1 (calibration).} T1 is deferred. The first pilot was useful as an implementation
+check but did not produce the required behavioural generalisation transition: the toy model
+memorised the training set while held-out accuracy did not improve. Consequently, the intervention
+retention readout was not interpretable. T1 therefore cannot currently be used as calibration
+evidence for the indicator-to-transition interpretation.
+
+\noindent\textbf{T2 (mechanistic vignette).} A mechanistic toy vignette remains optional. It should
+only be included if a revised toy task first produces a known transition that the indicators can
+recover.
+
+\resultplaceholder{Revised toy calibration results, if run: indicator panel across a known
+transition; inject-before/after durability; and any sufficiency demonstration.}
+
+\section{Summary of evidence}
+\label{sec:res-summary}
+
+The current evidence supports \cref{hyp:phases} at the observational, weight-space level. Across
+Pythia-70M, 160M, 410M, and 1B, E1 identifies a reproducible early reorganisation concentrated
+before step 2000 and strongest between 512 and 2000 steps. The result is module-staggered rather
+than globally synchronous. This is sufficient to define the checkpoint window for the next
+experiments, but it is not yet sufficient to claim a sensitive or critical period. The next required
+step is E2 functional grounding, followed by E3 intervention.
