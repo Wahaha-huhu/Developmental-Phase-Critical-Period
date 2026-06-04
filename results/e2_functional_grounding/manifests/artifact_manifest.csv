@@ -1,0 +1,3 @@
+experiment_id,artifact_type,path,thesis_section,caption_draft,source_data,code_entrypoint,status,notes
+E2,table,results/e2_functional_grounding/tables/e2_metric_summary_by_checkpoint.csv,Results / E2 functional grounding,Checkpoint-wise summary of E2-lite behavioural and log-likelihood metrics.,results/e2_functional_grounding/raw/e2_functional_metrics.csv,scripts/analyze_e2_results.py,candidate,Observational functional grounding only; not a causal test.
+E2,report,results/e2_functional_grounding/reports/e2_functional_grounding_report.md,Results / E2 functional grounding,Automatic report summarising E2-lite checkpoint behaviour.,results/e2_functional_grounding/raw/e2_functional_metrics.csv,scripts/analyze_e2_results.py,candidate,Use after manual review.
