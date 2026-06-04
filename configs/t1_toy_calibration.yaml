@@ -1,0 +1,35 @@
+# T1 toy calibration: prompted modular tasks with a held-out generalization split.
+# The goal is not to prove the Pythia claim, but to check whether the same spectral
+# indicators fire around a known behavioural transition in a controlled toy setting.
+experiment_id: t1_toy_calibration
+seed: 0
+model:
+  d_model: 128
+  hidden_dim: 256
+  task_vocab: 8
+  x_vocab: 97
+  y_vocab: 97
+  dropout: 0.0
+data:
+  prime: 97
+  n_tasks: 6
+  train_fraction_per_task: 0.45
+  batch_size: 256
+  # Fixed affine maps y = (a_t x + b_t) mod p. Coefficients are generated from seed.
+training:
+  steps: 6000
+  lr: 0.001
+  weight_decay: 0.0
+  eval_every: 100
+  checkpoint_every: 200
+  device: cuda
+intervention:
+  enabled: true
+  injection_checkpoints: [400, 1000, 2000, 4000]
+  injection_steps: 250
+  washout_steps: 500
+  injection_task_id: 6
+  injection_train_fraction: 0.45
+  injection_lr: 0.001
+outputs:
+  root: results/t1_toy_calibration
