@@ -6,6 +6,7 @@ Produces summary tables, retention/degradation curves, and a short markdown repo
 from __future__ import annotations
 
 import argparse
+import csv
 import math
 from pathlib import Path
 from typing import Any
@@ -23,18 +24,61 @@ def ensure_dirs(root: Path) -> dict[str, Path]:
     return out
 
 
+def _read_e3_metrics_flexible(path: Path) -> pd.DataFrame:
+    """Read E3 metrics even if an older run wrote degradation rows with extra columns.
+
+    Early versions of the E3 writer appended base rows with a 10-column header and
+    degradation rows with two extra values (poison_budget, degradation_steps).
+    pandas.read_csv then fails with: expected 10 fields, saw 12. This reader maps
+    those two trailing values back to their intended columns.
+    """
+    with path.open("r", newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        try:
+            header = next(reader)
+        except StopIteration:
+            return pd.DataFrame()
+        rows: list[dict[str, Any]] = []
+        for line_no, row in enumerate(reader, start=2):
+            if not row:
+                continue
+            cols = list(header)
+            if len(row) > len(cols):
+                extras_needed = len(row) - len(cols)
+                candidate_extras = ["poison_budget", "degradation_steps"]
+                for name in candidate_extras:
+                    if extras_needed <= 0:
+                        break
+                    if name not in cols:
+                        cols.append(name)
+                        extras_needed -= 1
+                for i in range(extras_needed):
+                    cols.append(f"extra_{i}")
+            if len(row) < len(cols):
+                row = row + [""] * (len(cols) - len(row))
+            rows.append(dict(zip(cols, row)))
+    return pd.DataFrame(rows)
+
+
 def load_metrics(root: Path, metrics_name: str) -> pd.DataFrame:
     path = root / metrics_name
     if not path.exists():
         raise FileNotFoundError(f"Missing E3 metrics CSV: {path}")
-    df = pd.read_csv(path)
+    try:
+        df = pd.read_csv(path)
+    except pd.errors.ParserError:
+        df = _read_e3_metrics_flexible(path)
+    if df.empty:
+        return df
     # Remove marker rows.
     df = df[df["event"] != "cell_complete"].copy()
-    df["step"] = pd.to_numeric(df["step"], errors="coerce").astype(int)
-    df["seed"] = pd.to_numeric(df["seed"], errors="coerce").astype(int)
+    df["step"] = pd.to_numeric(df["step"], errors="coerce").fillna(-1).astype(int)
+    df["seed"] = pd.to_numeric(df["seed"], errors="coerce").fillna(-1).astype(int)
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
     if "poison_budget" in df.columns:
         df["poison_budget"] = pd.to_numeric(df["poison_budget"], errors="coerce")
+    if "degradation_steps" in df.columns:
+        df["degradation_steps"] = pd.to_numeric(df["degradation_steps"], errors="coerce")
     return df
 
 
@@ -80,8 +124,8 @@ def pivot_cell_metrics(df: pd.DataFrame) -> pd.DataFrame:
         for _, r in out.iterrows():
             y = r[norm_cols].astype(float).to_numpy()
             ya = r[acc_cols].astype(float).to_numpy() if all(c in out.columns for c in acc_cols) else np.full_like(x, np.nan)
-            auc_norm.append(float(np.trapz(y, x)) if np.all(np.isfinite(y)) else np.nan)
-            auc_acc.append(float(np.trapz(ya, x)) if np.all(np.isfinite(ya)) else np.nan)
+            auc_norm.append(float(np.trapezoid(y, x)) if np.all(np.isfinite(y)) else np.nan)
+            auc_acc.append(float(np.trapezoid(ya, x)) if np.all(np.isfinite(ya)) else np.nan)
             below = [b for b, val in zip(budgets, ya) if np.isfinite(val) and val < 0.5]
             k_star_acc.append(min(below) if below else np.nan)
         out["normalized_degradation_margin_auc_logk"] = auc_norm

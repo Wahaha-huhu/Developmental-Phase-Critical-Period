@@ -1,0 +1,2 @@
+model,metric,boundary_step,n_points,log_step_sse,fixed_boundary_sse,log_step_aic,fixed_boundary_aic,delta_aic_boundary_minus_logstep,boundary_model_better
+EleutherAI/pythia-160m-deduped,normalized_clean_retention_margin_mean,2000,8,0.07191140815428834,0.03634672878728951,-33.69409521250503,-37.15274090262841,-3.458645690123376,True

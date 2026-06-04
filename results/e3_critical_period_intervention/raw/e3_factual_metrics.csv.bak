@@ -1,0 +1,27 @@
+experiment_id,model,stage,step,seed,signal_type,event,metric,value,timestamp
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,base,accuracy,0.2125,2026-06-04 14:05:25
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,base,mean_margin,-0.8239012718200683,2026-06-04 14:05:25
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,base,median_margin,-0.7460250854492188,2026-06-04 14:05:25
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,base,mean_gold_logprob,-14.213636720180512,2026-06-04 14:05:25
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,base,n_items,160,2026-06-04 14:05:25
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_injection,accuracy,0.025,2026-06-04 14:05:37
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_injection,mean_margin,-1.7868947356939315,2026-06-04 14:05:37
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_injection,median_margin,-1.7131547927856445,2026-06-04 14:05:37
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_injection,mean_gold_logprob,-9.707399368286133,2026-06-04 14:05:37
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_injection,n_items,160,2026-06-04 14:05:37
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_continuation,accuracy,0.04375,2026-06-04 14:05:49
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_continuation,mean_margin,-1.6629440039396286,2026-06-04 14:05:49
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_continuation,median_margin,-1.5562334060668945,2026-06-04 14:05:49
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_continuation,mean_gold_logprob,-10.290291792154312,2026-06-04 14:05:49
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_continuation,n_items,160,2026-06-04 14:05:49
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k4,accuracy,0.00625,2026-06-04 14:05:58,4,1
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k4,mean_margin,-1.7023808091878891,2026-06-04 14:05:58,4,1
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k4,median_margin,-1.575307846069336,2026-06-04 14:05:58,4,1
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k4,mean_gold_logprob,-9.911231851577758,2026-06-04 14:05:58,4,1
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k4,n_items,160,2026-06-04 14:05:58,4,1
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k16,accuracy,0.025,2026-06-04 14:06:07,16,2
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k16,mean_margin,-1.7356428980827332,2026-06-04 14:06:07,16,2
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k16,median_margin,-1.6231689453125,2026-06-04 14:06:07,16,2
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k16,mean_gold_logprob,-10.104912924766541,2026-06-04 14:06:07,16,2
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,post_degradation_k16,n_items,160,2026-06-04 14:06:07,16,2
+e3_factual_160m_smoke,EleutherAI/pythia-160m-deduped,step1000,1000,0,factual_association,cell_complete,cell_complete,1.0,2026-06-04 14:06:07

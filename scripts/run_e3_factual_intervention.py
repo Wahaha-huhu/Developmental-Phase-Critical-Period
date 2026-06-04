@@ -422,27 +422,49 @@ def evaluate_probes(model, tok, probes: Sequence[ProbeItem], device: torch.devic
     return summary, item_rows
 
 
-def append_dict_rows(path: Path, rows: list[dict[str, Any]]) -> None:
-    if not rows:
-        return
-    path.parent.mkdir(parents=True, exist_ok=True)
-    write_header = not path.exists()
-    # Stable union of keys.
-    fieldnames = []
+METRICS_FIELDNAMES = [
+    "experiment_id", "model", "stage", "step", "seed", "signal_type",
+    "event", "metric", "value", "timestamp", "poison_budget", "degradation_steps",
+]
+
+ITEM_FIELDNAMES = [
+    "experiment_id", "model", "stage", "step", "seed", "signal_type",
+    "event", "timestamp", "poison_budget", "degradation_steps",
+    "item_id", "fact_id", "prompt", "gold_value", "answer_index",
+    "predicted_index", "correct", "gold_logprob", "best_wrong_logprob",
+    "gold_logprob_margin", "choice_lengths", "choices",
+]
+
+
+def _fieldnames_for_path(path: Path, rows: list[dict[str, Any]]) -> list[str]:
+    # Keep E3 raw CSVs schema-stable. The previous append logic allowed later
+    # degradation rows to add columns without rewriting the header, producing
+    # files that pandas could not parse (e.g. 10 header fields, 12 row fields).
+    name = path.name
+    if name == "e3_factual_metrics.csv":
+        return METRICS_FIELDNAMES
+    if name == "e3_factual_item_metrics.csv":
+        return ITEM_FIELDNAMES
+    fieldnames: list[str] = []
+    if path.exists():
+        with path.open("r", newline="", encoding="utf-8") as f:
+            try:
+                fieldnames.extend(next(csv.reader(f)))
+            except StopIteration:
+                pass
     for row in rows:
         for k in row.keys():
             if k not in fieldnames:
                 fieldnames.append(k)
-    if path.exists():
-        with path.open("r", newline="", encoding="utf-8") as f:
-            reader = csv.reader(f)
-            try:
-                existing_header = next(reader)
-                for k in existing_header:
-                    if k not in fieldnames:
-                        fieldnames.insert(0, k)
-            except StopIteration:
-                pass
+    return fieldnames
+
+
+def append_dict_rows(path: Path, rows: list[dict[str, Any]]) -> None:
+    if not rows:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fieldnames = _fieldnames_for_path(path, rows)
+    write_header = (not path.exists()) or path.stat().st_size == 0
     with path.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         if write_header:
