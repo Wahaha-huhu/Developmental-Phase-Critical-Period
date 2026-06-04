@@ -3,7 +3,7 @@ thesis_section: "Chapter 4, E1: Phase identification and validation"
 
 # Start with pythia-70m-deduped. Add larger models after the pipeline is validated.
 models:
-  - EleutherAI/pythia-70m-deduped
+  - EleutherAI/pythia-160m-deduped
   # - EleutherAI/pythia-160m-deduped
   # - EleutherAI/pythia-410m-deduped
 

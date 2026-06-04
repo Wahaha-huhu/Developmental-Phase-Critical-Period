@@ -1,8 +1,8 @@
-model,transition,step,n_metric_module_votes,mean_candidate_strength,modules,metrics
-EleutherAI/pythia-70m-deduped,1000→2000,2000,7,0.3298079908869482,attention.dense;mlp.dense_4h_to_h;mlp.dense_h_to_4h,alpha_tail_frac_0.3;effective_rank;stable_rank;subspace_stability_topk
-EleutherAI/pythia-70m-deduped,128→512,512,4,1.2149315908699991,attention.query_key_value;mlp.dense_h_to_4h,alpha_tail_frac_0.3;mp_outliers_x1;stable_rank;subspace_stability_topk
-EleutherAI/pythia-70m-deduped,0→128,128,3,5.333333333301333,attention.dense;attention.query_key_value;mlp.dense_4h_to_h,mp_outliers_x1
-EleutherAI/pythia-70m-deduped,512→1000,1000,2,0.37664302557023216,attention.dense,alpha_tail_frac_0.3;subspace_stability_topk
-EleutherAI/pythia-70m-deduped,3000→8000,8000,2,0.17696262363653856,mlp.dense_4h_to_h;mlp.dense_h_to_4h,effective_rank;stable_rank
-EleutherAI/pythia-70m-deduped,16000→64000,64000,1,0.15329248531060038,attention.query_key_value,effective_rank
-EleutherAI/pythia-70m-deduped,64000→143000,143000,1,0.015768023727729754,mlp.dense_4h_to_h,effective_rank
+model,from_step,to_step,n_votes,n_metrics,n_modules,total_transition_score,mean_transition_score,metrics,modules
+EleutherAI/pythia-160m-deduped,512,1000,16,7,4,66.6823388932409,4.167646180827556,alpha_tail_frac_0.3; effective_rank; mp_outliers_x1; mp_outliers_x1.1; mp_outliers_x1.25; stable_rank; subspace_stability_topk,attention.dense; attention.query_key_value; mlp.dense_4h_to_h; mlp.dense_h_to_4h
+EleutherAI/pythia-160m-deduped,128,512,15,5,4,73.25203229634239,4.8834688197561595,mp_outliers_x1; mp_outliers_x1.1; mp_outliers_x1.25; stable_rank; subspace_stability_topk,attention.dense; attention.query_key_value; mlp.dense_4h_to_h; mlp.dense_h_to_4h
+EleutherAI/pythia-160m-deduped,1000,2000,11,6,4,8.025216534637602,0.7295651395125092,alpha_tail_frac_0.3; effective_rank; mp_outliers_x1.1; mp_outliers_x1.25; stable_rank; subspace_stability_topk,attention.dense; attention.query_key_value; mlp.dense_4h_to_h; mlp.dense_h_to_4h
+EleutherAI/pythia-160m-deduped,0,128,7,3,3,56.12703966933833,8.01814852419119,mp_outliers_x1; mp_outliers_x1.1; mp_outliers_x1.25,attention.dense; attention.query_key_value; mlp.dense_4h_to_h
+EleutherAI/pythia-160m-deduped,64000,143000,3,3,2,0.9691934169863641,0.32306447232878804,alpha_tail_frac_0.3; effective_rank; stable_rank,attention.dense; attention.query_key_value
+EleutherAI/pythia-160m-deduped,3000,8000,2,2,2,0.18665339642345408,0.09332669821172704,alpha_tail_frac_0.3; effective_rank,attention.dense; mlp.dense_h_to_4h
+EleutherAI/pythia-160m-deduped,16000,64000,2,2,1,0.41934844632816537,0.20967422316408268,effective_rank; subspace_stability_topk,attention.query_key_value
