@@ -1,0 +1,664 @@
+#!/usr/bin/env python3
+"""E3 factual-intervention runner v3.
+
+One model load per (stage, seed) cell:
+  base score -> inject -> uptake score -> clean-retention branch -> degradation branches.
+
+This script is intentionally self-contained to avoid silent regressions in older E3 helpers.
+It writes stable CSV schemas with explicit quoting and performs signal split sanity checks.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import gc
+import json
+import math
+import os
+import random
+import time
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+
+import numpy as np
+import torch
+import torch.nn.functional as F
+import yaml
+from torch.optim import AdamW
+from torch.utils.data import DataLoader, Dataset
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+CONS, VOW = "bdfgklmnprstvz", "aeiou"
+DEFAULT_RELATIONS = ["capital", "currency", "patron", "river"]
+
+
+@dataclass(frozen=True)
+class Fact:
+    fact_id: int
+    entity: str
+    relation: str
+    value: str
+
+
+def now() -> str:
+    return time.strftime("%Y-%m-%dT%H:%M:%S%z")
+
+
+def set_all_seeds(seed: int) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+
+
+def make_nonword(rng: random.Random, syll: Tuple[int, int] = (2, 3)) -> str:
+    n = rng.randint(*syll)
+    return "".join(rng.choice(CONS) + rng.choice(VOW) for _ in range(n)).capitalize()
+
+
+def token_len(tok, text: str) -> int:
+    return len(tok(text, add_special_tokens=False).input_ids)
+
+
+def make_vocab(
+    rng: random.Random,
+    k: int,
+    tok,
+    max_pieces: int = 3,
+    exclude: Optional[set[str]] = None,
+    prefix_space: bool = True,
+    max_tries: int = 100000,
+) -> List[str]:
+    exclude = exclude or set()
+    out: set[str] = set()
+    tries = 0
+    while len(out) < k:
+        tries += 1
+        if tries > max_tries:
+            raise RuntimeError(f"Could not generate {k} tokenizer-filtered names after {max_tries} tries")
+        w = make_nonword(rng)
+        if w in exclude or w in out:
+            continue
+        probe = " " + w if prefix_space else w
+        if token_len(tok, probe) <= max_pieces:
+            out.add(w)
+    return sorted(out)
+
+
+@dataclass
+class FactualSignal:
+    facts: List[Fact]
+    train_texts: List[str]
+    probes: List[Dict[str, Any]]
+    controls: List[Dict[str, Any]]
+    poison_by_budget: Dict[int, List[str]]
+    audit: Dict[str, Any]
+
+
+def render_fact_texts(fact: Fact, templates: Sequence[str], value_override: Optional[str] = None) -> List[str]:
+    value = fact.value if value_override is None else value_override
+    return [t.format(rel=fact.relation, e=fact.entity, v=value) for t in templates]
+
+
+def build_factual_signal(config: Dict[str, Any], tok, seed: int) -> FactualSignal:
+    sig = config["signal"]
+    tok_cfg = config.get("tokenizer", {})
+    rng = random.Random(seed)
+    n_items = int(sig.get("n_items", 300))
+    n_probe = int(sig.get("n_probe", 200))
+    n_distr = int(sig.get("n_distractors", 4))
+    max_pieces = int(tok_cfg.get("max_name_pieces", 3))
+    rels = list(sig.get("relations", DEFAULT_RELATIONS))
+    train_templates = list(sig["train_templates"])
+    probe_template = sig["probe_template"]
+
+    if n_probe > n_items:
+        raise ValueError(f"n_probe={n_probe} cannot exceed n_items={n_items}; probes must query taught facts")
+
+    ents = make_vocab(rng, n_items, tok, max_pieces=max_pieces)
+    vals = make_vocab(rng, n_items, tok, max_pieces=max_pieces, exclude=set(ents))
+    facts = [Fact(i, e, rng.choice(rels), v) for i, (e, v) in enumerate(zip(ents, vals))]
+
+    train_texts: List[str] = []
+    for f in facts:
+        train_texts.extend(render_fact_texts(f, train_templates))
+
+    probe_ids = list(range(n_items))
+    rng.shuffle(probe_ids)
+    probe_ids = sorted(probe_ids[:n_probe])
+    probes = []
+    all_values = [f.value for f in facts]
+    for pid in probe_ids:
+        f = facts[pid]
+        distractor_pool = [v for v in all_values if v != f.value]
+        distractors = rng.sample(distractor_pool, k=min(n_distr, len(distractor_pool)))
+        probes.append(
+            {
+                "split": "probe",
+                "fact_id": f.fact_id,
+                "prefix": probe_template.format(rel=f.relation, e=f.entity),
+                "correct": " " + f.value,
+                "distractors": [" " + d for d in distractors],
+                "entity": f.entity,
+                "relation": f.relation,
+                "value": f.value,
+            }
+        )
+
+    # Controls are separate, never-trained triples. They use the same probe shape.
+    cent = make_vocab(rng, n_probe, tok, max_pieces=max_pieces, exclude=set(ents) | set(vals))
+    cval = make_vocab(rng, n_probe, tok, max_pieces=max_pieces, exclude=set(ents) | set(vals) | set(cent))
+    controls = []
+    for i, (e, v) in enumerate(zip(cent, cval)):
+        relation = rng.choice(rels)
+        distractor_pool = [x for x in cval if x != v]
+        distractors = rng.sample(distractor_pool, k=min(n_distr, len(distractor_pool)))
+        controls.append(
+            {
+                "split": "control",
+                "fact_id": 1000000 + i,
+                "prefix": probe_template.format(rel=relation, e=e),
+                "correct": " " + v,
+                "distractors": [" " + d for d in distractors],
+                "entity": e,
+                "relation": relation,
+                "value": v,
+            }
+        )
+
+    # Poison budgets: same trained entities/relations, wrong values.
+    # Budget k means k contradicted facts. Each contradicted fact is rendered through the same templates.
+    poison_by_budget: Dict[int, List[str]] = {}
+    budgets = [int(x) for x in config.get("degradation", {}).get("poison_budgets", [])]
+    shuffled_facts = facts.copy()
+    rng.shuffle(shuffled_facts)
+    for k in budgets:
+        texts: List[str] = []
+        for f in shuffled_facts[: min(k, len(shuffled_facts))]:
+            wrong_pool = [v for v in all_values if v != f.value]
+            wrong = rng.choice(wrong_pool)
+            texts.extend(render_fact_texts(f, train_templates, value_override=wrong))
+        poison_by_budget[k] = texts
+
+    # Sanity checks for the prior bug: probes must query taught facts, controls must not.
+    train_fact_ids = {f.fact_id for f in facts}
+    probe_fact_ids = {p["fact_id"] for p in probes}
+    control_fact_ids = {c["fact_id"] for c in controls}
+    if not probe_fact_ids.issubset(train_fact_ids):
+        raise AssertionError("BUG: probe fact IDs are not a subset of taught facts")
+    if train_fact_ids & control_fact_ids:
+        raise AssertionError("BUG: control fact IDs overlap taught facts")
+    for t in train_templates:
+        if t == probe_template:
+            raise AssertionError("BUG: probe template appears in training templates")
+
+    audit = {
+        "seed": seed,
+        "n_items": n_items,
+        "n_probe": n_probe,
+        "n_train_texts": len(train_texts),
+        "n_controls": len(controls),
+        "train_fact_ids_minmax": [min(train_fact_ids), max(train_fact_ids)],
+        "probe_fact_ids_minmax": [min(probe_fact_ids), max(probe_fact_ids)],
+        "probe_subset_of_train": True,
+        "control_disjoint_from_train": True,
+        "train_templates": train_templates,
+        "probe_template": probe_template,
+        "example_train_texts": train_texts[:6],
+        "example_probe": probes[0] if probes else None,
+        "example_control": controls[0] if controls else None,
+        "poison_budgets": {str(k): len(v) for k, v in poison_by_budget.items()},
+    }
+    return FactualSignal(facts, train_texts, probes, controls, poison_by_budget, audit)
+
+
+class TextDataset(Dataset):
+    def __init__(self, tok, texts: Sequence[str], max_len: int):
+        self.examples = []
+        for text in texts:
+            ids = tok(text, add_special_tokens=False).input_ids[:max_len]
+            if len(ids) < 2:
+                continue
+            self.examples.append(torch.tensor(ids, dtype=torch.long))
+        if not self.examples:
+            raise ValueError("No trainable examples after tokenization")
+        self.pad_id = tok.pad_token_id if tok.pad_token_id is not None else tok.eos_token_id
+
+    def __len__(self) -> int:
+        return len(self.examples)
+
+    def __getitem__(self, idx: int) -> torch.Tensor:
+        return self.examples[idx]
+
+    def collate(self, batch: Sequence[torch.Tensor]) -> Dict[str, torch.Tensor]:
+        max_len = max(x.numel() for x in batch)
+        input_ids = torch.full((len(batch), max_len), self.pad_id, dtype=torch.long)
+        attention_mask = torch.zeros((len(batch), max_len), dtype=torch.long)
+        labels = torch.full((len(batch), max_len), -100, dtype=torch.long)
+        for i, ids in enumerate(batch):
+            input_ids[i, : ids.numel()] = ids
+            attention_mask[i, : ids.numel()] = 1
+            labels[i, : ids.numel()] = ids
+        return {"input_ids": input_ids, "attention_mask": attention_mask, "labels": labels}
+
+
+def infinite_loader(loader: DataLoader):
+    while True:
+        for batch in loader:
+            yield batch
+
+
+def finetune_texts(
+    model,
+    tok,
+    texts: Sequence[str],
+    *,
+    steps: Optional[int],
+    epochs: Optional[int],
+    lr: float,
+    batch_size: int,
+    max_len: int,
+    weight_decay: float,
+    grad_clip_norm: Optional[float],
+    seed: int,
+    device: torch.device,
+) -> Dict[str, Any]:
+    if not texts:
+        raise ValueError("finetune_texts got empty texts")
+    ds = TextDataset(tok, texts, max_len=max_len)
+    gen = torch.Generator()
+    gen.manual_seed(seed)
+    loader = DataLoader(ds, batch_size=batch_size, shuffle=True, collate_fn=ds.collate, generator=gen)
+    opt = AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+    model.train()
+    losses = []
+    n_steps = 0
+
+    if steps is not None:
+        it = infinite_loader(loader)
+        for _ in range(int(steps)):
+            batch = {k: v.to(device) for k, v in next(it).items()}
+            out = model(**batch)
+            out.loss.backward()
+            if grad_clip_norm is not None and grad_clip_norm > 0:
+                torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip_norm)
+            opt.step()
+            opt.zero_grad(set_to_none=True)
+            losses.append(float(out.loss.detach().cpu()))
+            n_steps += 1
+    else:
+        for _ in range(int(epochs or 1)):
+            for batch0 in loader:
+                batch = {k: v.to(device) for k, v in batch0.items()}
+                out = model(**batch)
+                out.loss.backward()
+                if grad_clip_norm is not None and grad_clip_norm > 0:
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip_norm)
+                opt.step()
+                opt.zero_grad(set_to_none=True)
+                losses.append(float(out.loss.detach().cpu()))
+                n_steps += 1
+
+    model.eval()
+    return {
+        "train_steps": n_steps,
+        "mean_loss": float(np.mean(losses)) if losses else math.nan,
+        "final_loss": float(losses[-1]) if losses else math.nan,
+    }
+
+
+@torch.no_grad()
+def seq_logprob(model, tok, prefix: str, continuation: str, device: torch.device) -> float:
+    # Tokenize prefix and full string separately to locate continuation token count.
+    pre = tok(prefix, return_tensors="pt", add_special_tokens=False).input_ids.to(device)
+    full = tok(prefix + continuation, return_tensors="pt", add_special_tokens=False).input_ids.to(device)
+    clen = full.shape[1] - pre.shape[1]
+    if clen <= 0:
+        raise ValueError(f"Continuation produced no new tokens: {continuation!r}")
+    out = model(full)
+    logits = out.logits[:, :-1, :]
+    targets = full[:, 1:]
+    lp = F.log_softmax(logits, dim=-1).gather(-1, targets.unsqueeze(-1)).squeeze(-1)
+    return float((lp[:, -clen:].sum() / clen).detach().cpu())
+
+
+@torch.no_grad()
+def score_probe_set(model, tok, probes: Sequence[Dict[str, Any]], device: torch.device, split: str, event: str) -> Tuple[Dict[str, float], List[Dict[str, Any]]]:
+    rows: List[Dict[str, Any]] = []
+    for i, p in enumerate(probes):
+        lp_c = seq_logprob(model, tok, p["prefix"], p["correct"], device)
+        lp_ds = [seq_logprob(model, tok, p["prefix"], d, device) for d in p["distractors"]]
+        max_d = max(lp_ds) if lp_ds else -float("inf")
+        margin = lp_c - max_d
+        rows.append(
+            {
+                "event": event,
+                "split": split,
+                "probe_index": i,
+                "fact_id": p.get("fact_id"),
+                "margin": margin,
+                "correct": int(margin > 0),
+                "lp_correct": lp_c,
+                "max_lp_distractor": max_d,
+                "nll_correct": -lp_c,
+                "prefix": p.get("prefix", ""),
+                "target": p.get("correct", ""),
+            }
+        )
+    margins = np.array([r["margin"] for r in rows], dtype=float)
+    correct = np.array([r["correct"] for r in rows], dtype=float)
+    nll = np.array([r["nll_correct"] for r in rows], dtype=float)
+    summary = {
+        f"{split}_mean_margin": float(np.mean(margins)) if len(margins) else math.nan,
+        f"{split}_accuracy": float(np.mean(correct)) if len(correct) else math.nan,
+        f"{split}_mean_nll": float(np.mean(nll)) if len(nll) else math.nan,
+        f"{split}_n": int(len(rows)),
+    }
+    return summary, rows
+
+
+def write_rows(path: Path, rows: List[Dict[str, Any]], fieldnames: Sequence[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    exists = path.exists() and path.stat().st_size > 0
+    with path.open("a", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore", quoting=csv.QUOTE_MINIMAL)
+        if not exists:
+            w.writeheader()
+        for row in rows:
+            w.writerow(row)
+
+
+def save_json(path: Path, obj: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def clone_state_to_cpu(model) -> Dict[str, torch.Tensor]:
+    return {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+
+
+def restore_state(model, state: Dict[str, torch.Tensor], device: torch.device) -> None:
+    model.load_state_dict(state, strict=True)
+    model.to(device)
+    model.eval()
+    if device.type == "cuda":
+        torch.cuda.empty_cache()
+
+
+def synthetic_continuation_corpus(n: int, seed: int) -> List[str]:
+    rng = random.Random(10_000 + seed)
+    subjects = ["The report", "A researcher", "The archive", "This paragraph", "The system"]
+    verbs = ["describes", "summarizes", "compares", "records", "explains"]
+    objects = ["a simple observation", "several examples", "a short sequence", "the next result", "a measured change"]
+    endings = ["in clear language.", "with enough detail.", "for later analysis.", "without using special notation."]
+    out = []
+    for _ in range(n):
+        out.append(f"{rng.choice(subjects)} {rng.choice(verbs)} {rng.choice(objects)} {rng.choice(endings)}")
+    return out
+
+
+def dtype_from_config(name: str):
+    name = str(name).lower()
+    if name in {"float16", "fp16"}:
+        return torch.float16
+    if name in {"bfloat16", "bf16"}:
+        return torch.bfloat16
+    if name in {"float32", "fp32"}:
+        return torch.float32
+    if name == "auto":
+        return "auto"
+    raise ValueError(f"Unknown dtype {name}")
+
+
+def compute_normed_delta(after: float, before: float, injected: float) -> float:
+    denom = injected - before
+    if abs(denom) < 1e-8:
+        return math.nan
+    return (after - before) / denom
+
+
+def k_star_from_curve(points: List[Tuple[int, float]], threshold: float) -> float:
+    # points sorted by budget, includes k=0 post-injection.
+    points = sorted(points, key=lambda x: x[0])
+    prev_k, prev_y = points[0]
+    if prev_y < threshold:
+        return 0.0
+    for k, y in points[1:]:
+        if y < threshold:
+            # linear interpolation in k.
+            if y == prev_y:
+                return float(k)
+            frac = (threshold - prev_y) / (y - prev_y)
+            return float(prev_k + frac * (k - prev_k))
+        prev_k, prev_y = k, y
+    return float("inf")
+
+
+def trapz_auc(xs: Sequence[float], ys: Sequence[float]) -> float:
+    fn = getattr(np, "trapezoid", None) or getattr(np, "trapz")
+    return float(fn(np.asarray(ys, dtype=float), np.asarray(xs, dtype=float)))
+
+
+def run_cell(config: Dict[str, Any], stage: str, seed: int) -> None:
+    exp_id = config.get("experiment_id", "e3_factual_cell_v3")
+    model_name = config["model_name"]
+    root = Path(config.get("outputs", {}).get("root", "results/e3_critical_period_intervention_v3"))
+    raw_dir = root / "raw"
+    audit_dir = root / "audits"
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    set_all_seeds(seed)
+
+    print(f"[{now()}] Loading tokenizer: {model_name}", flush=True)
+    tok = AutoTokenizer.from_pretrained(model_name)
+    if tok.pad_token is None:
+        tok.pad_token = tok.eos_token
+
+    signal = build_factual_signal(config, tok, seed)
+    save_json(audit_dir / f"signal_audit_{stage}_seed{seed}.json", signal.audit)
+
+    print(f"[{now()}] Loading model: {model_name} @ {stage} on {device}", flush=True)
+    dtype = dtype_from_config(config.get("training", {}).get("dtype", "float32"))
+    kwargs = {"revision": stage}
+    if dtype != "auto":
+        kwargs["torch_dtype"] = dtype
+    model = AutoModelForCausalLM.from_pretrained(model_name, **kwargs).to(device)
+    model.config.use_cache = False
+    model.eval()
+
+    metadata = {
+        "experiment_id": exp_id,
+        "model": model_name,
+        "stage": stage,
+        "step": int(stage.replace("step", "")) if stage.startswith("step") else None,
+        "seed": seed,
+        "timestamp": now(),
+    }
+    summary_rows: List[Dict[str, Any]] = []
+    item_rows_all: List[Dict[str, Any]] = []
+    degradation_rows: List[Dict[str, Any]] = []
+
+    print(f"[{now()}] Scoring base probes/controls", flush=True)
+    base_probe, rows = score_probe_set(model, tok, signal.probes, device, "probe", "base")
+    item_rows_all.extend([{**metadata, **r, "poison_budget": "", "branch": "base"} for r in rows])
+    base_control, rows = score_probe_set(model, tok, signal.controls, device, "control", "base_control")
+    item_rows_all.extend([{**metadata, **r, "poison_budget": "", "branch": "base"} for r in rows])
+
+    tr = config["training"]
+    print(f"[{now()}] Injecting signal: {len(signal.train_texts)} texts, {tr['injection_steps']} steps", flush=True)
+    inj_train_info = finetune_texts(
+        model,
+        tok,
+        signal.train_texts,
+        steps=int(tr["injection_steps"]),
+        epochs=None,
+        lr=float(tr["injection_lr"]),
+        batch_size=int(tr.get("batch_size", 16)),
+        max_len=int(tr.get("max_len", 128)),
+        weight_decay=float(tr.get("weight_decay", 0.0)),
+        grad_clip_norm=float(tr.get("grad_clip_norm", 0.0)) if tr.get("grad_clip_norm", 0.0) else None,
+        seed=seed,
+        device=device,
+    )
+
+    print(f"[{now()}] Scoring post-injection uptake", flush=True)
+    post_probe, rows = score_probe_set(model, tok, signal.probes, device, "probe", "post_injection")
+    item_rows_all.extend([{**metadata, **r, "poison_budget": 0, "branch": "injection"} for r in rows])
+    post_control, rows = score_probe_set(model, tok, signal.controls, device, "control", "post_injection_control")
+    item_rows_all.extend([{**metadata, **r, "poison_budget": 0, "branch": "injection"} for r in rows])
+
+    injected_state = clone_state_to_cpu(model)
+
+    base_margin = base_probe["probe_mean_margin"]
+    post_margin = post_probe["probe_mean_margin"]
+    base_acc = base_probe["probe_accuracy"]
+    post_acc = post_probe["probe_accuracy"]
+
+    # Retention branch.
+    retention_summary: Dict[str, Any] = {}
+    if config.get("retention", {}).get("enabled", True):
+        ret = config["retention"]
+        corpus_kind = ret.get("continuation_corpus", "synthetic_generic")
+        if corpus_kind != "synthetic_generic":
+            raise NotImplementedError("Only synthetic_generic continuation corpus is implemented in v3 standalone runner")
+        cont_texts = synthetic_continuation_corpus(int(ret.get("continuation_corpus_size", 1000)), seed=seed)
+        print(f"[{now()}] Clean-continuation branch: {ret['continuation_steps']} steps", flush=True)
+        cont_info = finetune_texts(
+            model,
+            tok,
+            cont_texts,
+            steps=int(ret["continuation_steps"]),
+            epochs=None,
+            lr=float(ret["continuation_lr"]),
+            batch_size=int(ret.get("continuation_batch_size", tr.get("batch_size", 16))),
+            max_len=int(tr.get("max_len", 128)),
+            weight_decay=float(tr.get("weight_decay", 0.0)),
+            grad_clip_norm=float(tr.get("grad_clip_norm", 0.0)) if tr.get("grad_clip_norm", 0.0) else None,
+            seed=seed + 1000,
+            device=device,
+        )
+        print(f"[{now()}] Scoring post-continuation retention", flush=True)
+        cont_probe, rows = score_probe_set(model, tok, signal.probes, device, "probe", "post_continuation")
+        item_rows_all.extend([{**metadata, **r, "poison_budget": "", "branch": "retention"} for r in rows])
+        retention_summary = {
+            "post_continuation_mean_margin": cont_probe["probe_mean_margin"],
+            "post_continuation_accuracy": cont_probe["probe_accuracy"],
+            "post_continuation_mean_nll": cont_probe["probe_mean_nll"],
+            "normalized_retention_margin": compute_normed_delta(cont_probe["probe_mean_margin"], base_margin, post_margin),
+            "normalized_retention_accuracy": compute_normed_delta(cont_probe["probe_accuracy"], base_acc, post_acc),
+            "continuation_train_steps": cont_info["train_steps"],
+            "continuation_final_loss": cont_info["final_loss"],
+        }
+        restore_state(model, injected_state, device)
+
+    # Degradation branches: each budget restarts from the injected state.
+    deg_summary: Dict[str, Any] = {}
+    if config.get("degradation", {}).get("enabled", True):
+        deg = config["degradation"]
+        budget_points_acc = [(0, post_acc)]
+        budget_points_margin = [(0, post_margin)]
+        degradation_rows.append({**metadata, "poison_budget": 0, "probe_accuracy": post_acc, "probe_mean_margin": post_margin, "probe_mean_nll": post_probe["probe_mean_nll"], "poison_train_steps": 0})
+        for budget in [int(x) for x in deg.get("poison_budgets", [])]:
+            restore_state(model, injected_state, device)
+            poison_texts = signal.poison_by_budget[budget]
+            print(f"[{now()}] Degradation branch: budget={budget} facts, {len(poison_texts)} texts", flush=True)
+            poison_info = finetune_texts(
+                model,
+                tok,
+                poison_texts,
+                steps=None,
+                epochs=int(deg.get("poison_epochs", 1)),
+                lr=float(deg.get("poison_lr", tr["injection_lr"])),
+                batch_size=int(deg.get("poison_batch_size", tr.get("batch_size", 16))),
+                max_len=int(tr.get("max_len", 128)),
+                weight_decay=float(tr.get("weight_decay", 0.0)),
+                grad_clip_norm=float(tr.get("grad_clip_norm", 0.0)) if tr.get("grad_clip_norm", 0.0) else None,
+                seed=seed + 2000 + budget,
+                device=device,
+            )
+            deg_probe, rows = score_probe_set(model, tok, signal.probes, device, "probe", f"post_poison_k{budget}")
+            item_rows_all.extend([{**metadata, **r, "poison_budget": budget, "branch": "degradation"} for r in rows])
+            budget_points_acc.append((budget, deg_probe["probe_accuracy"]))
+            budget_points_margin.append((budget, deg_probe["probe_mean_margin"]))
+            degradation_rows.append({**metadata, "poison_budget": budget, "probe_accuracy": deg_probe["probe_accuracy"], "probe_mean_margin": deg_probe["probe_mean_margin"], "probe_mean_nll": deg_probe["probe_mean_nll"], "poison_train_steps": poison_info["train_steps"]})
+
+        threshold = float(deg.get("threshold_accuracy", 0.5))
+        xs = [x for x, _ in budget_points_acc]
+        ys_acc = [y for _, y in budget_points_acc]
+        ys_margin = [y for _, y in budget_points_margin]
+        deg_summary = {
+            "k_star_accuracy_threshold": k_star_from_curve(budget_points_acc, threshold),
+            "degradation_auc_accuracy": trapz_auc(xs, ys_acc),
+            "degradation_auc_margin": trapz_auc(xs, ys_margin),
+            "degradation_final_accuracy": ys_acc[-1] if ys_acc else math.nan,
+            "degradation_final_margin": ys_margin[-1] if ys_margin else math.nan,
+        }
+        restore_state(model, injected_state, device)
+
+    # One row per cell.
+    cell_row = {
+        **metadata,
+        "n_items": config["signal"]["n_items"],
+        "n_probe": config["signal"]["n_probe"],
+        "n_train_texts": len(signal.train_texts),
+        "base_probe_mean_margin": base_margin,
+        "base_probe_accuracy": base_acc,
+        "base_probe_mean_nll": base_probe["probe_mean_nll"],
+        "base_control_mean_margin": base_control["control_mean_margin"],
+        "base_control_accuracy": base_control["control_accuracy"],
+        "post_injection_mean_margin": post_margin,
+        "post_injection_accuracy": post_acc,
+        "post_injection_mean_nll": post_probe["probe_mean_nll"],
+        "uptake_margin_delta": post_margin - base_margin,
+        "uptake_accuracy_delta": post_acc - base_acc,
+        "injection_train_steps": inj_train_info["train_steps"],
+        "injection_final_loss": inj_train_info["final_loss"],
+        **retention_summary,
+        **deg_summary,
+    }
+    summary_rows.append(cell_row)
+
+    summary_fields = [
+        "experiment_id", "model", "stage", "step", "seed", "timestamp", "n_items", "n_probe", "n_train_texts",
+        "base_probe_mean_margin", "base_probe_accuracy", "base_probe_mean_nll", "base_control_mean_margin", "base_control_accuracy",
+        "post_injection_mean_margin", "post_injection_accuracy", "post_injection_mean_nll", "uptake_margin_delta", "uptake_accuracy_delta",
+        "injection_train_steps", "injection_final_loss",
+        "post_continuation_mean_margin", "post_continuation_accuracy", "post_continuation_mean_nll", "normalized_retention_margin", "normalized_retention_accuracy", "continuation_train_steps", "continuation_final_loss",
+        "k_star_accuracy_threshold", "degradation_auc_accuracy", "degradation_auc_margin", "degradation_final_accuracy", "degradation_final_margin",
+    ]
+    item_fields = [
+        "experiment_id", "model", "stage", "step", "seed", "timestamp", "branch", "event", "split", "poison_budget", "probe_index", "fact_id", "margin", "correct", "lp_correct", "max_lp_distractor", "nll_correct", "prefix", "target",
+    ]
+    deg_fields = [
+        "experiment_id", "model", "stage", "step", "seed", "timestamp", "poison_budget", "probe_accuracy", "probe_mean_margin", "probe_mean_nll", "poison_train_steps",
+    ]
+    write_rows(raw_dir / "e3_factual_cell_summary.csv", summary_rows, summary_fields)
+    write_rows(raw_dir / "e3_factual_item_metrics.csv", item_rows_all, item_fields)
+    write_rows(raw_dir / "e3_factual_degradation_curve.csv", degradation_rows, deg_fields)
+    print(f"[{now()}] Wrote cell outputs under {raw_dir}", flush=True)
+
+    del injected_state
+    del model
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", required=True)
+    args = ap.parse_args()
+    config = yaml.safe_load(Path(args.config).read_text())
+    stages = list(config["stages"])
+    seeds = [int(x) for x in config["seeds"]]
+    root = Path(config.get("outputs", {}).get("root", "results/e3_critical_period_intervention_v3"))
+    root.mkdir(parents=True, exist_ok=True)
+    save_json(root / "config_snapshot.json", config)
+    for stage in stages:
+        for seed in seeds:
+            run_cell(config, stage, seed)
+
+
+if __name__ == "__main__":
+    main()

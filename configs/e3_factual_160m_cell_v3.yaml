@@ -1,0 +1,54 @@
+experiment_id: e3_factual_160m_cell_v3
+model_name: EleutherAI/pythia-160m-deduped
+stages:
+  - step8000
+seeds:
+  - 0
+outputs:
+  root: results/e3_critical_period_intervention_v3_cell
+
+tokenizer:
+  max_name_pieces: 3
+  add_leading_space_for_values: true
+
+signal:
+  type: factual
+  n_items: 300
+  n_probe: 200
+  n_distractors: 4
+  relations: [capital, currency, patron, river]
+  train_templates:
+    - "The {rel} of {e} is {v}."
+    - "{v} is the {rel} of {e}."
+    - "{e}'s {rel} is {v}."
+  probe_template: "Question: What is the {rel} of {e}?\nAnswer:"
+
+training:
+  dtype: float32          # use float32 first for stability; change to float16/bfloat16 after smoke test if desired
+  max_len: 128
+  batch_size: 16
+  injection_steps: 300
+  injection_lr: 2.0e-5
+  weight_decay: 0.0
+  grad_clip_norm: 1.0
+  shuffle_each_epoch: true
+
+retention:
+  enabled: true
+  continuation_steps: 500
+  continuation_lr: 2.0e-5
+  continuation_batch_size: 16
+  continuation_corpus: synthetic_generic
+  continuation_corpus_size: 1000
+
+degradation:
+  enabled: true
+  poison_budgets: [4, 16, 64, 256]
+  poison_epochs: 1
+  poison_lr: 2.0e-5
+  poison_batch_size: 16
+  threshold_accuracy: 0.5
+
+sanity_checks:
+  require_probe_subset_of_train: true
+  require_positive_uptake_for_interpretability: false
