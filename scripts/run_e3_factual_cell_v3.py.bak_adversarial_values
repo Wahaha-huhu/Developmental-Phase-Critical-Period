@@ -167,29 +167,17 @@ def build_factual_signal(config: Dict[str, Any], tok, seed: int) -> FactualSigna
             }
         )
 
-    # Poison budgets: same trained entities/relations, fixed wrong values.
+    # Poison budgets: same trained entities/relations, wrong values.
     # Budget k means k contradicted facts. Each contradicted fact is rendered through the same templates.
-    # Important final-run control: wrong values are precomputed once per fact, so nested budgets are
-    # truly nested. The first 4 attacked facts use the same wrong values in k=4, k=16, k=64, etc.
+    poison_by_budget: Dict[int, List[str]] = {}
     budgets = [int(x) for x in config.get("degradation", {}).get("poison_budgets", [])]
     shuffled_facts = facts.copy()
     rng.shuffle(shuffled_facts)
-
-    wrong_value_by_fact_id: Dict[int, str] = {}
-    for f in shuffled_facts:
-        wrong_pool = [v for v in all_values if v != f.value]
-        wrong_value_by_fact_id[f.fact_id] = rng.choice(wrong_pool)
-
-    poison_fact_ids_by_budget: Dict[int, List[int]] = {}
-    poison_by_budget: Dict[int, List[str]] = {}
     for k in budgets:
-        attacked = shuffled_facts[: min(k, len(shuffled_facts))]
-        poison_fact_ids_by_budget[k] = [f.fact_id for f in attacked]
         texts: List[str] = []
-        for f in attacked:
-            wrong = wrong_value_by_fact_id[f.fact_id]
-            if wrong == f.value:
-                raise AssertionError("BUG: adversarial wrong value equals correct value")
+        for f in shuffled_facts[: min(k, len(shuffled_facts))]:
+            wrong_pool = [v for v in all_values if v != f.value]
+            wrong = rng.choice(wrong_pool)
             texts.extend(render_fact_texts(f, train_templates, value_override=wrong))
         poison_by_budget[k] = texts
 
@@ -220,11 +208,6 @@ def build_factual_signal(config: Dict[str, Any], tok, seed: int) -> FactualSigna
         "example_train_texts": train_texts[:6],
         "example_probe": probes[0] if probes else None,
         "example_control": controls[0] if controls else None,
-        "poison_budgets": budgets,
-        "poison_budget_unit": "facts",
-        "poison_templates_per_fact": len(train_templates),
-        "poison_budget_fact_ids": poison_fact_ids_by_budget,
-        "example_wrong_value_by_fact_id": {str(k): v for k, v in list(wrong_value_by_fact_id.items())[:5]},
         "poison_budgets": {str(k): len(v) for k, v in poison_by_budget.items()},
     }
     return FactualSignal(facts, train_texts, probes, controls, poison_by_budget, audit)
