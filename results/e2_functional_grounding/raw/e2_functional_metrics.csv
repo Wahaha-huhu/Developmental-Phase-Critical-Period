@@ -819,3 +819,823 @@ EleutherAI/pythia-160m-deduped,step143000,143000,multiple_choice,syntax_regulari
 EleutherAI/pythia-160m-deduped,step143000,143000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:25:29
 EleutherAI/pythia-160m-deduped,step143000,143000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:25:29
 EleutherAI/pythia-160m-deduped,step143000,143000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.5,4,,0,0,The capital city is located near the,2026-06-04 13:25:29
+EleutherAI/pythia-410m-deduped,step0,0,lm_loss,fixed_text,0,nll,11.0546875,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,lm_loss,fixed_text,1,nll,10.984375,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,lm_loss,fixed_text,2,nll,10.953125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,lm_loss,fixed_text,3,nll,11.0078125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,lm_loss,fixed_text,4,nll,10.9765625,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-1.5078125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 4 + 1? Answer:,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 4 + 1? Answer:,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.2265625,4,,3,0,Question: What is 4 + 1? Answer:,2026-06-04 13:37:22
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,0.2578125,4,,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-1.1796875,4,,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-1.2734375,4,,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,1,0,1 2 3 4,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,1 2 3 4,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-1.5859375,4,,1,0,1 2 3 4,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,1,accuracy_raw_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,0.265625,4,,0,0,2 4 6 8,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,0.828125,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.140625,4,,2,0,January February March,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,-0.921875,4,,2,0,The cat sat on the,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,0.0,4,False,2,0,She opened the book and began to,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,She opened the book and began to,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,-0.6796875,4,,2,0,She opened the book and began to,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,0.0,4,False,2,0,The capital city is located near the,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,The capital city is located near the,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step0,0,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,-0.4765625,4,,2,0,The capital city is located near the,2026-06-04 13:37:23
+EleutherAI/pythia-410m-deduped,step128,128,lm_loss,fixed_text,0,nll,7.55078125,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:37:48
+EleutherAI/pythia-410m-deduped,step128,128,lm_loss,fixed_text,1,nll,8.421875,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:37:48
+EleutherAI/pythia-410m-deduped,step128,128,lm_loss,fixed_text,2,nll,7.78125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:37:48
+EleutherAI/pythia-410m-deduped,step128,128,lm_loss,fixed_text,3,nll,8.46875,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,lm_loss,fixed_text,4,nll,8.9453125,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-1.8828125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.6796875,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,0.3515625,4,,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-1.89453125,4,,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-2.390625,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-1.21875,4,,2,0,1 2 3 4,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-0.203125,4,,3,0,2 4 6 8,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.328125,4,,3,0,Monday Tuesday Wednesday,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.6328125,4,,2,0,January February March,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,-0.2734375,4,,2,0,The cat sat on the,2026-06-04 13:37:49
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:37:50
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:37:50
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,1.78125,4,,0,0,She opened the book and began to,2026-06-04 13:37:50
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,0.0,4,False,1,0,The capital city is located near the,2026-06-04 13:37:50
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,The capital city is located near the,2026-06-04 13:37:50
+EleutherAI/pythia-410m-deduped,step128,128,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,-0.96875,4,,1,0,The capital city is located near the,2026-06-04 13:37:50
+EleutherAI/pythia-410m-deduped,step512,512,lm_loss,fixed_text,0,nll,5.99609375,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,lm_loss,fixed_text,1,nll,6.98046875,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,lm_loss,fixed_text,2,nll,6.09375,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,lm_loss,fixed_text,3,nll,6.26171875,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,lm_loss,fixed_text,4,nll,7.0859375,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,0.21484375,4,,0,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.7109375,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:15
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-1.181640625,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.15234375,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.6953125,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-0.4609375,4,,2,0,1 2 3 4,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,1,accuracy_raw_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,0.25,4,,0,0,2 4 6 8,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-1.1796875,4,,1,0,Monday Tuesday Wednesday,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.19140625,4,,1,0,January February March,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,-1.41015625,4,,2,0,The cat sat on the,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,4.80078125,4,,0,0,She opened the book and began to,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step512,512,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,2.34375,4,,0,0,The capital city is located near the,2026-06-04 13:38:16
+EleutherAI/pythia-410m-deduped,step1000,1000,lm_loss,fixed_text,0,nll,5.19921875,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,lm_loss,fixed_text,1,nll,6.60546875,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,lm_loss,fixed_text,2,nll,5.51171875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,lm_loss,fixed_text,3,nll,5.4453125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,lm_loss,fixed_text,4,nll,6.484375,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.08203125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.34765625,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.7109375,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.125,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.3046875,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:41
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,0.40625,4,,0,0,1 2 3 4,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,0.5,4,,0,0,2 4 6 8,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,0.09375,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-1.37109375,4,,1,0,January February March,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,-0.828125,4,,2,0,The cat sat on the,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,8.0625,4,,0,0,She opened the book and began to,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step1000,1000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,5.2734375,4,,0,0,The capital city is located near the,2026-06-04 13:38:42
+EleutherAI/pythia-410m-deduped,step2000,2000,lm_loss,fixed_text,0,nll,4.671875,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,lm_loss,fixed_text,1,nll,5.5078125,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,lm_loss,fixed_text,2,nll,4.6171875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,lm_loss,fixed_text,3,nll,5.14453125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,lm_loss,fixed_text,4,nll,5.65234375,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.046875,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.1953125,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.97265625,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.078125,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.46875,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,1,0,1 2 3 4,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,1 2 3 4,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-0.296875,4,,1,0,1 2 3 4,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-1.072265625,4,,1,0,2 4 6 8,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,0.0078125,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:38:50
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.22265625,4,,1,0,January February March,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,1.6796875,4,,0,0,The cat sat on the,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,10.4013671875,4,,0,0,She opened the book and began to,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step2000,2000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,5.0546875,4,,0,0,The capital city is located near the,2026-06-04 13:38:51
+EleutherAI/pythia-410m-deduped,step3000,3000,lm_loss,fixed_text,0,nll,4.30859375,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,lm_loss,fixed_text,1,nll,5.32421875,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,lm_loss,fixed_text,2,nll,4.21875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,lm_loss,fixed_text,3,nll,4.70703125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,lm_loss,fixed_text,4,nll,5.33203125,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.21875,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,0.453125,4,,0,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-1.1640625,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.2421875,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.40625,4,,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-0.171875,4,,2,0,1 2 3 4,2026-06-04 13:39:27
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-3.412109375,4,,3,0,2 4 6 8,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.64453125,4,,1,0,Monday Tuesday Wednesday,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.03125,4,,0,0,January February March,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,1.72265625,4,,0,0,The cat sat on the,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,12.1748046875,4,,0,0,She opened the book and began to,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step3000,3000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.66796875,4,,0,0,The capital city is located near the,2026-06-04 13:39:28
+EleutherAI/pythia-410m-deduped,step8000,8000,lm_loss,fixed_text,0,nll,3.904296875,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,lm_loss,fixed_text,1,nll,4.97265625,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,lm_loss,fixed_text,2,nll,3.953125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,lm_loss,fixed_text,3,nll,4.78515625,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,lm_loss,fixed_text,4,nll,4.921875,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-1.3203125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.75,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.98046875,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.302734375,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:39
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-1.875,4,,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,3.750244140625,4,,0,0,1 2 3 4,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-0.4140625,4,,1,0,2 4 6 8,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.4140625,4,,3,0,Monday Tuesday Wednesday,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,3,0,January February March,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,January February March,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.65234375,4,,3,0,January February March,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,3.2734375,4,,0,0,The cat sat on the,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,11.75,4,,0,0,She opened the book and began to,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step8000,8000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,5.87109375,4,,0,0,The capital city is located near the,2026-06-04 13:39:40
+EleutherAI/pythia-410m-deduped,step16000,16000,lm_loss,fixed_text,0,nll,3.6328125,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,lm_loss,fixed_text,1,nll,4.86328125,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,lm_loss,fixed_text,2,nll,3.236328125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,lm_loss,fixed_text,3,nll,4.7265625,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,lm_loss,fixed_text,4,nll,4.8828125,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.2734375,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.28125,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-1.029296875,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:39:50
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.09375,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.3828125,4,,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,4.8284912109375,4,,0,0,1 2 3 4,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-0.90625,4,,1,0,2 4 6 8,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,0.00390625,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.109375,4,,0,0,January February March,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,2.05078125,4,,0,0,The cat sat on the,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,11.53173828125,4,,0,0,She opened the book and began to,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step16000,16000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.267578125,4,,0,0,The capital city is located near the,2026-06-04 13:39:51
+EleutherAI/pythia-410m-deduped,step64000,64000,lm_loss,fixed_text,0,nll,3.34765625,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,lm_loss,fixed_text,1,nll,4.48046875,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,lm_loss,fixed_text,2,nll,3.1796875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,lm_loss,fixed_text,3,nll,4.53125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,lm_loss,fixed_text,4,nll,5.06640625,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.8828125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.125,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.333984375,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.3515625,4,,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-1.193359375,4,,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:01
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,2.265625,4,,0,0,1 2 3 4,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,0.546875,4,,0,0,2 4 6 8,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.42578125,4,,3,0,Monday Tuesday Wednesday,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,3,0,January February March,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,January February March,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.30859375,4,,3,0,January February March,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,2.55859375,4,,0,0,The cat sat on the,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,11.2568359375,4,,0,0,She opened the book and began to,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step64000,64000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,5.98828125,4,,0,0,The capital city is located near the,2026-06-04 13:40:02
+EleutherAI/pythia-410m-deduped,step143000,143000,lm_loss,fixed_text,0,nll,3.224609375,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,lm_loss,fixed_text,1,nll,4.4765625,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,lm_loss,fixed_text,2,nll,3.17578125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,lm_loss,fixed_text,3,nll,4.421875,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,lm_loss,fixed_text,4,nll,4.87109375,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.484375,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,0.09375,4,,0,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:25
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.328125,4,,2,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.125,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.703125,4,,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,2.3427734375,4,,0,0,1 2 3 4,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-0.140625,4,,3,0,2 4 6 8,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,0.2734375,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.2890625,4,,1,0,January February March,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,2.78125,4,,0,0,The cat sat on the,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,13.828125,4,,0,0,She opened the book and began to,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:26
+EleutherAI/pythia-410m-deduped,step143000,143000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.1171875,4,,0,0,The capital city is located near the,2026-06-04 13:40:26
+EleutherAI/pythia-1b-deduped,step0,0,lm_loss,fixed_text,0,nll,11.09375,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,lm_loss,fixed_text,1,nll,10.734375,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,lm_loss,fixed_text,2,nll,11.0546875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,lm_loss,fixed_text,3,nll,11.359375,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,lm_loss,fixed_text,4,nll,10.96875,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.75,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-1.0390625,4,,3,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-1.890625,4,,2,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.84375,4,,3,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-1.265625,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-1.0,4,,2,0,1 2 3 4,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-0.1875,4,,1,0,2 4 6 8,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,2,0,Monday Tuesday Wednesday,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Monday Tuesday Wednesday,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-1.140625,4,,2,0,Monday Tuesday Wednesday,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.2734375,4,,0,0,January February March,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,0.0,4,False,1,0,The cat sat on the,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,The cat sat on the,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,-0.75,4,,1,0,The cat sat on the,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,1.3671875,4,,0,0,She opened the book and began to,2026-06-04 13:40:29
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,0.0,4,False,3,0,The capital city is located near the,2026-06-04 13:40:30
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,The capital city is located near the,2026-06-04 13:40:30
+EleutherAI/pythia-1b-deduped,step0,0,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,-1.2421875,4,,3,0,The capital city is located near the,2026-06-04 13:40:30
+EleutherAI/pythia-1b-deduped,step128,128,lm_loss,fixed_text,0,nll,7.25390625,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,lm_loss,fixed_text,1,nll,8.109375,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,lm_loss,fixed_text,2,nll,7.3125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,lm_loss,fixed_text,3,nll,8.125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,lm_loss,fixed_text,4,nll,8.2265625,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.73828125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.44921875,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.18359375,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.72265625,4,,1,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-1.66796875,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-0.95703125,4,,2,0,1 2 3 4,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,1,accuracy_raw_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,2 4 6 8,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,0.78515625,4,,0,0,2 4 6 8,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Monday Tuesday Wednesday,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.6171875,4,,3,0,Monday Tuesday Wednesday,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.2734375,4,,0,0,January February March,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,-1.4375,4,,2,0,The cat sat on the,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,1.8046875,4,,0,0,She opened the book and began to,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,0.0,4,False,1,0,The capital city is located near the,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,The capital city is located near the,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step128,128,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,-0.265625,4,,1,0,The capital city is located near the,2026-06-04 13:40:32
+EleutherAI/pythia-1b-deduped,step512,512,lm_loss,fixed_text,0,nll,6.015625,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:34
+EleutherAI/pythia-1b-deduped,step512,512,lm_loss,fixed_text,1,nll,6.73828125,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:34
+EleutherAI/pythia-1b-deduped,step512,512,lm_loss,fixed_text,2,nll,5.76953125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:34
+EleutherAI/pythia-1b-deduped,step512,512,lm_loss,fixed_text,3,nll,5.92578125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:34
+EleutherAI/pythia-1b-deduped,step512,512,lm_loss,fixed_text,4,nll,6.83203125,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:34
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.2890625,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.7578125,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.86328125,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.0703125,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.15625,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-0.6806640625,4,,2,0,1 2 3 4,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-1.375,4,,3,0,2 4 6 8,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-2.09765625,4,,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.6484375,4,,2,0,January February March,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,The cat sat on the,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,-1.65234375,4,,2,0,The cat sat on the,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,4.86328125,4,,0,0,She opened the book and began to,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step512,512,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,3.51953125,4,,0,0,The capital city is located near the,2026-06-04 13:40:35
+EleutherAI/pythia-1b-deduped,step1000,1000,lm_loss,fixed_text,0,nll,5.08984375,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,lm_loss,fixed_text,1,nll,6.22265625,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,lm_loss,fixed_text,2,nll,5.27734375,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,lm_loss,fixed_text,3,nll,5.1953125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,lm_loss,fixed_text,4,nll,6.2890625,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.0859375,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.2421875,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-1.220703125,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,0.0078125,4,,0,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.390625,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,1 2 3 4,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,-0.9052734375,4,,2,0,1 2 3 4,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-1.5791015625,4,,3,0,2 4 6 8,2026-06-04 13:40:37
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.890625,4,,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.00390625,4,,0,0,January February March,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,0.82421875,4,,0,0,The cat sat on the,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,6.47265625,4,,0,0,She opened the book and began to,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step1000,1000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,5.16796875,4,,0,0,The capital city is located near the,2026-06-04 13:40:38
+EleutherAI/pythia-1b-deduped,step2000,2000,lm_loss,fixed_text,0,nll,4.25390625,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,lm_loss,fixed_text,1,nll,5.40625,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,lm_loss,fixed_text,2,nll,4.328125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,lm_loss,fixed_text,3,nll,4.8125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,lm_loss,fixed_text,4,nll,5.66015625,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.75,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.6640625,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.111328125,4,,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.6171875,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,0.802734375,4,,0,0,1 2 3 4,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-1.1328125,4,,1,0,2 4 6 8,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-1.48828125,4,,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,January February March,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.08203125,4,,1,0,January February March,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,3.33203125,4,,0,0,The cat sat on the,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,12.64111328125,4,,0,0,She opened the book and began to,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step2000,2000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.34765625,4,,0,0,The capital city is located near the,2026-06-04 13:40:40
+EleutherAI/pythia-1b-deduped,step3000,3000,lm_loss,fixed_text,0,nll,3.869140625,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,lm_loss,fixed_text,1,nll,5.1640625,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,lm_loss,fixed_text,2,nll,3.8671875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,lm_loss,fixed_text,3,nll,4.9453125,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,lm_loss,fixed_text,4,nll,5.296875,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.625,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:42
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.1015625,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.4140625,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.443359375,4,,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.609375,4,,2,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,0.2265625,4,,0,0,1 2 3 4,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-3.056640625,4,,3,0,2 4 6 8,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.74609375,4,,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.40625,4,,0,0,January February March,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,3.51953125,4,,0,0,The cat sat on the,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,12.96337890625,4,,0,0,She opened the book and began to,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step3000,3000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,4.8359375,4,,0,0,The capital city is located near the,2026-06-04 13:40:43
+EleutherAI/pythia-1b-deduped,step8000,8000,lm_loss,fixed_text,0,nll,3.81640625,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,lm_loss,fixed_text,1,nll,4.890625,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,lm_loss,fixed_text,2,nll,3.79296875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,lm_loss,fixed_text,3,nll,4.44140625,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,lm_loss,fixed_text,4,nll,4.76171875,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.564453125,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.546875,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.6171875,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.0703125,4,,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.6328125,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,0.5478515625,4,,0,0,1 2 3 4,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-2.044921875,4,,3,0,2 4 6 8,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,-0.0625,4,,1,0,Monday Tuesday Wednesday,2026-06-04 13:40:45
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-0.2890625,4,,2,0,January February March,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,1.4921875,4,,0,0,The cat sat on the,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,9.980712890625,4,,0,0,She opened the book and began to,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step8000,8000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.23828125,4,,0,0,The capital city is located near the,2026-06-04 13:40:46
+EleutherAI/pythia-1b-deduped,step16000,16000,lm_loss,fixed_text,0,nll,3.53125,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,lm_loss,fixed_text,1,nll,4.96875,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,lm_loss,fixed_text,2,nll,3.111328125,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,lm_loss,fixed_text,3,nll,4.3671875,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,lm_loss,fixed_text,4,nll,5.11328125,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-0.65625,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.9765625,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.25,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.6875,4,,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-0.931640625,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,2.390625,4,,0,0,1 2 3 4,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-1.18359375,4,,3,0,2 4 6 8,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,0.625,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,January February March,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,-1.015625,4,,2,0,January February March,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,2.79296875,4,,0,0,The cat sat on the,2026-06-04 13:40:48
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:49
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:49
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,12.668212890625,4,,0,0,She opened the book and began to,2026-06-04 13:40:49
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:49
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:49
+EleutherAI/pythia-1b-deduped,step16000,16000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.734375,4,,0,0,The capital city is located near the,2026-06-04 13:40:49
+EleutherAI/pythia-1b-deduped,step64000,64000,lm_loss,fixed_text,0,nll,3.32421875,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,lm_loss,fixed_text,1,nll,4.546875,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,lm_loss,fixed_text,2,nll,2.919921875,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,lm_loss,fixed_text,3,nll,3.958984375,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,lm_loss,fixed_text,4,nll,4.890625,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-1.197265625,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.46875,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,-0.0390625,4,,1,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.515625,4,,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-1.3203125,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,1.1884765625,4,,0,0,1 2 3 4,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,2 4 6 8,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-1.5,4,,3,0,2 4 6 8,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,0.5,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.15234375,4,,0,0,January February March,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,3.890625,4,,0,0,The cat sat on the,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,13.7198486328125,4,,0,0,She opened the book and began to,2026-06-04 13:40:51
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:52
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:52
+EleutherAI/pythia-1b-deduped,step64000,64000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.357421875,4,,0,0,The capital city is located near the,2026-06-04 13:40:52
+EleutherAI/pythia-1b-deduped,step143000,143000,lm_loss,fixed_text,0,nll,3.080078125,29,,,,"Language models are trained to predict the next token in a sequence of text. During pretraining, the model gradually changes its internal representation of comm",2026-06-04 13:40:53
+EleutherAI/pythia-1b-deduped,step143000,143000,lm_loss,fixed_text,1,nll,4.484375,27,,,,"A scientific experiment should separate observation from intervention. Observational evidence can locate a candidate pattern, while a causal experiment tests wh",2026-06-04 13:40:53
+EleutherAI/pythia-1b-deduped,step143000,143000,lm_loss,fixed_text,2,nll,2.837890625,23,,,,The quick brown fox jumps over the lazy dog. The sentence is often used because it contains many letters of the alphabet.,2026-06-04 13:40:53
+EleutherAI/pythia-1b-deduped,step143000,143000,lm_loss,fixed_text,3,nll,3.962890625,30,,,,"In a controlled training run, checkpoints provide snapshots of the model at different stages. Comparing checkpoints can reveal changes that are hidden by aggreg",2026-06-04 13:40:53
+EleutherAI/pythia-1b-deduped,step143000,143000,lm_loss,fixed_text,4,nll,4.66015625,26,,,,Mathematics and language both require structure. A model that improves during training should assign higher probability to regular sequences than to unrelated a,2026-06-04 13:40:53
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,0,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,0_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,0_margin,gold_logprob_margin,-1.1171875,4,,1,0,Question: What is 2 + 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,1,accuracy_raw_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,1_margin,gold_logprob_margin,-0.7578125,4,,1,0,Question: What is 4 + 1? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,2,accuracy_raw_logprob,1.0,4,True,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,2_margin,gold_logprob_margin,0.046875,4,,0,0,Question: What is 3 + 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,3,accuracy_raw_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,3_norm,accuracy_len_norm_logprob,0.0,4,False,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,3_margin,gold_logprob_margin,-0.3515625,4,,2,0,Question: What is 7 - 2? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,4,accuracy_raw_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,4_norm,accuracy_len_norm_logprob,0.0,4,False,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,arithmetic_small,4_margin,gold_logprob_margin,-1.189453125,4,,3,0,Question: What is 8 - 3? Answer:,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,0,accuracy_raw_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,1 2 3 4,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,0_margin,gold_logprob_margin,2.1953125,4,,0,0,1 2 3 4,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,1,accuracy_raw_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,1_norm,accuracy_len_norm_logprob,0.0,4,False,1,0,2 4 6 8,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,1_margin,gold_logprob_margin,-0.3828125,4,,1,0,2 4 6 8,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,2,accuracy_raw_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,2_margin,gold_logprob_margin,1.28955078125,4,,0,0,Monday Tuesday Wednesday,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,3,accuracy_raw_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,3_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,January February March,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,sequence_completion,3_margin,gold_logprob_margin,0.0078125,4,,0,0,January February March,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,0,accuracy_raw_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,0_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The cat sat on the,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,0_margin,gold_logprob_margin,3.2578125,4,,0,0,The cat sat on the,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,1,accuracy_raw_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,1_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,She opened the book and began to,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,1_margin,gold_logprob_margin,13.14111328125,4,,0,0,She opened the book and began to,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,2,accuracy_raw_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,2_norm,accuracy_len_norm_logprob,1.0,4,True,0,0,The capital city is located near the,2026-06-04 13:40:54
+EleutherAI/pythia-1b-deduped,step143000,143000,multiple_choice,syntax_regularities,2_margin,gold_logprob_margin,6.78515625,4,,0,0,The capital city is located near the,2026-06-04 13:40:54
