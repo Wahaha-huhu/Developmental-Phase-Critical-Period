@@ -1,0 +1,15 @@
+
+% Suggested replacement/addition for Chapter 4: E2 Functional Grounding
+
+\subsection{E2: Functional grounding of the early spectral transition}
+\label{sec:e2-functional-grounding}
+
+E1 establishes a reproducible early reorganisation in weight space, but this observation is not yet sufficient to show that the identified phases are functionally meaningful. E2 therefore asks whether lightweight behavioural and log-likelihood measures change over the same checkpoint interval. The experiment evaluates Pythia-70M, 160M, 410M, and 1B on the same checkpoint grid used in E1: step 0, 128, 512, 1000, 2000, 3000, 8000, 16000, 64000, and 143000. The probes include fixed-text next-token negative log-likelihood, small arithmetic multiple-choice questions, sequence-completion items, and syntax-regularity contrasts.
+
+The clearest functional signal is fixed-text next-token loss. Across all four model sizes, most of the total step-0-to-final loss reduction has already occurred by step 2000. The fractions of final loss reduction achieved by step 2000 are approximately 0.93 for Pythia-70M, 0.91 for Pythia-160M, 0.84 for Pythia-410M, and 0.85 for Pythia-1B. This shows that the earliest part of pre-training is also the period of fastest improvement in basic language-modelling performance. However, the largest single loss reduction occurs between step 0 and step 128, earlier than the strongest spectral reorganisation observed in E1. Fixed-text loss is therefore best interpreted as a coarse indicator of early language-model adaptation rather than as a precise behavioural marker of the E1 boundary.
+
+The syntax-regularity probe aligns more closely with the E1 window. Across model sizes, the gold-answer log-probability margin improves mainly between step 128 and step 2000. Averaged across models, the largest adjacent improvements occur over the 128--512, 512--1000, and 1000--2000 intervals. By step 2000, the syntax margin has achieved a large fraction of its final improvement: approximately 0.84 for Pythia-70M, 0.69 for Pythia-160M, 0.78 for Pythia-410M, and 0.96 for Pythia-1B. This provides the strongest E2 evidence that the E1 spectral window overlaps with a period of functional change.
+
+The arithmetic and sequence-completion probes are less conclusive. Their item counts are small, and their accuracy curves fluctuate substantially across checkpoints. They are therefore treated as exploratory rather than as headline evidence. Taken together, E2 provides moderate functional grounding for E1: the early weight-space reorganisation coincides with rapid improvement in language-model likelihood and with a consistent rise in syntax-regularity margins, but the current lightweight probe suite does not yet establish broad capability emergence.
+
+Crucially, E2 remains observational. It strengthens the interpretation that the E1 phases are not merely geometric artifacts, but it does not establish a sensitive or critical period. That causal claim requires the intervention-and-retention experiments in E3.

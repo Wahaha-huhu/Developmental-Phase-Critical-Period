@@ -1,0 +1,5 @@
+
+% Suggested methodology addition for E2
+
+\paragraph{Functional-grounding probes.}
+To test whether the E1 phase boundaries have functional correlates, E2 evaluates the same Pythia checkpoints on a lightweight suite of behavioural and log-likelihood probes. The primary measure is fixed-text next-token negative log-likelihood, which provides a coarse language-modelling readout over identical text across checkpoints. Secondary probes include multiple-choice arithmetic items, sequence-completion items, and syntax-regularity contrasts. For multiple-choice probes, both raw log-probability accuracy and length-normalised log-probability accuracy are recorded, together with the gold-answer log-probability margin. Because the probe set is intentionally lightweight, E2 is treated as functional grounding rather than as a full downstream evaluation benchmark.

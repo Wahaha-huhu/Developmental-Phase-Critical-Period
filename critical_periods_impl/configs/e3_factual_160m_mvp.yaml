@@ -1,0 +1,77 @@
+# E3 MVP: factual-association intervention on Pythia-160M.
+# This is the first causal stage sweep. It is intentionally narrower than the full E3/E4/E6 grid.
+
+experiment_id: e3_factual_160m_mvp
+thesis_section: "Chapter 4, E3 critical-period intervention"
+
+model: EleutherAI/pythia-160m-deduped
+stages:
+  - step0
+  - step128
+  - step512
+  - step1000
+  - step2000
+  - step3000
+  - step8000
+  - step143000
+seeds: [0, 1, 2]
+
+runtime:
+  device: auto
+  dtype: float32
+  trust_remote_code: false
+  max_length: 128
+  local_files_only: false
+
+signal:
+  type: factual_association
+  train_facts: 300
+  eval_facts: 200
+  train_templates_per_fact: 3
+  eval_templates_per_fact: 2
+  num_distractors: 4
+  require_single_token_values: true
+  value_candidate_count: 5000
+  entity_prefix: "zorlan"
+
+training:
+  injection_steps: 200
+  injection_lr: 2.0e-5
+  batch_size: 8
+  grad_accum_steps: 1
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  log_every: 50
+
+continuation:
+  enabled: true
+  steps: 200
+  lr: 1.0e-5
+  batch_size: 8
+  texts:
+    - "Language models are trained by predicting text. A fixed continuation corpus is used here as a control after signal injection."
+    - "Scientific experiments separate observation from intervention. A short continuation budget tests whether an injected signal is retained."
+    - "The model reads ordinary text that does not mention the fictional entities used in the signal dataset."
+    - "Training dynamics can contain rapid early changes followed by slower consolidation."
+    - "A checkpoint captures the parameters of a model at a particular point in training. Comparing checkpoints helps reveal hidden changes."
+    - "The evaluation in this experiment uses synthetic names and synthetic codewords so that the facts are novel at every checkpoint."
+
+degradation:
+  enabled: true
+  budgets: [4, 16, 64, 256]
+  lr: 2.0e-5
+  batch_size: 8
+  epochs: 1
+  mode: conflicting_values
+
+analysis:
+  uptake_margin_threshold: 0.25
+  uptake_accuracy_threshold: 0.20
+  retention_boundary_step: 2000
+  degradation_accuracy_threshold: 0.50
+
+outputs:
+  root: results/e3_critical_period_intervention
+  metrics_csv: raw/e3_factual_metrics.csv
+  item_metrics_csv: raw/e3_factual_item_metrics.csv
+  manifest_csv: manifests/artifact_manifest.csv

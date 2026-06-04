@@ -1,0 +1,5 @@
+model,step0_nll,step2000_nll,final_nll,nll_fraction_by_step2000,syntax_step0,syntax_step2000,syntax_final,syntax_fraction_by_step2000
+Pythia-70M,11.036,5.333,4.93,0.934,-0.073,4.2,4.998,0.843
+Pythia-160M,11.059,5.207,4.62,0.909,-0.055,4.839,7.001,0.694
+Pythia-410M,10.995,5.119,4.034,0.844,-0.693,5.712,7.576,0.775
+Pythia-1B,11.042,4.892,3.805,0.85,-0.208,7.44,7.728,0.964
