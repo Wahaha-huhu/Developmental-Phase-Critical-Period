@@ -1,0 +1,5 @@
+checkpoint_step,injection_accuracy_before,injection_accuracy_after,injection_accuracy_after_washout,base_accuracy_before,base_accuracy_after_injection,base_accuracy_after_washout,normalized_retention,injection_steps,washout_steps
+400,0.0188679245283018,0.0,0.0,0.0,0.0,0.0,1.0,250,500
+1000,0.0188679245283018,0.0,0.0,0.0,0.0,0.0,1.0,250,500
+2000,0.0188679245283018,0.0,0.0,0.0,0.0,0.0,1.0,250,500
+4000,0.0188679245283018,0.0,0.0188679245283018,0.0,0.0,0.0,-0.0,250,500

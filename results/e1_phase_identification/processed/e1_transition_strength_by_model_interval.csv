@@ -1,0 +1,10 @@
+model,from_step,to_step,abs_rel_delta
+EleutherAI/pythia-70m-deduped,0,128,1.1377619595513433
+EleutherAI/pythia-70m-deduped,128,512,0.6692926273253069
+EleutherAI/pythia-70m-deduped,512,1000,0.5160986936952042
+EleutherAI/pythia-70m-deduped,1000,2000,0.4236118194021321
+EleutherAI/pythia-70m-deduped,16000,64000,0.15169615222319266
+EleutherAI/pythia-70m-deduped,2000,3000,0.13391042778447576
+EleutherAI/pythia-70m-deduped,3000,8000,0.10720722262123343
+EleutherAI/pythia-70m-deduped,64000,143000,0.0976118228260438
+EleutherAI/pythia-70m-deduped,8000,16000,0.0689465487383254

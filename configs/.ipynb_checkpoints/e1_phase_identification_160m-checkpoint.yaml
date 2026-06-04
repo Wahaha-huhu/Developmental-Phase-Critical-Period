@@ -1,8 +1,8 @@
-# E1 reduced replication config: Pythia-410M.
-# Use this reduced early grid first to control download and SVD time.
+# E1 replication config: Pythia-160M.
+# Run after the 70M pipeline is complete and artifact generation works.
 experiment_id: e1_phase_identification
 models:
-  - EleutherAI/pythia-410m-deduped
+  - EleutherAI/pythia-160m-deduped
 checkpoints:
   - step0
   - step128
@@ -11,6 +11,9 @@ checkpoints:
   - step2000
   - step3000
   - step8000
+  - step16000
+  - step64000
+  - step143000
 modules:
   - attention.query_key_value
   - attention.dense
@@ -25,6 +28,7 @@ metrics:
   alpha: true
   subspace_stability: true
 svd:
+  # Exact SVD is fine for 70M/160M on a 4090, but can be slower for 410M+.
   device: cuda
   dtype: float32
   top_k: 8
