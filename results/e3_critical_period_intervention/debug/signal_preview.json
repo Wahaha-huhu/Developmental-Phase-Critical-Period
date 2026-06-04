@@ -1,0 +1,202 @@
+{
+  "spec": {
+    "name": "factual",
+    "n_items": 300,
+    "n_probe": 200,
+    "seed": 0,
+    "max_name_pieces": 3,
+    "mask_prompt": null,
+    "n_distractors": 4
+  },
+  "meta": {
+    "name": "factual",
+    "relations": [
+      "capital",
+      "currency",
+      "patron",
+      "river",
+      "festival",
+      "symbol"
+    ],
+    "train_templates": [
+      "The {rel} of {e} is {v}.",
+      "{v} is the {rel} of {e}.",
+      "{e}'s {rel} is {v}.",
+      "In the fictional gazetteer, {e} has {v} as its {rel}."
+    ],
+    "probe_templates": [
+      "Question: What is the {rel} of {e}?\nAnswer:",
+      "In the fictional gazetteer, what is {e}'s {rel}?\nAnswer:"
+    ],
+    "mask_prompt": false,
+    "n_items": 300,
+    "n_probe": 200,
+    "seed": 0
+  },
+  "n_train_texts": 1200,
+  "n_train_pairs": 0,
+  "n_probes": 200,
+  "n_controls": 200,
+  "train_texts_preview": [
+    "The currency of Badori is Babe.",
+    "Babe is the currency of Badori.",
+    "Badori's currency is Babe.",
+    "In the fictional gazetteer, Badori has Babe as its currency.",
+    "The symbol of Base is Babifi."
+  ],
+  "train_pairs_preview": [],
+  "probes_preview": [
+    {
+      "signal_type": "factual",
+      "item_id": "fact_282",
+      "prefix": "Question: What is the symbol of Vupu?\nAnswer:",
+      "correct": " Zapa",
+      "distractors": [
+        " Feme",
+        " Gebu",
+        " Ruga",
+        " Kabara"
+      ],
+      "entity": "Vupu",
+      "relation": "symbol",
+      "value": "Zapa"
+    },
+    {
+      "signal_type": "factual",
+      "item_id": "fact_9",
+      "prefix": "In the fictional gazetteer, what is Bibara's currency?\nAnswer:",
+      "correct": " Bera",
+      "distractors": [
+        " Ganifu",
+        " Gotu",
+        " Live",
+        " Loto"
+      ],
+      "entity": "Bibara",
+      "relation": "currency",
+      "value": "Bera"
+    },
+    {
+      "signal_type": "factual",
+      "item_id": "fact_184",
+      "prefix": "Question: What is the river of Pufida?\nAnswer:",
+      "correct": " Pebomo",
+      "distractors": [
+        " Muvepo",
+        " Gogoda",
+        " Sobipu",
+        " Nele"
+      ],
+      "entity": "Pufida",
+      "relation": "river",
+      "value": "Pebomo"
+    },
+    {
+      "signal_type": "factual",
+      "item_id": "fact_33",
+      "prefix": "In the fictional gazetteer, what is Defa's patron?\nAnswer:",
+      "correct": " Doru",
+      "distractors": [
+        " Vutebe",
+        " Feva",
+        " Fegi",
+        " Reba"
+      ],
+      "entity": "Defa",
+      "relation": "patron",
+      "value": "Doru"
+    },
+    {
+      "signal_type": "factual",
+      "item_id": "fact_166",
+      "prefix": "Question: What is the currency of Pede?\nAnswer:",
+      "correct": " Muvepo",
+      "distractors": [
+        " Bara",
+        " Dolu",
+        " Kabara",
+        " Nifi"
+      ],
+      "entity": "Pede",
+      "relation": "currency",
+      "value": "Muvepo"
+    }
+  ],
+  "controls_preview": [
+    {
+      "signal_type": "factual_control",
+      "item_id": "control_0",
+      "prefix": "Question: What is the capital of Bebu?\nAnswer:",
+      "correct": " Badepa",
+      "distractors": [
+        " Nodiku",
+        " Moga",
+        " Tekebu",
+        " Kibi"
+      ],
+      "entity": "Bebu",
+      "relation": "capital",
+      "value": "Badepa"
+    },
+    {
+      "signal_type": "factual_control",
+      "item_id": "control_1",
+      "prefix": "In the fictional gazetteer, what is Bezo's patron?\nAnswer:",
+      "correct": " Badupo",
+      "distractors": [
+        " Mizina",
+        " Virila",
+        " Monefo",
+        " Mure"
+      ],
+      "entity": "Bezo",
+      "relation": "patron",
+      "value": "Badupo"
+    },
+    {
+      "signal_type": "factual_control",
+      "item_id": "control_2",
+      "prefix": "Question: What is the currency of Bibano?\nAnswer:",
+      "correct": " Bagi",
+      "distractors": [
+        " Mese",
+        " Moga",
+        " Dotito",
+        " Kogupo"
+      ],
+      "entity": "Bibano",
+      "relation": "currency",
+      "value": "Bagi"
+    },
+    {
+      "signal_type": "factual_control",
+      "item_id": "control_3",
+      "prefix": "In the fictional gazetteer, what is Bigoru's patron?\nAnswer:",
+      "correct": " Begi",
+      "distractors": [
+        " Vorila",
+        " Tinu",
+        " Kupo",
+        " Lani"
+      ],
+      "entity": "Bigoru",
+      "relation": "patron",
+      "value": "Begi"
+    },
+    {
+      "signal_type": "factual_control",
+      "item_id": "control_4",
+      "prefix": "Question: What is the currency of Bimu?\nAnswer:",
+      "correct": " Begide",
+      "distractors": [
+        " Nobufu",
+        " Sirozi",
+        " Nepu",
+        " Kibi"
+      ],
+      "entity": "Bimu",
+      "relation": "currency",
+      "value": "Begide"
+    }
+  ]
+}
