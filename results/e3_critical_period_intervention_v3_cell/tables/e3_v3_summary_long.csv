@@ -1,0 +1,12 @@
+model,stage,step,seed,metric,value
+EleutherAI/pythia-160m-deduped,step8000,8000,0,base_probe_accuracy,0.28
+EleutherAI/pythia-160m-deduped,step8000,8000,0,post_injection_accuracy,0.765
+EleutherAI/pythia-160m-deduped,step8000,8000,0,uptake_accuracy_delta,0.485
+EleutherAI/pythia-160m-deduped,step8000,8000,0,base_probe_mean_margin,-1.2751419377326965
+EleutherAI/pythia-160m-deduped,step8000,8000,0,post_injection_mean_margin,1.0141157314181328
+EleutherAI/pythia-160m-deduped,step8000,8000,0,uptake_margin_delta,2.289257669150829
+EleutherAI/pythia-160m-deduped,step8000,8000,0,normalized_retention_margin,0.5930700205647339
+EleutherAI/pythia-160m-deduped,step8000,8000,0,normalized_retention_accuracy,0.5257731958762887
+EleutherAI/pythia-160m-deduped,step8000,8000,0,k_star_accuracy_threshold,184.0
+EleutherAI/pythia-160m-deduped,step8000,8000,0,degradation_auc_accuracy,138.24
+EleutherAI/pythia-160m-deduped,step8000,8000,0,degradation_auc_margin,15.300067585408687

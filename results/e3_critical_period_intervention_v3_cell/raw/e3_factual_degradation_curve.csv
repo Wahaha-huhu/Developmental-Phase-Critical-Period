@@ -1,0 +1,6 @@
+experiment_id,model,stage,step,seed,timestamp,poison_budget,probe_accuracy,probe_mean_margin,probe_mean_nll,poison_train_steps
+e3_factual_160m_cell_v3,EleutherAI/pythia-160m-deduped,step8000,8000,0,2026-06-04T15:46:50+0000,0,0.765,1.0141157314181328,2.720638879835606,0
+e3_factual_160m_cell_v3,EleutherAI/pythia-160m-deduped,step8000,8000,0,2026-06-04T15:46:50+0000,4,0.75,0.9418942165374756,2.7062640833854674,1
+e3_factual_160m_cell_v3,EleutherAI/pythia-160m-deduped,step8000,8000,0,2026-06-04T15:46:50+0000,16,0.705,0.7414377062022686,2.7354978342354297,3
+e3_factual_160m_cell_v3,EleutherAI/pythia-160m-deduped,step8000,8000,0,2026-06-04T15:46:50+0000,64,0.525,-0.0008741459250450135,3.027282426059246,12
+e3_factual_160m_cell_v3,EleutherAI/pythia-160m-deduped,step8000,8000,0,2026-06-04T15:46:50+0000,256,0.485,-0.17084949254989623,3.0360679388046266,48

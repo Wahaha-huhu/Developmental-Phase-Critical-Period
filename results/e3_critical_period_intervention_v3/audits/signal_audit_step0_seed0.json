@@ -1,0 +1,67 @@
+{
+  "control_disjoint_from_train": true,
+  "example_control": {
+    "correct": " Badepa",
+    "distractors": [
+      " Kuboto",
+      " Kubeli",
+      " Ziteda",
+      " Mipe"
+    ],
+    "entity": "Bebu",
+    "fact_id": 1000000,
+    "prefix": "Question: What is the patron of Bebu?\nAnswer:",
+    "relation": "patron",
+    "split": "control",
+    "value": "Badepa"
+  },
+  "example_probe": {
+    "correct": " Balo",
+    "distractors": [
+      " Pabi",
+      " Pitomi",
+      " Gipado",
+      " Memu"
+    ],
+    "entity": "Bebite",
+    "fact_id": 3,
+    "prefix": "Question: What is the currency of Bebite?\nAnswer:",
+    "relation": "currency",
+    "split": "probe",
+    "value": "Balo"
+  },
+  "example_train_texts": [
+    "The currency of Badori is Babe.",
+    "Babe is the currency of Badori.",
+    "Badori's currency is Babe.",
+    "The capital of Base is Babifi.",
+    "Babifi is the capital of Base.",
+    "Base's capital is Babifi."
+  ],
+  "n_controls": 200,
+  "n_items": 300,
+  "n_probe": 200,
+  "n_train_texts": 900,
+  "poison_budgets": {
+    "16": 48,
+    "256": 768,
+    "4": 12,
+    "64": 192
+  },
+  "probe_fact_ids_minmax": [
+    3,
+    298
+  ],
+  "probe_subset_of_train": true,
+  "probe_template": "Question: What is the {rel} of {e}?\nAnswer:",
+  "seed": 0,
+  "train_fact_ids_minmax": [
+    0,
+    299
+  ],
+  "train_templates": [
+    "The {rel} of {e} is {v}.",
+    "{v} is the {rel} of {e}.",
+    "{e}'s {rel} is {v}."
+  ]
+}
