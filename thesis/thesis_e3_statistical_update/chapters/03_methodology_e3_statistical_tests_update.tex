@@ -1,0 +1,23 @@
+% -----------------------------------------------------------------------------
+% E3 statistical model-comparison update for Methodology chapter
+% -----------------------------------------------------------------------------
+\subsection{Statistical tests for a sensitive-window effect}
+\label{sec:e3-statistical-tests}
+
+The intervention experiment is designed to distinguish a genuine stage-localised durability effect from two weaker alternatives: a smooth ``earlier is better'' trend, and an artefact of unequal signal uptake across checkpoints.  I therefore analyse E3 using three complementary tests.
+
+First, I define the independently motivated E1/E2 window as the set of trained checkpoints from step 512 to step 3000.  This window brackets the strongest spectral reorganisation identified in E1 and the functional transition observed in E2.  Late checkpoints are defined as step 8000 and the final checkpoint step 143000.  Step 0 and step 128 are retained as diagnostic baselines but are excluded from the primary statistical comparisons, because uptake at these near-initial checkpoints is qualitatively different from trained checkpoints.
+
+Second, I compare window and late checkpoints using bootstrap confidence intervals over experimental cells.  The primary quantity is uptake-normalised clean-retention margin,
+\[
+R_{\mathrm{margin}} =
+\frac{m_{\mathrm{cont}} - m_{\mathrm{base}}}{m_{\mathrm{inj}} - m_{\mathrm{base}}},
+\]
+where \(m_{\mathrm{base}}\), \(m_{\mathrm{inj}}\), and \(m_{\mathrm{cont}}\) are the mean held-out factual-probe margins before injection, immediately after injection, and after fixed continuation respectively.  The same normalisation is applied to degradation curves, replacing \(m_{\mathrm{cont}}\) with the post-poison margin at each adversarial budget.  This normalisation is important because the same fixed injection budget does not produce identical post-injection uptake at all checkpoints.
+
+Third, I compare a monotone log-step model against segmented models.  The monotone baseline tests whether durability can be explained by a smooth function of training time.  The segmented model allows a break at a candidate developmental boundary, especially the step-1000 boundary inside the E1/E2 window.  I compare models using AIC, BIC, and leave-one-out cross-validation error.  To check that the window effect is not merely an uptake artefact, I also fit uptake-controlled regressions of the form
+\[
+R = \beta_0 + \beta_1 \mathbf{1}_{\mathrm{window}} + \beta_2 \mathbf{1}_{\mathrm{late}}
++ \beta_3 \log(\mathrm{step}+1) + \beta_4 U + \epsilon,
+\]
+where \(U\) is the standardised post-injection uptake margin.  A robust sensitive-window effect should remain positive after controlling for uptake and should be better fit by a segmented/window model than by the monotone baseline.

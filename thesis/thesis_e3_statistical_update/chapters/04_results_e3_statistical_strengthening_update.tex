@@ -1,0 +1,42 @@
+% -----------------------------------------------------------------------------
+% E3 statistical-strengthening update for Results chapter
+% -----------------------------------------------------------------------------
+\subsection{Statistical support for the E3 sensitive-window interpretation}
+\label{sec:e3-statistical-strengthening-results}
+
+The previous section reported the raw stage-wise E3 curves.  I next ask whether those curves are better interpreted as a stage-localised sensitive-window effect, or as a smooth early-to-late trend.  This distinction is central to the thesis: the claim is not merely that earlier checkpoints differ from later checkpoints, but that the independently identified E1/E2 reorganisation window predicts unusually durable incorporation of injected signal.
+
+Across the pooled Pythia-160M final run and the Pythia-410M reduced scale check, the analysis contains 64 intervention cells.  Uptake is positive by margin in 63 of 64 cells, so the injected factual signal enters the model in nearly every cell before retention is measured.  The primary outcome is uptake-normalised clean-retention margin, which measures the fraction of the injected factual margin that survives fixed Pile-validation continuation.
+
+\paragraph{Window-versus-late bootstrap comparison.}
+For normalised clean-retention margin, the E1/E2 window (steps 512--3000) has substantially higher durability than late checkpoints (steps 8000 and 143000).  In the pooled 160M+410M analysis, the window mean is 0.673, the late mean is 0.394, and the difference is 0.279 with a bootstrap 95\% interval of [0.237, 0.318].  In the 160M final run alone, the same comparison gives a window mean of 0.666, a late mean of 0.353, and a difference of 0.313 with a bootstrap 95\% interval of [0.288, 0.349].  Thus the retention advantage is not dependent on the reduced 410M scale check; it is already present in the primary 160M run and remains when 410M is pooled.
+
+The accuracy version of the same metric gives the same direction.  In the pooled analysis, normalised clean-retention accuracy is higher in the window than in late checkpoints by 0.160, with a bootstrap 95\% interval of [0.093, 0.232].  Margin remains the primary readout because it is continuous and less sensitive to thresholding.
+
+\paragraph{Segmented models beat monotone alternatives for clean retention.}
+The model-comparison analysis supports the same conclusion.  For normalised clean-retention margin in the pooled 160M+410M data, the best model is a segmented model with a break at step 1000.  Its AIC is -242.95, compared with -212.98 for the monotone log-step model.  The resulting AIC advantage of roughly 30 strongly favours the segmented/window interpretation over a smooth monotone trend.  The 160M-only result is similar: the segmented break-at-1000 model has AIC -167.98, compared with -144.27 for the monotone log-step model.  Thus the primary E3 metric is not well explained by a simple ``earlier is better'' baseline.
+
+The fitted break at step 1000 lies inside the independently measured E1/E2 reorganisation window and near the strongest aggregate E1 boundary-vote region.  This agreement is important because the break location is not chosen from the E3 retention curve alone: E1 first identifies the candidate developmental window from weight geometry, and E3 then tests whether behavioural durability changes around that window.
+
+\paragraph{The effect is not explained by uptake alone.}
+A remaining concern is that uptake is not perfectly matched across stages.  In particular, late checkpoints can show stronger immediate uptake under the same injection budget.  To address this, I fit uptake-controlled regressions that include standardised post-injection uptake margin, log step, and window/late indicators.  In the pooled 160M+410M analysis for normalised clean-retention margin, the window coefficient remains positive (0.250) after controlling for uptake, while the late coefficient is much smaller (0.079).  The uptake coefficient is negative (-0.079), indicating that stronger immediate uptake does not explain the window retention advantage.  The corresponding 160M-only regression gives a similar window coefficient of 0.249.  These analyses support the interpretation that the E3 effect is a stage-dependent durability effect rather than a raw post-injection-strength artefact.
+
+\paragraph{Adversarial degradation as a supporting stress test.}
+The adversarial overwrite branch provides supporting but more conservative evidence.  For normalised degradation-resistance AUC measured by margin, the pooled window mean is 0.857 and the late mean is 0.653, with a bootstrap difference of 0.203 and a 95\% interval of [0.191, 0.215].  A segmented break-at-1000 model also fits margin-based degradation AUC best.  However, the accuracy-based degradation AUC is closer to a monotone explanation, and adversarial overwrite is itself a new learning process.  I therefore treat degradation resistance as a stress test that is consistent with the clean-retention result, rather than as the primary definition of durability.
+
+\paragraph{Conclusion.}
+Together, these tests strengthen the E3 conclusion.  The primary durability metric, uptake-normalised clean-retention margin, is higher in the E1/E2 window than at late checkpoints, remains higher after controlling for uptake, and is better fit by a segmented model with a break inside the independently identified reorganisation window than by a monotone log-step trend.  E3 therefore supports a short-horizon sensitive-window interpretation: factual associations injected near the early reorganisation window are more durably retained under fixed-budget continuation than the same type of signal injected after consolidation.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/e3_statistics/e3_stat_normalized_retention_margin_by_stage.png}
+    \caption{Uptake-normalised clean-retention margin by injection stage, pooling the Pythia-160M final run and the reduced Pythia-410M scale check.  Retention is highest inside the E1/E2 reorganisation window and lower at late checkpoints.}
+    \label{fig:e3-stat-retention-margin}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/e3_statistics/e3_stat_normalized_degradation_auc_margin_by_stage.png}
+    \caption{Normalised degradation-resistance AUC by injection stage.  The margin-based adversarial overwrite stress test shows the same broad window-versus-late direction as clean retention, although it is interpreted as supporting rather than primary evidence.}
+    \label{fig:e3-stat-degradation-margin}
+\end{figure}

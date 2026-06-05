@@ -1,0 +1,13 @@
+% -----------------------------------------------------------------------------
+% E3 statistical interpretation update for Discussion chapter
+% -----------------------------------------------------------------------------
+\subsection{What the E3 statistical tests do and do not establish}
+\label{sec:e3-stat-discussion}
+
+The statistical E3 analysis strengthens the central causal interpretation of the thesis.  The primary result is not simply that early checkpoints differ from late checkpoints, but that the independently identified E1/E2 reorganisation window predicts a larger fraction of injected factual signal surviving fixed continuation.  The segmented-versus-monotone comparison is therefore important: it shows that uptake-normalised clean retention is better described by a windowed model with a break inside the E1/E2 region than by a smooth log-step trend.
+
+At the same time, the result should be described as evidence for a short-horizon sensitive period, not as proof of a strict critical period.  The experiment fine-tunes public checkpoints rather than replaying pretraining from scratch, and the continuation branch applies a fixed Pile-validation budget rather than the full remaining Pythia schedule.  The correct interpretation is therefore stage-dependent durable amenability to factual-signal injection under controlled continuation, not lifetime persistence through all subsequent pretraining.
+
+The degradation branch should also be interpreted carefully.  In that branch, increasing poison budget means presenting contradictory values for more originally injected facts.  This is a dose-response overwrite test, not an equal-budget continuation test.  Because adversarial fine-tuning is itself a learning process, degradation resistance combines the durability of the original signal with the model's plasticity to contradictory evidence.  For this reason, clean continuation is the primary durability measure, while adversarial degradation is a supporting stress test.
+
+The remaining limitations are clear.  The causal E3 result is currently demonstrated for synthetic factual associations, with Pythia-160M as the primary model and Pythia-410M as a reduced scale check.  The result does not yet establish signal-type generality across procedural or alignment-style signals, nor does it isolate module-specific plasticity.  These are natural extensions, but they are not necessary for the core thesis claim: the early weight-space reorganisation identified in E1 predicts a measurable, stage-dependent difference in short-horizon durability.
