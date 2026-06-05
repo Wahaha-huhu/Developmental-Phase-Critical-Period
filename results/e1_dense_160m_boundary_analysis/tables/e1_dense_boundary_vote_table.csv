@@ -1,0 +1,14 @@
+model,interval,prev_step,next_step,votes,mean_transition_strength,metrics,modules
+EleutherAI/pythia-160m-deduped,1000->2000,1000,2000,19,0.4165433574372792,alpha_tail_frac_0.3;effective_rank;frobenius_norm;nuclear_norm;spectral_norm;stable_rank,attention.dense;attention.query_key_value;mlp.dense_4h_to_h;mlp.dense_h_to_4h
+EleutherAI/pythia-160m-deduped,512->1000,512,1000,9,620370370372.4043,alpha_tail_frac_0.3;mp_outliers_x1;mp_outliers_x1.1;mp_outliers_x1.25;stable_rank;subspace_stability_topk,attention.dense;mlp.dense_4h_to_h;mlp.dense_h_to_4h
+EleutherAI/pythia-160m-deduped,128->256,128,256,3,722222222222.2798,mp_outliers_x1.1;mp_outliers_x1.25;subspace_stability_topk,attention.query_key_value
+EleutherAI/pythia-160m-deduped,64->128,64,128,3,111111111112.77777,mp_outliers_x1;mp_outliers_x1.1;mp_outliers_x1.25,attention.query_key_value;mlp.dense_4h_to_h
+EleutherAI/pythia-160m-deduped,2000->3000,2000,3000,3,0.06404661432831874,alpha_tail_frac_0.2;alpha_tail_frac_0.5,attention.dense;mlp.dense_4h_to_h
+EleutherAI/pythia-160m-deduped,0->1,0,1,3,0.0,mp_outliers_x1;mp_outliers_x1.1;mp_outliers_x1.25,attention.dense
+EleutherAI/pythia-160m-deduped,256->512,256,512,2,0.3021741445285596,subspace_stability_topk,attention.dense;mlp.dense_4h_to_h
+EleutherAI/pythia-160m-deduped,4000->5000,4000,5000,1,0.04275615542857845,nuclear_norm,attention.query_key_value
+EleutherAI/pythia-160m-deduped,3000->4000,3000,4000,1,0.035832130654399295,alpha_tail_frac_0.5,attention.dense
+EleutherAI/pythia-160m-deduped,5000->6000,5000,6000,1,0.015075907675607337,alpha_tail_frac_0.2,attention.query_key_value
+EleutherAI/pythia-160m-deduped,10000->11000,10000,11000,1,0.003502792633307008,alpha_tail_frac_0.5,attention.query_key_value
+EleutherAI/pythia-160m-deduped,18000->19000,18000,19000,1,0.0030852063482323115,alpha_tail_frac_0.2,mlp.dense_h_to_4h
+EleutherAI/pythia-160m-deduped,24000->25000,24000,25000,1,0.0017092311894675916,alpha_tail_frac_0.5,mlp.dense_h_to_4h

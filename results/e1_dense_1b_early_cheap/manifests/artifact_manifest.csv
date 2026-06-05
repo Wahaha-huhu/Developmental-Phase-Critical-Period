@@ -1,0 +1,2 @@
+timestamp_utc,experiment_id,artifact_type,path,thesis_section,caption_draft,source_data,code_entrypoint,status,notes
+2026-06-05T21:20:38+00:00,e1_phase_identification,raw_csv,results/e1_dense_1b_early_cheap/raw/e1_spectral_metrics.csv,"Chapter 4, E1: Phase identification and validation",Raw per-matrix weight-spectral indicators across Pythia checkpoints.,Hugging Face Pythia checkpoint revisions,scripts/run_e1_collect_spectra.py,draft,Config: configs/e1_dense_1b_early_cheap.yaml
