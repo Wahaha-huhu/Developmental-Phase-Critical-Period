@@ -1,7 +1,9 @@
 experiment_id: e3_factual_160m_final_thesis_v4
 model_name: EleutherAI/pythia-410m-deduped
-stages: [step0, step128, step512, step1000, step2000, step3000, step8000, step143000]
-seeds: [0, 1, 2]
+# stages: [step0, step128, step512, step1000, step2000, step3000, step8000, step143000]
+stages: [ step143000]
+# seeds: [0, 1, 2, 3, 4]
+seeds: [0]
 
 outputs:
   root: results/e3_critical_period_intervention_410m_reduced_v4

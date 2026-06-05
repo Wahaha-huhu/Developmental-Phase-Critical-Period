@@ -1,0 +1,106 @@
+{
+  "analysis": {
+    "diagnostic_only_stages": [
+      "step0",
+      "step128"
+    ],
+    "e1_break_candidates": [
+      "step1000",
+      "step2000",
+      "step3000"
+    ],
+    "e1_candidate_window": [
+      "step128",
+      "step2000"
+    ],
+    "primary_stage_subset": [
+      "step512",
+      "step1000",
+      "step2000",
+      "step3000",
+      "step8000",
+      "step143000"
+    ]
+  },
+  "degradation": {
+    "enabled": true,
+    "poison_batch_size": 16,
+    "poison_budget_unit": "facts",
+    "poison_budgets": [
+      4,
+      16,
+      64,
+      256
+    ],
+    "poison_epochs": 1,
+    "poison_lr": 2e-05,
+    "threshold_accuracy": 0.5
+  },
+  "experiment_id": "e3_factual_160m_final_thesis_v4",
+  "model_name": "EleutherAI/pythia-410m-deduped",
+  "outputs": {
+    "root": "results/e3_critical_period_intervention_410m_reduced_v4"
+  },
+  "retention": {
+    "continuation_batch_size": 16,
+    "continuation_corpus": "fixed_jsonl",
+    "continuation_jsonl": "data/e3_continuation/fixed_pile_val_seed0.jsonl",
+    "continuation_lr": 2e-05,
+    "continuation_steps": 500,
+    "corpus_path": "data/e3_continuation/fixed_pile_val_seed0.jsonl",
+    "enabled": true
+  },
+  "sanity_checks": {
+    "min_uptake_margin_delta": 0.25,
+    "require_control_disjoint_from_train": true,
+    "require_positive_uptake_for_interpretability": true,
+    "require_probe_subset_of_train": true
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "signal": {
+    "n_distractors": 4,
+    "n_items": 300,
+    "n_probe": 200,
+    "probe_template": "Question: What is the {rel} of {e}?\nAnswer:",
+    "relations": [
+      "capital",
+      "currency",
+      "patron",
+      "river"
+    ],
+    "train_templates": [
+      "The {rel} of {e} is {v}.",
+      "{v} is the {rel} of {e}.",
+      "{e}'s {rel} is {v}."
+    ],
+    "type": "factual"
+  },
+  "stages": [
+    "step0",
+    "step128",
+    "step512",
+    "step1000",
+    "step2000",
+    "step3000",
+    "step8000",
+    "step143000"
+  ],
+  "tokenizer": {
+    "add_leading_space_for_values": true,
+    "max_name_pieces": 3
+  },
+  "training": {
+    "batch_size": 16,
+    "dtype": "float32",
+    "grad_clip_norm": 1.0,
+    "injection_lr": 2e-05,
+    "injection_steps": 600,
+    "max_len": 128,
+    "shuffle_each_epoch": true,
+    "weight_decay": 0.0
+  }
+}
