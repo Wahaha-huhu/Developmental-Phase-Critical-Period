@@ -5,6 +5,8 @@ src/critical_periods.egg-info/PKG-INFO
 src/critical_periods.egg-info/SOURCES.txt
 src/critical_periods.egg-info/dependency_links.txt
 src/critical_periods.egg-info/top_level.txt
+src/critical_periods/e3/inject.py
+src/critical_periods/e3/score.py
 src/critical_periods/indicators/__init__.py
 src/critical_periods/indicators/spectral.py
 src/critical_periods/io/__init__.py
@@ -14,5 +16,11 @@ src/critical_periods/models/__init__.py
 src/critical_periods/models/pythia.py
 src/critical_periods/plots/__init__.py
 src/critical_periods/plots/e1.py
+src/critical_periods/signals/__init__.py
+src/critical_periods/signals/alignment.py
+src/critical_periods/signals/base.py
+src/critical_periods/signals/factual.py
+src/critical_periods/signals/procedural.py
+src/critical_periods/signals/vocab.py
 src/critical_periods/stats/__init__.py
 src/critical_periods/stats/retention.py
