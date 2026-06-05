@@ -1,0 +1,14 @@
+
+% E3 final 160M factual intervention result. Insert into Chapter 4 after E1/E2.
+\subsection{E3: Factual-signal intervention at Pythia-160M}
+\label{sec:e3-factual-160m}
+
+E3 tests whether the early developmental window identified in E1 and functionally grounded in E2 is also a window of greater durable plasticity. The final 160M run used eight Pythia checkpoints (steps 0, 128, 512, 1000, 2000, 3000, 8000, and 143000) and five independently generated factual-signal seeds. Each cell loaded a checkpoint once, measured the base factual-probe score, injected 300 synthetic factual associations by full fine-tuning, measured immediate uptake, branched into a fixed Pile-validation continuation run, and branched separately into conflicting-fact degradation sweeps.
+
+The signal was learned at every stage: all 40 cells had positive uptake by log-probability margin. Uptake, however, was not perfectly matched across stages. In particular, the final checkpoint learned the synthetic facts with substantially larger post-injection margin than the early checkpoints. For this reason, the main durability analysis uses uptake-normalised retention and degradation scores, and raw post-injection scores are treated as controls rather than as the primary outcome.
+
+The clean-continuation branch gives the clearest evidence for stage-dependent durable plasticity. Averaged over seeds, the E1/E2 window checkpoints (512, 1000, 2000, and 3000) retained a larger fraction of the injected margin after fixed Pile continuation than the later checkpoints (8000 and 143000). The mean normalised margin retention was approximately 0.67 in the window and 0.35 in the late checkpoints. The highest retention occurred around steps 1000--2000, close to the independently measured E1 boundary. This supports the interpretation that the reorganisation window is not merely a geometric transition but also a period in which injected factual signal is more durably preserved under subsequent training pressure.
+
+The conflicting-fact degradation branch points in the same broad direction but is more gradual. Normalised degradation AUC is highest in the 512--3000 range and lower at the final checkpoint, indicating reduced overwrite resistance after consolidation. However, this degradation curve is less sharply boundary-like than the clean-retention curve. The result is therefore best described as evidence for a short-horizon sensitive period, rather than as a fully established critical period in the strong biological sense.
+
+These results preserve the central non-circular structure of the thesis. The candidate window was located independently from weight-space spectral indicators in E1; E3 then tested behavioural durability of a synthetic factual signal injected at those stages. The positive result is that durability, after normalising for uptake, is highest near the E1/E2 reorganisation window and lower at later consolidated checkpoints.

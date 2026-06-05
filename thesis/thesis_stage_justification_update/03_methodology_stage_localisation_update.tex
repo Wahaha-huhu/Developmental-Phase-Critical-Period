@@ -1,0 +1,20 @@
+% -----------------------------------------------------------------------------
+% Methodology update: stage localisation and robustness checks
+% -----------------------------------------------------------------------------
+\subsection{Locating developmental stages from weight-space dynamics}
+\label{sec:method_stage_localisation}
+
+The intervention experiments require a candidate developmental window, but this window must not be chosen from the intervention outcomes themselves. I therefore locate stages using only pre-intervention weight-space measurements from released Pythia checkpoints. For each model size, checkpoint, layer, and module, I compute a panel of spectral indicators: Frobenius norm, spectral norm, stable rank, effective rank, Marchenko--Pastur outlier count, heavy-tail/spectral-decay proxy, and leading singular-subspace stability between adjacent checkpoints. The target modules are the attention query/key/value projection, the attention output projection, the MLP expansion projection, and the MLP contraction projection.
+
+A phase boundary is not credited from a single indicator. Instead, I treat a transition as credible only when several relatively independent indicators concentrate their largest adjacent-checkpoint changes in the same interval, and when this pattern is visible across modules and model sizes. This guards against overinterpreting monotone norm growth, threshold-sensitive outlier counts, or a visually sharp change caused by log-spaced checkpoint sampling. The main boundary statistic is therefore not the raw value of a metric at one checkpoint, but the interval-wise change between consecutive checkpoints:
+\[
+    \Delta_m(s_i,s_{i+1}) = m(s_{i+1}) - m(s_i),
+\]
+where \(m\) is a spectral indicator aggregated over layers within a module. For decreasing quantities such as stable rank, I report both signed and magnitude-normalised changes so that different modules and metrics can be compared.
+
+The stage-localisation procedure has three parts. First, I construct per-model interval-strength tables that rank adjacent checkpoint intervals by the number of metric--module votes they receive. Second, I examine early-window plots on a linear step axis, not only on a logarithmic axis, because the early Pythia checkpoints are unevenly spaced. Third, I compare the resulting transition intervals across model sizes. A stage is treated as part of the candidate reorganisation window only if it is supported by repeated evidence across this multi-model panel, rather than by one model or one metric alone.
+
+This procedure deliberately gives a window rather than a single exact checkpoint. The available checkpoints do not allow a continuous estimate of the transition time, and the results show module-staggering: attention and MLP projections do not reorganise synchronously. Consequently, the intervention grid samples the region around the inferred window densely rather than assuming that a single checkpoint is the unique boundary. In the final E3 design, the injection stages are chosen to cover the near-initial regime, the onset and middle of the reorganisation window, the immediate post-window regime, and late/post-hoc controls.
+
+\paragraph{Robustness checks.}
+To make the stage-localisation claim more defensible, I report four robustness checks. First, I repeat the analysis across Pythia-70M, 160M, 410M, and 1B. Second, I show both absolute and relative metric trajectories, since absolute ranks differ by model width. Third, I separate module-level results rather than collapsing all matrices into one average. Fourth, I compare the geometric window with functional curves from E2, including fixed-text next-token loss and syntax-regularity margins. E2 is not used to define the window, but it tests whether the independently located geometric transition coincides with behavioural/log-likelihood change.

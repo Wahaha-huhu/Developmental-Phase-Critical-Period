@@ -1,0 +1,25 @@
+% -----------------------------------------------------------------------------
+% Appendix / robustness plan: making E1 stage localisation more convincing
+% -----------------------------------------------------------------------------
+\section{Additional robustness analyses for stage localisation}
+\label{app:stage_localisation_robustness}
+
+The main text locates the candidate developmental window using multi-indicator agreement across model sizes. The following additional analyses can strengthen this claim and should be included either in the appendix or as robustness tables if space permits.
+
+\paragraph{Boundary-vote stability.}
+For each model size, compute the top adjacent-checkpoint interval for each metric--module pair. Report the distribution of votes over intervals and the entropy of this distribution. A concentrated distribution supports a well-localised transition; a diffuse distribution supports a weaker, broader-window interpretation.
+
+\paragraph{Bootstrap over layers.}
+For each model and module, bootstrap layers with replacement and recompute the interval-strength ranking. This gives uncertainty intervals over the strongest transition interval without requiring additional model training. If the 512--2000 window remains the modal interval under layer bootstrap, the localisation is more robust.
+
+\paragraph{Metric-family ablation.}
+Repeat the boundary vote after removing one metric family at a time: norm-based metrics, rank-based metrics, MP-outlier metrics, tail-fit metrics, and subspace-stability metrics. The result should not depend entirely on one fragile metric. Stable-rank-only and subspace-stability-only analyses are particularly useful because they rely on different aspects of the singular spectrum.
+
+\paragraph{Linear-axis early-window plots.}
+All main E1 plots should include early-window linear-axis versions. Because the released Pythia checkpoints are unevenly spaced and often plotted logarithmically, a log-axis plot can exaggerate apparent sharpness. Linear early-window plots are therefore a necessary visual control.
+
+\paragraph{Functional overlay.}
+Overlay the E1 interval-strength scores with E2 fixed-text NLL change and syntax-margin change. E2 should not be used to choose the E1 boundary, but an overlap between independently measured geometry and behaviour strengthens the interpretation that the stages are consequential rather than purely descriptive.
+
+\paragraph{Alternative boundary definitions.}
+Report whether the E3 conclusion is stable if the candidate boundary is defined as 512--1000, 1000--2000, or the broader 512--2000 window. Since E1 shows module-staggering, the thesis should not rely on a single exact checkpoint. A robust E3 result should survive this reasonable uncertainty in boundary placement.

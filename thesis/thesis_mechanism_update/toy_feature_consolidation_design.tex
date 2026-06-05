@@ -1,0 +1,25 @@
+% Toy design update: controlled mechanism for stage formation and plasticity
+% Paste into methodology or appendix.
+
+\section{Toy mechanism experiment: feature-subspace consolidation}
+\label{sec:toy-feature-consolidation}
+
+The role of the toy experiment is not to prove that Pythia uses a particular mechanism. Its purpose is narrower: to show that a simple, controlled system with a known feature-formation transition can reproduce the qualitative pattern observed in E1 and tested in E3. The toy result should therefore be presented as a sufficiency and calibration experiment.
+
+\paragraph{Toy task.}
+I propose a synthetic latent-feature language task. Each training sequence is generated from a small number of latent factors. A sequence begins with a task or topic token, followed by tokens sampled from a distribution determined by a low-rank latent vector. The next-token target is therefore predictable only if the model recovers the latent feature subspace. The data distribution contains two parts: a high-frequency background structure that appears throughout training and a held-out injectable signal introduced only at selected checkpoints.
+
+\paragraph{Model.}
+The model is a small transformer or gated MLP trained with causal-language-model loss. The architecture should be small enough to run many seeds quickly, but large enough to have attention and MLP matrices whose spectra can be analysed using the same E1 indicators. The default model can be a 2-layer transformer with 128--256 hidden dimensions and 4 attention heads. For a simpler mechanistic baseline, the same data can also be fit by a two-layer matrix-factorisation or MLP model, where the learned hidden representation is easier to inspect.
+
+\paragraph{Known transition.}
+The ground-truth transition is the recovery of the latent feature subspace. Because the data generator is known, I can measure subspace recovery directly by comparing the model's hidden representation or readout weights with the true latent factors. This gives a behavioural and mechanistic target that Pythia does not provide. The expected spectral pattern is: early leading-subspace rotation, emergence of outlier singular values, stable-rank collapse as the low-rank feature subspace is amplified, and later stabilisation of the learned subspace.
+
+\paragraph{Toy intervention.}
+At checkpoints before, during, and after the subspace-recovery transition, inject a small new association or rule using the same protocol as E3. Then continue training on the original latent-feature distribution or apply a conflicting-signal degradation set. The predicted mechanism is that signals injected while the feature subspace is still forming are integrated into the learned basis and retained better, while signals injected after consolidation must overwrite an already-stabilised representation and are less durable.
+
+\paragraph{Measurements.}
+The toy experiment reports four aligned curves: (1) true subspace recovery against the known latent factors, (2) E1-style spectral indicators, (3) held-out task performance, and (4) injection durability. A successful toy does not need to match Pythia quantitatively. It is sufficient if the spectral indicators locate the known transition and if durability changes across that transition.
+
+\paragraph{Interpretation.}
+If successful, the toy supports the following mechanistic vignette: low-rank feature-subspace formation is sufficient to produce the same qualitative chain observed in Pythia---early subspace instability, spectral outlier emergence, rank compression, and reduced plasticity after consolidation. This does not establish that Pythia literally learns the same latent factors, but it makes the E1/E3 interpretation mechanistically coherent.

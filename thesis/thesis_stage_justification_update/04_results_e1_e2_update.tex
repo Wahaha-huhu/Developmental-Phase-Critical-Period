@@ -1,0 +1,37 @@
+% -----------------------------------------------------------------------------
+% Results update: E1 and E2 current results
+% -----------------------------------------------------------------------------
+\section{E1: Weight-space phase identification}
+\label{sec:results_e1_phase_identification}
+
+E1 provides the observational foundation for the thesis. Across Pythia-70M, 160M, 410M, and 1B, the spectral indicators reveal a reproducible early reorganisation of weight space. The effect is concentrated between approximately 128 and 2000 training steps, with the largest adjacent-checkpoint changes usually occurring between 512 and 2000 steps. This pattern is visible most clearly in stable-rank collapse, spectral concentration, Marchenko--Pastur outlier growth in rectangular matrices, changes in the fitted spectral-tail proxy, and instability of leading singular subspaces.
+
+The transition is not a single globally synchronous event. Attention and MLP modules reorganise at different times, and this module-staggered structure becomes clearer at larger model sizes. In particular, the MLP expansion projection often remains close to its initial spectral state through the earliest checkpoints and then undergoes a sharp collapse between the middle and end of the early window. The attention query/key/value projection tends to move earlier. These findings argue against describing the phase structure as a single universal checkpoint boundary. A more accurate description is that Pythia models pass through a short early reorganisation window, followed by slower and more module-specific consolidation.
+
+The four-model replication makes the phase-identification result substantially stronger than the initial 70M observation. The precise peak interval varies with scale and module, but the broader window is stable: the models are close to their initial spectral state at the earliest checkpoints, reorganise rapidly before roughly step 2000, and then change more slowly. This result supplies the candidate intervention window for E3. It remains observational, however. By itself, E1 does not establish a sensitive or critical period; it only identifies where such a period would be expected if weight-space reorganisation is functionally consequential.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/e1/e1_multimodel_stable_rank_relative_early_8000.png}
+    \caption{Relative stable-rank trajectories for Pythia-70M, 160M, 410M, and 1B over the early checkpoint window. The main spectral reorganisation is concentrated before roughly step 2000, with module-specific timing.}
+    \label{fig:e1_relative_stable_rank}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/e1/e1_multimodel_interval_mean_stable_rank_drop.png}
+    \caption{Mean adjacent-checkpoint stable-rank drop by interval. The strongest changes are concentrated in the early intervals surrounding 512--2000 steps, which motivates the E3 intervention grid.}
+    \label{fig:e1_interval_stable_rank_drop}
+\end{figure}
+
+\section{E2: Functional grounding of the geometric window}
+\label{sec:results_e2_functional_grounding}
+
+E2 asks whether the E1 geometric transition has a functional correlate. Using the same checkpoint grid, I evaluate lightweight behavioural and log-likelihood probes across Pythia-70M, 160M, 410M, and 1B. The result is not a broad capability benchmark; it is a functional-grounding check for the stage structure located in E1.
+
+The strongest E2 evidence comes from fixed-text next-token loss and syntax-regularity margins. Fixed-text next-token loss improves rapidly in the earliest checkpoints for all four model sizes, with most of the total step-0-to-final loss reduction already achieved by approximately step 2000. This shows that the early part of training is functionally consequential, but the largest loss drop begins very early and therefore should be interpreted as coarse language-model adaptation rather than a precise marker of the E1 consolidation boundary.
+
+Syntax-regularity margins align more closely with the E1 candidate window. Across models, the margin improves primarily between 128 and 2000 steps, overlapping the period in which E1 finds the strongest spectral reorganisation. The arithmetic and sequence-completion probes are noisier and are treated as exploratory rather than load-bearing. Overall, E2 gives moderate support for the interpretation that the E1 phases are not merely geometric artifacts. It does not, however, make a causal claim. That role belongs to E3, where the injection stage is experimentally varied and durability is measured independently of the indicators used to locate the window.
+
+\paragraph{Interpretation.}
+Taken together, E1 and E2 justify the E3 intervention grid. E1 defines an independently measured candidate developmental window from weight geometry, while E2 shows that the same early regime overlaps with changes in model behaviour and log-likelihood. The intervention stages therefore bracket the near-initial regime, the onset and middle of the early reorganisation window, the immediate post-window regime, and late/post-hoc controls.

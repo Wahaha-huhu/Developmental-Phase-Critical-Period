@@ -1,0 +1,100 @@
+% -----------------------------------------------------------------------------
+% E3 methodology update: final factual-signal intervention design
+% -----------------------------------------------------------------------------
+% Suggested location: Chapter 3, after the phase-localisation and E2 functional
+% grounding methodology, before the results-facing experiment list.
+
+\section{E3: checkpoint intervention and short-horizon durability}
+\label{sec:method-e3-final}
+
+E3 is the causal experiment in the thesis.  E1 identifies a candidate developmental window from weight-space geometry, and E2 checks whether that window overlaps with functional change.  E3 asks whether the same window also matters causally: if the same novel signal is injected into checkpoints from different stages of pre-training, is it retained more durably when injected near the independently identified reorganisation window than when injected after consolidation?
+
+The design deliberately separates the stage definition from the durability outcome.  The injection stages are chosen from the E1/E2 analysis before observing E3: steps $0$, $128$, $512$, $1000$, $2000$, $3000$, $8000$, and $143000$.  These checkpoints densely sample the broad E1 reorganisation window, especially the $512$--$2000$ region, and include post-window controls.  The E3 durability measures are behavioural and are computed only after the signal is injected; they therefore do not define the window they test.
+
+\subsection{Model and intervention regime}
+\label{sec:method-e3-model}
+
+The primary E3 run uses \texttt{EleutherAI/pythia-160m-deduped}.  A reduced scale-check run uses \texttt{EleutherAI/pythia-410m-deduped}.  In both cases I load public Pythia checkpoints and perform full-parameter fine-tuning, rather than adapter training.  This choice is important: the claim concerns whether signal is durably imprinted into the model weights at different pre-training stages, and an adapter would introduce a separate memory mechanism.
+
+The experiment should be read as a checkpoint fine-tuning intervention, not as full replay of the original pre-training trajectory.  Continuing an early checkpoint to the end of pre-training for every cell would require re-running a large fraction of pre-training per intervention stage.  Instead, E3 measures short-horizon durability under a fixed continuation budget and overwrite resistance under a fixed adversarial protocol.  This means that a positive result supports stage-dependent amenability and short-horizon durable plasticity, not lifetime persistence over the entire remaining Pythia schedule.
+
+\subsection{Synthetic factual signal}
+\label{sec:method-e3-signal}
+
+The primary signal is a synthetic factual association task.  Each taught unit is a fictional triple
+\[
+(e, r, v),
+\]
+where $e$ is a fictional entity, $r$ is a relation such as \emph{capital} or \emph{currency}, and $v$ is a fictional value.  The signal is intentionally synthetic so that it is equally novel at every checkpoint; otherwise later checkpoints might differ merely because they already know some natural fact or lexical association.
+
+For each seed, I generate 300 taught triples.  Each triple is rendered through three training templates, producing 900 training strings.  For example, a taught association may appear as
+\begin{quote}
+\texttt{The capital of Glorbon is Zephyria.}\quad
+\texttt{Zephyria is the capital of Glorbon.}\quad
+\texttt{Glorbon's capital is Zephyria.}
+\end{quote}
+The probe set queries the same taught triples through a held-out template, for example
+\begin{quote}
+\texttt{Question: What is the capital of Glorbon? Answer:}
+\end{quote}
+with \texttt{ Zephyria} as the correct continuation.  This distinction is essential: the probe evaluates whether the association was internalised across templates, not whether the model memorised one exact training string.  A separate control set consists of fictional triples that are never trained.  The implementation audits verify that probe triples are a subset of the taught triples, that controls are disjoint from taught triples, and that the probe template does not occur in training.
+
+Entity and value strings are generated as fictional nonwords and filtered by tokenisation length under the Pythia tokenizer.  Values are drawn from a pool disjoint from the entity pool.  This reduces item-level difficulty variation and prevents probes from being solved by superficial overlap.  Evaluation is closed-set: for each probe, the model is scored on the correct continuation and several distractor values sampled from the same value pool.
+
+\subsection{Injection and scoring}
+\label{sec:method-e3-injection-scoring}
+
+Each E3 cell is indexed by an injection stage $s$ and data seed $i$.  The cell proceeds as follows:
+\begin{enumerate}
+    \item Load checkpoint $c_s$ once.
+    \item Score the base model on factual probes and controls.
+    \item Fully fine-tune the checkpoint on the synthetic factual training strings using a fixed learning rate, fixed number of optimisation steps, fixed batch size, and no learning-rate warmup or decay.
+    \item Re-score the held-out probes to measure uptake.
+    \item Branch from the post-injection model into a clean-retention branch.
+    \item Restore the post-injection model and branch into adversarial conflicting-fact degradation sweeps.
+\end{enumerate}
+
+For a probe with prefix $x$, correct continuation $y^+$, and distractors $y^-_1,\ldots,y^-_m$, I compute a length-normalised conditional log-probability for each candidate continuation.  The main continuous score is the margin
+\[
+M(x) = \log p_\theta(y^+ \mid x) - \max_j \log p_\theta(y^-_j \mid x).
+\]
+Closed-set accuracy is the fraction of probes for which this margin is positive.  The margin is the primary score because it remains informative even when exact closed-set accuracy is near threshold.
+
+Uptake is the post-injection change in probe score relative to the base checkpoint:
+\[
+U_M(s,i) = M_{\mathrm{inj}}(s,i) - M_{\mathrm{base}}(s,i).
+\]
+Durability is not interpreted for cells with no uptake.  Because uptake varies by stage in practice, the main retention and degradation analyses are normalised by uptake.
+
+\subsection{Clean-retention branch}
+\label{sec:method-e3-clean-retention}
+
+For the clean-retention branch, the injected model is trained for a fixed number of steps on a frozen Pile-validation continuation corpus.  The corpus is sampled once, tokenised into fixed-length sequences, saved to disk, and reused unchanged across all stages and seeds.  This controls both continuation content and continuation budget: early-stage injections do not see more post-injection data than late-stage injections, and no stage receives a different continuation distribution.
+
+The main clean-retention metric is the fraction of injected margin that survives fixed continuation:
+\[
+R_M(s,i) =
+\frac{M_{\mathrm{cont}}(s,i)-M_{\mathrm{base}}(s,i)}
+     {M_{\mathrm{inj}}(s,i)-M_{\mathrm{base}}(s,i)}.
+\]
+The analogous accuracy-normalised score is also logged, but the margin-based measure is the primary continuous metric.
+
+\subsection{Conflicting-fact degradation branch}
+\label{sec:method-e3-degradation}
+
+The degradation branch measures overwrite resistance.  For each taught factual triple $(e,r,v)$, I precompute a wrong value $v' \neq v$ from the same value pool.  The adversarial set contains contradictory statements with the same entity and relation but the wrong value:
+\begin{quote}
+\texttt{The capital of Glorbon is Valdora.}\quad
+\texttt{Valdora is the capital of Glorbon.}\quad
+\texttt{Glorbon's capital is Valdora.}
+\end{quote}
+Poison budgets are expressed as the number of contradicted facts, with nested budgets $k\in\{4,16,64,256\}$.  Each budget branch restarts from the same post-injection model, rather than continuing sequentially from the smaller-budget branch.  This avoids confounding poison budget with training history.
+
+For each budget $k$, the model is fine-tuned on the corresponding contradictory facts and then re-scored on the original probes.  The primary degradation-resistance measure is the area under the uptake-normalised margin-retention curve across poison budgets.  This normalisation is necessary because late checkpoints can sometimes learn the injected facts with larger immediate margin than early checkpoints; raw post-poison margins would then conflate durability with initial uptake.
+
+\subsection{Scope of the E3 claim}
+\label{sec:method-e3-scope}
+
+The positive E3 signature is higher uptake-normalised durability near the E1/E2 reorganisation window than at later consolidated checkpoints.  This design controls several trivial alternatives.  The injection learning rate is fixed across stages, so any stage dependence is not simply the natural pre-training learning-rate schedule.  The continuation budget and continuation corpus are fixed across stages, so early injections are not penalised by receiving more or different subsequent training.  Uptake is measured and reported, so durability is interpreted only conditional on the signal entering the model.
+
+The result should nevertheless be scoped carefully.  E3 measures short-horizon retention and overwrite resistance after checkpoint fine-tuning.  It does not prove lifetime persistence under the full remaining pre-training trajectory, and it does not by itself establish a biological-style critical period.  The appropriate claim is evidence for a short-horizon sensitive period in small Pythia models.

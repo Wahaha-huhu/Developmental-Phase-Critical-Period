@@ -1,0 +1,17 @@
+% -----------------------------------------------------------------------------
+% E3 discussion update: interpretation, limitations, and claims
+% -----------------------------------------------------------------------------
+% Suggested location: Discussion chapter, after the mechanism/toy discussion.
+
+\section{What E3 establishes, and what it does not}
+\label{sec:discussion-e3-scope}
+
+E3 is the first experiment in the thesis that directly tests whether the stages identified from weight geometry are functionally different under intervention.  Its result is positive in a specific, bounded sense.  Synthetic factual associations can be injected at all tested Pythia-160M stages, and a reduced Pythia-410M scale check shows the same broad pattern.  However, the fraction of injected signal that survives fixed continuation is highest near the E1/E2 reorganisation window and lower after consolidation.  This supports the claim that the early window is not merely a geometric phenomenon; it is also a period of greater short-horizon durable plasticity.
+
+The result should not be overstated.  First, E3 uses checkpoint fine-tuning rather than replaying the original pre-training process.  The most accurate interpretation is stage-dependent amenability to durable fine-tuning, not a direct measurement of how a signal would persist if inserted into the original Pythia data stream.  Second, retention is tested over a fixed continuation budget, not over the full remaining training schedule.  Third, the injected signal is synthetic and factual; it is a clean causal instrument, but it is not yet evidence that all signal types share the same sensitive window.  Cross-signal generality remains an E4 question.
+
+A second caveat is uptake.  Uptake is positive in the final runs, but it is not equal across stages.  In particular, late checkpoints can learn the synthetic facts with large immediate margins.  This is why E3 reports uptake curves and uses uptake-normalised durability as the main outcome.  The central claim is therefore not that signal enters the model more easily during the reorganisation window.  Rather, conditional on entering, the signal is retained more durably near that window.
+
+The clean-retention result is the strongest evidence.  Degradation resistance under conflicting-fact overwrite agrees in direction but is more gradual.  This difference is itself informative: ordinary continuation and adversarial overwrite are distinct pressures.  The thesis should therefore describe degradation as supporting evidence, not as the sole primary proof.
+
+Overall, E3 supports the phrase \emph{short-horizon sensitive period}.  I avoid the stronger term \emph{critical period} as the main result label, because the experiment does not establish irreversibility or lifetime persistence.  The stronger biological analogy is useful as motivation, but the measured object here is a bounded, experimentally controlled form of stage-dependent durable plasticity.
