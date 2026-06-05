@@ -1,0 +1,13 @@
+{
+  "dataset": "EleutherAI/pile_val_test",
+  "split": "validation",
+  "text_key": "text",
+  "tokenizer": "EleutherAI/pythia-160m-deduped",
+  "target_sequences": 12000,
+  "max_tokens": 256,
+  "min_tokens": 64,
+  "seed": 0,
+  "buffer_multiplier": 4,
+  "output": "data/e3_continuation/fixed_pile_val_seed0.jsonl",
+  "actual_sequences": 12000
+}

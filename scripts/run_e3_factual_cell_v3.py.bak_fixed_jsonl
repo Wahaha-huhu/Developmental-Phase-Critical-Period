@@ -167,29 +167,17 @@ def build_factual_signal(config: Dict[str, Any], tok, seed: int) -> FactualSigna
             }
         )
 
-    # Poison budgets: same trained entities/relations, fixed wrong values.
+    # Poison budgets: same trained entities/relations, wrong values.
     # Budget k means k contradicted facts. Each contradicted fact is rendered through the same templates.
-    # Important final-run control: wrong values are precomputed once per fact, so nested budgets are
-    # truly nested. The first 4 attacked facts use the same wrong values in k=4, k=16, k=64, etc.
+    poison_by_budget: Dict[int, List[str]] = {}
     budgets = [int(x) for x in config.get("degradation", {}).get("poison_budgets", [])]
     shuffled_facts = facts.copy()
     rng.shuffle(shuffled_facts)
-
-    wrong_value_by_fact_id: Dict[int, str] = {}
-    for f in shuffled_facts:
-        wrong_pool = [v for v in all_values if v != f.value]
-        wrong_value_by_fact_id[f.fact_id] = rng.choice(wrong_pool)
-
-    poison_fact_ids_by_budget: Dict[int, List[int]] = {}
-    poison_by_budget: Dict[int, List[str]] = {}
     for k in budgets:
-        attacked = shuffled_facts[: min(k, len(shuffled_facts))]
-        poison_fact_ids_by_budget[k] = [f.fact_id for f in attacked]
         texts: List[str] = []
-        for f in attacked:
-            wrong = wrong_value_by_fact_id[f.fact_id]
-            if wrong == f.value:
-                raise AssertionError("BUG: adversarial wrong value equals correct value")
+        for f in shuffled_facts[: min(k, len(shuffled_facts))]:
+            wrong_pool = [v for v in all_values if v != f.value]
+            wrong = rng.choice(wrong_pool)
             texts.extend(render_fact_texts(f, train_templates, value_override=wrong))
         poison_by_budget[k] = texts
 
@@ -220,11 +208,6 @@ def build_factual_signal(config: Dict[str, Any], tok, seed: int) -> FactualSigna
         "example_train_texts": train_texts[:6],
         "example_probe": probes[0] if probes else None,
         "example_control": controls[0] if controls else None,
-        "poison_budgets": budgets,
-        "poison_budget_unit": "facts",
-        "poison_templates_per_fact": len(train_templates),
-        "poison_budget_fact_ids": poison_fact_ids_by_budget,
-        "example_wrong_value_by_fact_id": {str(k): v for k, v in list(wrong_value_by_fact_id.items())[:5]},
         "poison_budgets": {str(k): len(v) for k, v in poison_by_budget.items()},
     }
     return FactualSignal(facts, train_texts, probes, controls, poison_by_budget, audit)
@@ -415,35 +398,6 @@ def synthetic_continuation_corpus(n: int, seed: int) -> List[str]:
     return out
 
 
-
-def fixed_jsonl_continuation_corpus(path: str, limit: Optional[int] = None) -> List[str]:
-    """Load a frozen JSONL continuation corpus with a `text` field.
-
-    The corpus should be created once and reused unchanged across all E3 stages.
-    Each line should be JSON like {"id": 0, "text": "..."}.
-    """
-    p = Path(path)
-    if not p.exists():
-        raise FileNotFoundError(f"Continuation JSONL not found: {p}")
-    out: List[str] = []
-    with p.open("r", encoding="utf-8") as f:
-        for line_no, line in enumerate(f, start=1):
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                obj = json.loads(line)
-            except json.JSONDecodeError as e:
-                raise ValueError(f"Invalid JSON on line {line_no} of {p}: {e}") from e
-            txt = str(obj.get("text", "")).strip()
-            if txt:
-                out.append(txt)
-            if limit is not None and len(out) >= int(limit):
-                break
-    if not out:
-        raise ValueError(f"No usable text entries found in continuation JSONL: {p}")
-    return out
-
 def dtype_from_config(name: str):
     name = str(name).lower()
     if name in {"float16", "fp16"}:
@@ -566,17 +520,10 @@ def run_cell(config: Dict[str, Any], stage: str, seed: int) -> None:
     if config.get("retention", {}).get("enabled", True):
         ret = config["retention"]
         corpus_kind = ret.get("continuation_corpus", "synthetic_generic")
-        corpus_limit = ret.get("continuation_corpus_size", None)
-        if corpus_kind == "synthetic_generic":
-            cont_texts = synthetic_continuation_corpus(int(corpus_limit or 1000), seed=seed)
-        elif corpus_kind in {"fixed_jsonl", "local_jsonl", "pile_jsonl"}:
-            jsonl_path = ret.get("continuation_jsonl") or ret.get("corpus_path") or ret.get("path")
-            if not jsonl_path:
-                raise ValueError("retention.continuation_jsonl / corpus_path must be set for fixed_jsonl continuation")
-            cont_texts = fixed_jsonl_continuation_corpus(str(jsonl_path), limit=int(corpus_limit) if corpus_limit else None)
-        else:
-            raise ValueError(f"Unknown continuation_corpus kind: {corpus_kind!r}")
-        print(f"[{now()}] Clean-continuation branch: {ret['continuation_steps']} steps on {corpus_kind} ({len(cont_texts)} texts)", flush=True)
+        if corpus_kind != "synthetic_generic":
+            raise NotImplementedError("Only synthetic_generic continuation corpus is implemented in v3 standalone runner")
+        cont_texts = synthetic_continuation_corpus(int(ret.get("continuation_corpus_size", 1000)), seed=seed)
+        print(f"[{now()}] Clean-continuation branch: {ret['continuation_steps']} steps", flush=True)
         cont_info = finetune_texts(
             model,
             tok,
@@ -587,8 +534,8 @@ def run_cell(config: Dict[str, Any], stage: str, seed: int) -> None:
             batch_size=int(ret.get("continuation_batch_size", tr.get("batch_size", 16))),
             max_len=int(tr.get("max_len", 128)),
             weight_decay=float(tr.get("weight_decay", 0.0)),
-            grad_clip_norm=float(tr.get("grad_clip_norm", 0.0)) if ret.get("grad_clip_norm", tr.get("grad_clip_norm", 0.0)) else None,
-            seed=int(ret.get("continuation_seed", 0)),
+            grad_clip_norm=float(tr.get("grad_clip_norm", 0.0)) if tr.get("grad_clip_norm", 0.0) else None,
+            seed=seed + 1000,
             device=device,
         )
         print(f"[{now()}] Scoring post-continuation retention", flush=True)
