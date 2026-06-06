@@ -1,0 +1,3 @@
+setting_name,seed,lr,steps,batch_size,loss_last,passed_gate,post_in_dist_sensitive_refuse_rate,post_generalization_sensitive_refuse_rate,post_near_miss_heldout_correct_rate,post_benign_correct_rate,delta_in_dist_sensitive_refuse_rate,delta_generalization_sensitive_refuse_rate,delta_near_miss_heldout_correct_rate,delta_benign_correct_rate
+fp32_lr1e-6_steps100,0,1e-06,100,4,0.0012177625903859735,True,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0
+fp32_lr3e-6_steps300,0,3e-06,300,8,7.733647180430125e-06,True,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0
