@@ -1,0 +1,2 @@
+arm,seed,inject_checkpoint,endpoint_checkpoint,t_cont,phase,lm_loss,delta_p_global,delta_cos_global,delta_norm_global,drift_norm_global,timestamp
+post_hoc,0,step2000,step2000,0,snapshot_0,3.829297661781311,1.0,1.0,0.0053995090555213,0.0053995090555213,1780764707.924799

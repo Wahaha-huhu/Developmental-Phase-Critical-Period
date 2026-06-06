@@ -1,0 +1,12 @@
+[2026-06-06 16:39:09] C1 runner started with config=configs/c1_alignment_160m_injection_smoke_safe.yaml output_root=results/c1_alignment_160m_injection_smoke_safe
+[2026-06-06 16:39:09] Run plan: seeds=[0], arms=['in_window_carried', 'post_hoc']
+Traceback (most recent call last):
+  File "/workspace/Developmental-Phase-Critical-Period/scripts/run_c1_alignment_consolidation.py", line 1054, in <module>
+    main()
+  File "/workspace/Developmental-Phase-Critical-Period/scripts/run_c1_alignment_consolidation.py", line 1048, in main
+    statuses.append(run_arm(cfg, arm, int(seed)))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Developmental-Phase-Critical-Period/scripts/run_c1_alignment_consolidation.py", line 645, in run_arm
+    model_id = cfg["model"]["name"]
+               ~~~~~~~~~~~~^^^^^^^^
+TypeError: string indices must be integers, not 'str'

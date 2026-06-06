@@ -82,6 +82,96 @@ def parse_betas(x: Any, default: Tuple[float, float] = (0.9, 0.95)) -> Tuple[flo
     return default
 
 
+
+def parse_step_number(x: Any) -> Optional[int]:
+    """Parse Pythia revision strings like step1000 into integer steps."""
+    if x is None:
+        return None
+    if isinstance(x, (int, np.integer)):
+        return int(x)
+    s = str(x).strip()
+    if not s:
+        return None
+    if s.startswith("step"):
+        s = s[4:]
+    return int(s)
+
+
+def compute_continuation_token_plan(cfg: Dict[str, Any], arm: Dict[str, Any]) -> Dict[str, Any]:
+    """Compute continuation updates from token budget, always applying budget_scale.
+
+    This intentionally overrides stale/resolved arm['continuation_steps'] values when
+    continuation.use_token_budget is true or unset. The previous bug was that the runner
+    trusted a stale 32,000-update value corresponding to full step1000->step2000 tokens
+    even when the YAML contained budget_scale=0.001/0.00025.
+    """
+    cont = cfg.get("continuation", {}) or {}
+    use_token_budget = as_bool(cont.get("use_token_budget", cfg.get("use_token_budget", True)), True)
+
+    inject = arm.get("inject_checkpoint") or arm.get("inject_step") or arm.get("inject_at") or arm.get("revision_inject")
+    endpoint = (
+        arm.get("endpoint_checkpoint")
+        or arm.get("endpoint_step")
+        or arm.get("continue_to_checkpoint")
+        or arm.get("continue_to_step")
+        or cfg.get("endpoint_checkpoint")
+        or cfg.get("endpoint_step")
+        or "step8000"
+    )
+    inject_step_num = parse_step_number(inject)
+    endpoint_step_num = parse_step_number(endpoint)
+
+    seq_len = int(cont.get("sequence_length", cont.get("max_length", cfg.get("runtime", {}).get("max_length", cfg.get("sequence_length", 256)))))
+    batch_size = int(cont.get("batch_size", cfg.get("batch_size", 1)))
+    grad_accum = int(cont.get(
+        "gradient_accumulation_steps",
+        cont.get("grad_accum", cfg.get("gradient_accumulation_steps", cfg.get("grad_accum", 1))),
+    ))
+    local_tokens_per_update = max(1, seq_len * batch_size * max(1, grad_accum))
+
+    explicit_updates = int(arm.get("continuation_steps", arm.get("continue_steps", arm.get("cont_steps", cont.get("continuation_steps", 0)))))
+
+    if not use_token_budget or inject_step_num is None or endpoint_step_num is None:
+        updates = explicit_updates
+        scaled_target_tokens = updates * local_tokens_per_update
+        full_target_tokens = scaled_target_tokens
+        budget_scale = float(cont.get("budget_scale", cfg.get("budget_scale", 1.0)))
+        delta_steps = max(0, (endpoint_step_num or 0) - (inject_step_num or 0))
+        pythia_tokens_per_step = int(cont.get("pythia_tokens_per_step", cfg.get("pythia_tokens_per_step", 2097152)))
+    else:
+        pythia_tokens_per_step = int(cont.get("pythia_tokens_per_step", cfg.get("pythia_tokens_per_step", 2097152)))
+        budget_scale = float(cont.get("budget_scale", arm.get("budget_scale", cfg.get("budget_scale", 1.0))))
+        delta_steps = max(0, endpoint_step_num - inject_step_num)
+        full_target_tokens = delta_steps * pythia_tokens_per_step
+        scaled_target_tokens = int(round(full_target_tokens * budget_scale))
+        updates = int(math.ceil(scaled_target_tokens / local_tokens_per_update)) if scaled_target_tokens > 0 else 0
+
+        max_updates = cont.get("max_continuation_updates", cfg.get("max_continuation_updates"))
+        if max_updates is not None:
+            updates = min(updates, int(max_updates))
+
+    actual_tokens = updates * local_tokens_per_update
+    return {
+        "use_token_budget": use_token_budget,
+        "inject_checkpoint": inject,
+        "endpoint_checkpoint": endpoint,
+        "inject_step_num": inject_step_num,
+        "endpoint_step_num": endpoint_step_num,
+        "delta_steps": delta_steps,
+        "pythia_tokens_per_step": pythia_tokens_per_step,
+        "budget_scale": budget_scale,
+        "sequence_length": seq_len,
+        "batch_size": batch_size,
+        "grad_accum": grad_accum,
+        "local_tokens_per_update": local_tokens_per_update,
+        "full_target_tokens": full_target_tokens,
+        "scaled_target_tokens": scaled_target_tokens,
+        "updates": updates,
+        "actual_tokens": actual_tokens,
+        "explicit_updates_in_config": explicit_updates,
+        "actual_to_full_ratio": (actual_tokens / full_target_tokens) if full_target_tokens else 0.0,
+    }
+
 def make_adamw(params: Any, *, lr: float, weight_decay: float, eps: float, betas: Tuple[float, float], foreach: bool = False) -> AdamW:
     """Create AdamW with conservative defaults for early-checkpoint SFT stability."""
     kwargs = dict(lr=lr, weight_decay=weight_decay, eps=eps, betas=betas)
@@ -751,20 +841,37 @@ def run_arm(cfg: Dict[str, Any], arm: Dict[str, Any], seed: int) -> Dict[str, An
         or cfg.get("endpoint_step")
         or "step8000"
     )
-    continuation_steps = int(arm.get("continuation_steps", arm.get("continue_steps", arm.get("cont_steps", 0))))
-    snapshot_steps = sorted(set([0] + [int(x) for x in arm.get("snapshot_steps", []) if int(x) <= continuation_steps]))
+    token_plan = compute_continuation_token_plan(cfg, arm)
+    continuation_steps = int(token_plan["updates"])
+
+    raw_snapshot_steps = arm.get("snapshot_steps", cfg.get("snapshot_steps", []))
+    snapshots_cfg = cfg.get("snapshots", {}) or {}
+    if as_bool(snapshots_cfg.get("enabled"), True):
+        raw_snapshot_steps = snapshots_cfg.get("steps", raw_snapshot_steps)
+    else:
+        raw_snapshot_steps = []
+    snapshot_steps = sorted(set([0] + [int(x) for x in raw_snapshot_steps if int(x) <= continuation_steps]))
 
     log("=" * 96)
     log(f"C1 arm start: arm={arm_name} seed={seed} model={model_id} device={device}")
     log(f"checkpoints: inject={inject_checkpoint} endpoint={endpoint_checkpoint} continuation_updates={continuation_steps} snapshots={snapshot_steps}")
-    if any(k in arm for k in ["target_continuation_tokens", "actual_continuation_tokens", "local_tokens_per_step", "pythia_delta_steps"]):
+    log(
+        "[token-budget] "
+        f"use_token_budget={token_plan['use_token_budget']} "
+        f"inject=step{token_plan['inject_step_num']} endpoint=step{token_plan['endpoint_step_num']} "
+        f"delta_steps={token_plan['delta_steps']} "
+        f"budget_scale={token_plan['budget_scale']} "
+        f"full_target_tokens={token_plan['full_target_tokens']:,} "
+        f"scaled_target_tokens={token_plan['scaled_target_tokens']:,} "
+        f"tokens/update={token_plan['local_tokens_per_update']:,} "
+        f"updates={token_plan['updates']} "
+        f"actual_tokens={token_plan['actual_tokens']:,} "
+        f"explicit_updates_in_config={token_plan['explicit_updates_in_config']}"
+    )
+    if token_plan["explicit_updates_in_config"] and token_plan["explicit_updates_in_config"] != continuation_steps:
         log(
-            "token budget: "
-            f"pythia_delta_steps={arm.get('pythia_delta_steps')} "
-            f"target_tokens={arm.get('target_continuation_tokens')} "
-            f"local_tokens/update={arm.get('local_tokens_per_step')} "
-            f"actual_tokens={arm.get('actual_continuation_tokens')} "
-            f"overshoot={arm.get('token_overshoot')}"
+            "[token-budget] overriding stale explicit continuation_steps "
+            f"{token_plan['explicit_updates_in_config']} -> {continuation_steps} because budget_scale is applied in runner"
         )
     log(f"Loading model checkpoint {model_id}@{inject_checkpoint}")
     model, tokenizer = load_model_and_tokenizer(model_id, inject_checkpoint, cfg, device)
@@ -794,6 +901,7 @@ def run_arm(cfg: Dict[str, Any], arm: Dict[str, Any], seed: int) -> Dict[str, An
         "refusal_response": refusal,
         "compliance_response": compliance,
         "example_train_prompts": [x.prompt for x in train_items[:5]],
+        "continuation_token_plan": token_plan,
     }
     (audit_dir / f"signal_audit_{arm_name}_seed{seed}.json").write_text(json.dumps(audit, indent=2), encoding="utf-8")
 
@@ -808,12 +916,14 @@ def run_arm(cfg: Dict[str, Any], arm: Dict[str, Any], seed: int) -> Dict[str, An
     log("[base] " + summarize_family_scores(fam_base))
 
     # Capture base tensors for delta persistence.
-    geom_cfg = cfg.get("geometry", {})
+    geom_cfg = cfg.get("geometry", {}) or {}
+    cont_cfg_early = cfg.get("continuation", {}) or {}
+    geometry_enabled = as_bool(geom_cfg.get("enabled", True), True) and not as_bool(cont_cfg_early.get("disable_delta_persistence", False), False)
     suffixes = geom_cfg.get("module_suffixes", ["attention.query_key_value", "attention.dense", "mlp.dense_h_to_4h", "mlp.dense_4h_to_h"])
-    names = selected_weight_names(model, suffixes)
+    names = selected_weight_names(model, suffixes) if geometry_enabled else []
     if geom_cfg.get("max_matrices"):
         names = names[: int(geom_cfg["max_matrices"])]
-    log(f"Selected {len(names)} matrices for delta persistence / cheap spectral metrics")
+    log(f"Selected {len(names)} matrices for delta persistence / cheap spectral metrics (geometry_enabled={geometry_enabled})")
     base_tensors = capture_tensors(model, names, dtype=torch.float32)
 
     # Injection.

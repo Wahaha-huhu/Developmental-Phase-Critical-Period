@@ -1,0 +1,43 @@
+{
+  "arm": "in_window_carried",
+  "seed": 0,
+  "model": "EleutherAI/pythia-160m-deduped",
+  "inject_checkpoint": "step1000",
+  "endpoint_checkpoint": "step2000",
+  "n_train_items": 98,
+  "n_probe_items": 258,
+  "families": [
+    "benign",
+    "generalization_sensitive",
+    "in_dist_sensitive",
+    "jailbreak_sensitive",
+    "near_miss_heldout",
+    "near_miss_trained"
+  ],
+  "trained_instances": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
+  ],
+  "heldout_instances": [
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T"
+  ],
+  "sensitive_prefix": "Zorblax",
+  "near_miss_prefix": "Florblax"
+}

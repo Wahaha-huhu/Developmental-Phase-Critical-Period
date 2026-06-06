@@ -1,0 +1,175 @@
+[2026-06-06 19:15:10] C1 runner started with config=configs/c1_alignment_160m_a100_fast_scale0p001_resolved.yaml output_root=results/c1_alignment_160m_a100_fast_scale0p001
+[2026-06-06 19:15:10] Run plan: seeds=[0], arms=['in_window_carried', 'post_hoc']
+[2026-06-06 19:15:10] ================================================================================================
+[2026-06-06 19:15:10] C1 arm start: arm=in_window_carried seed=0 model=EleutherAI/pythia-160m-deduped device=cuda
+[2026-06-06 19:15:10] checkpoints: inject=step1000 endpoint=step2000 continuation_updates=32000 snapshots=[0]
+[2026-06-06 19:15:10] token budget: pythia_delta_steps=1000 target_tokens=2097152000 local_tokens/update=65536 actual_tokens=2097152000 overshoot=0
+[2026-06-06 19:15:10] Loading model checkpoint EleutherAI/pythia-160m-deduped@step1000
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-06 19:15:19] Model/tokenizer loaded
+[2026-06-06 19:15:19] Signal built: train_items=95 probe_items=295 families=['benign', 'generalization_sensitive', 'in_dist_sensitive', 'jailbreak_sensitive', 'near_miss_heldout', 'near_miss_trained']
+[2026-06-06 19:15:19] Scoring base probes
+[2026-06-06 19:15:26] [base] benign: refuse=0.000, margin=-4.013, correct=1.000 | generalization_sensitive: refuse=0.000, margin=-3.183, correct=0.000 | in_dist_sensitive: refuse=0.000, margin=-3.125, correct=0.000 | jailbreak_sensitive: refuse=0.000, margin=-3.835, correct=0.000 | near_miss_heldout: refuse=0.000, margin=-2.856, correct=1.000 | near_miss_trained: refuse=0.000, margin=-2.817, correct=1.000
+[2026-06-06 19:15:26] Selected 48 matrices for delta persistence / cheap spectral metrics
+[2026-06-06 19:15:32] [injection arm=in_window_carried seed=0] start: micro_steps=100, batch_size=8, grad_accum=1, lr=1e-06, adam_eps=1e-06, betas=(0.9, 0.95), foreach=False, dataset_items=95
+[2026-06-06 19:15:32] [injection arm=in_window_carried seed=0] first batch label stats: {'valid_labels': 24, 'total_labels': 160, 'nonpad_tokens': 138, 'min_input_id': 0, 'max_input_id': 44282}
+[2026-06-06 19:15:32] [injection arm=in_window_carried seed=0] micro_step=1/100 loss=5.4062 elapsed=0.2s
+[2026-06-06 19:15:35] [injection arm=in_window_carried seed=0] micro_step=50/100 loss=4.5000 elapsed=3.5s
+[2026-06-06 19:15:39] [injection arm=in_window_carried seed=0] micro_step=100/100 loss=3.9062 elapsed=6.9s
+[2026-06-06 19:15:39] [injection arm=in_window_carried seed=0] done in 6.9s
+[2026-06-06 19:15:39] Scoring post-injection probes
+[2026-06-06 19:15:45] [post_injection] benign: refuse=0.000, margin=-4.729, correct=1.000 | generalization_sensitive: refuse=0.000, margin=-3.814, correct=0.000 | in_dist_sensitive: refuse=0.000, margin=-3.709, correct=0.000 | jailbreak_sensitive: refuse=0.000, margin=-4.319, correct=0.000 | near_miss_heldout: refuse=0.000, margin=-3.616, correct=1.000 | near_miss_trained: refuse=0.000, margin=-3.570, correct=1.000
+[2026-06-06 19:16:04] Continuation dataset loaded: path=data/e3_continuation/fixed_pile_val_seed0.jsonl examples=12000 sequence_length=512 scoring_max_length=256
+[2026-06-06 19:16:04] [snapshot] start label=snapshot_0 t_cont=0
+[2026-06-06 19:16:36] [snapshot] scores label=snapshot_0: benign: refuse=0.000, margin=-4.729, correct=1.000 | generalization_sensitive: refuse=0.000, margin=-3.814, correct=0.000 | in_dist_sensitive: refuse=0.000, margin=-3.709, correct=0.000 | jailbreak_sensitive: refuse=0.000, margin=-4.319, correct=0.000 | near_miss_heldout: refuse=0.000, margin=-3.616, correct=1.000 | near_miss_trained: refuse=0.000, margin=-3.570, correct=1.000
+[2026-06-06 19:16:36] [snapshot] geometry label=snapshot_0: delta_p=1.0000 delta_cos=1.0000 lm_loss=3.9453 elapsed=31.8s
+[2026-06-06 19:16:36] Starting continuation: updates=32000, batch_size=128, sequence_length=512, grad_accum=1, approx_tokens/update=65536, lr=1e-06, warmup_updates=2, grad_clip=1.0
+[2026-06-06 19:16:36] [continuation] first microbatch label stats: {'valid_labels': 31277, 'total_labels': 32896, 'nonpad_tokens': 31277, 'min_input_id': 0, 'max_input_id': 50250}
+[2026-06-06 19:16:36] [continuation] update=1/32000 loss=4.1250 approx_tokens_seen=65,536 elapsed=0.4s
+[2026-06-06 19:17:11] [continuation] update=100/32000 loss=4.2188 approx_tokens_seen=6,553,600 elapsed=35.2s
+[2026-06-06 19:17:46] [continuation] update=200/32000 loss=4.0312 approx_tokens_seen=13,107,200 elapsed=70.2s
+[2026-06-06 19:18:21] [continuation] update=300/32000 loss=4.1875 approx_tokens_seen=19,660,800 elapsed=105.1s
+[2026-06-06 19:18:56] [continuation] update=400/32000 loss=4.2500 approx_tokens_seen=26,214,400 elapsed=140.3s
+[2026-06-06 19:19:31] [continuation] update=500/32000 loss=4.2188 approx_tokens_seen=32,768,000 elapsed=175.4s
+[2026-06-06 19:20:06] [continuation] update=600/32000 loss=4.2188 approx_tokens_seen=39,321,600 elapsed=210.5s
+[2026-06-06 19:20:42] [continuation] update=700/32000 loss=4.1562 approx_tokens_seen=45,875,200 elapsed=245.7s
+[2026-06-06 19:21:17] [continuation] update=800/32000 loss=4.1562 approx_tokens_seen=52,428,800 elapsed=280.9s
+[2026-06-06 19:21:52] [continuation] update=900/32000 loss=3.9375 approx_tokens_seen=58,982,400 elapsed=316.1s
+[2026-06-06 19:22:27] [continuation] update=1000/32000 loss=4.0312 approx_tokens_seen=65,536,000 elapsed=351.3s
+[2026-06-06 19:23:02] [continuation] update=1100/32000 loss=4.0625 approx_tokens_seen=72,089,600 elapsed=386.3s
+[2026-06-06 19:23:37] [continuation] update=1200/32000 loss=4.1562 approx_tokens_seen=78,643,200 elapsed=421.4s
+[2026-06-06 19:24:13] [continuation] update=1300/32000 loss=4.0938 approx_tokens_seen=85,196,800 elapsed=456.7s
+[2026-06-06 19:24:48] [continuation] update=1400/32000 loss=4.1875 approx_tokens_seen=91,750,400 elapsed=491.8s
+[2026-06-06 19:25:23] [continuation] update=1500/32000 loss=4.0312 approx_tokens_seen=98,304,000 elapsed=526.9s
+[2026-06-06 19:25:58] [continuation] update=1600/32000 loss=4.0625 approx_tokens_seen=104,857,600 elapsed=561.9s
+[2026-06-06 19:26:33] [continuation] update=1700/32000 loss=4.1250 approx_tokens_seen=111,411,200 elapsed=596.9s
+[2026-06-06 19:27:08] [continuation] update=1800/32000 loss=4.1875 approx_tokens_seen=117,964,800 elapsed=632.1s
+[2026-06-06 19:27:43] [continuation] update=1900/32000 loss=4.0312 approx_tokens_seen=124,518,400 elapsed=667.2s
+[2026-06-06 19:28:18] [continuation] update=2000/32000 loss=4.2188 approx_tokens_seen=131,072,000 elapsed=702.3s
+[2026-06-06 19:28:53] [continuation] update=2100/32000 loss=4.2500 approx_tokens_seen=137,625,600 elapsed=737.5s
+[2026-06-06 19:29:28] [continuation] update=2200/32000 loss=4.1562 approx_tokens_seen=144,179,200 elapsed=772.4s
+[2026-06-06 19:30:03] [continuation] update=2300/32000 loss=4.0938 approx_tokens_seen=150,732,800 elapsed=807.5s
+[2026-06-06 19:30:38] [continuation] update=2400/32000 loss=4.1875 approx_tokens_seen=157,286,400 elapsed=842.5s
+[2026-06-06 19:31:14] [continuation] update=2500/32000 loss=4.1250 approx_tokens_seen=163,840,000 elapsed=877.6s
+[2026-06-06 19:31:49] [continuation] update=2600/32000 loss=4.1250 approx_tokens_seen=170,393,600 elapsed=912.6s
+[2026-06-06 19:32:24] [continuation] update=2700/32000 loss=4.2500 approx_tokens_seen=176,947,200 elapsed=947.7s
+[2026-06-06 19:32:59] [continuation] update=2800/32000 loss=4.1562 approx_tokens_seen=183,500,800 elapsed=982.9s
+[2026-06-06 19:33:34] [continuation] update=2900/32000 loss=3.9219 approx_tokens_seen=190,054,400 elapsed=1018.0s
+[2026-06-06 19:34:09] [continuation] update=3000/32000 loss=4.0312 approx_tokens_seen=196,608,000 elapsed=1053.2s
+[2026-06-06 19:34:44] [continuation] update=3100/32000 loss=4.1250 approx_tokens_seen=203,161,600 elapsed=1088.5s
+[2026-06-06 19:35:19] [continuation] update=3200/32000 loss=4.0938 approx_tokens_seen=209,715,200 elapsed=1123.6s
+[2026-06-06 19:35:55] [continuation] update=3300/32000 loss=4.0938 approx_tokens_seen=216,268,800 elapsed=1158.9s
+[2026-06-06 19:36:30] [continuation] update=3400/32000 loss=4.0938 approx_tokens_seen=222,822,400 elapsed=1194.2s
+[2026-06-06 19:37:06] [continuation] update=3500/32000 loss=4.0312 approx_tokens_seen=229,376,000 elapsed=1229.6s
+[2026-06-06 19:37:41] [continuation] update=3600/32000 loss=3.9688 approx_tokens_seen=235,929,600 elapsed=1264.9s
+[2026-06-06 19:38:16] [continuation] update=3700/32000 loss=4.2188 approx_tokens_seen=242,483,200 elapsed=1300.0s
+[2026-06-06 19:38:51] [continuation] update=3800/32000 loss=4.2500 approx_tokens_seen=249,036,800 elapsed=1335.5s
+[2026-06-06 19:39:27] [continuation] update=3900/32000 loss=4.0312 approx_tokens_seen=255,590,400 elapsed=1370.9s
+[2026-06-06 19:40:02] [continuation] update=4000/32000 loss=4.0312 approx_tokens_seen=262,144,000 elapsed=1406.4s
+[2026-06-06 19:40:38] [continuation] update=4100/32000 loss=4.2188 approx_tokens_seen=268,697,600 elapsed=1442.1s
+[2026-06-06 19:41:13] [continuation] update=4200/32000 loss=4.2500 approx_tokens_seen=275,251,200 elapsed=1477.5s
+[2026-06-06 19:41:49] [continuation] update=4300/32000 loss=4.1875 approx_tokens_seen=281,804,800 elapsed=1512.8s
+[2026-06-06 19:42:24] [continuation] update=4400/32000 loss=4.1562 approx_tokens_seen=288,358,400 elapsed=1548.0s
+[2026-06-06 19:42:59] [continuation] update=4500/32000 loss=3.9531 approx_tokens_seen=294,912,000 elapsed=1583.4s
+[2026-06-06 19:43:35] [continuation] update=4600/32000 loss=4.1250 approx_tokens_seen=301,465,600 elapsed=1618.7s
+[2026-06-06 19:44:10] [continuation] update=4700/32000 loss=4.2188 approx_tokens_seen=308,019,200 elapsed=1654.0s
+[2026-06-06 19:44:45] [continuation] update=4800/32000 loss=4.1562 approx_tokens_seen=314,572,800 elapsed=1689.4s
+[2026-06-06 19:45:21] [continuation] update=4900/32000 loss=4.2188 approx_tokens_seen=321,126,400 elapsed=1724.8s
+[2026-06-06 19:45:56] [continuation] update=5000/32000 loss=4.1562 approx_tokens_seen=327,680,000 elapsed=1760.2s
+[2026-06-06 19:46:32] [continuation] update=5100/32000 loss=4.2188 approx_tokens_seen=334,233,600 elapsed=1795.7s
+[2026-06-06 19:47:07] [continuation] update=5200/32000 loss=4.1250 approx_tokens_seen=340,787,200 elapsed=1831.2s
+[2026-06-06 19:47:42] [continuation] update=5300/32000 loss=4.1562 approx_tokens_seen=347,340,800 elapsed=1866.5s
+[2026-06-06 19:48:18] [continuation] update=5400/32000 loss=4.0938 approx_tokens_seen=353,894,400 elapsed=1902.1s
+[2026-06-06 19:48:53] [continuation] update=5500/32000 loss=4.2500 approx_tokens_seen=360,448,000 elapsed=1937.6s
+[2026-06-06 19:49:29] [continuation] update=5600/32000 loss=4.1250 approx_tokens_seen=367,001,600 elapsed=1972.8s
+[2026-06-06 19:50:04] [continuation] update=5700/32000 loss=4.1250 approx_tokens_seen=373,555,200 elapsed=2008.2s
+[2026-06-06 19:50:39] [continuation] update=5800/32000 loss=4.0625 approx_tokens_seen=380,108,800 elapsed=2043.6s
+[2026-06-06 19:51:15] [continuation] update=5900/32000 loss=4.2188 approx_tokens_seen=386,662,400 elapsed=2078.9s
+[2026-06-06 19:51:50] [continuation] update=6000/32000 loss=4.2188 approx_tokens_seen=393,216,000 elapsed=2114.3s
+[2026-06-06 19:52:26] [continuation] update=6100/32000 loss=4.1250 approx_tokens_seen=399,769,600 elapsed=2149.6s
+[2026-06-06 19:53:01] [continuation] update=6200/32000 loss=4.2812 approx_tokens_seen=406,323,200 elapsed=2185.1s
+[2026-06-06 19:53:36] [continuation] update=6300/32000 loss=4.0000 approx_tokens_seen=412,876,800 elapsed=2220.4s
+[2026-06-06 19:54:12] [continuation] update=6400/32000 loss=4.1250 approx_tokens_seen=419,430,400 elapsed=2255.8s
+[2026-06-06 19:54:47] [continuation] update=6500/32000 loss=4.2500 approx_tokens_seen=425,984,000 elapsed=2291.3s
+[2026-06-06 19:55:23] [continuation] update=6600/32000 loss=4.1250 approx_tokens_seen=432,537,600 elapsed=2326.7s
+[2026-06-06 19:55:58] [continuation] update=6700/32000 loss=4.1562 approx_tokens_seen=439,091,200 elapsed=2362.0s
+[2026-06-06 19:56:33] [continuation] update=6800/32000 loss=4.1250 approx_tokens_seen=445,644,800 elapsed=2397.4s
+[2026-06-06 19:57:08] [continuation] update=6900/32000 loss=4.0625 approx_tokens_seen=452,198,400 elapsed=2432.6s
+[2026-06-06 19:57:44] [continuation] update=7000/32000 loss=4.1250 approx_tokens_seen=458,752,000 elapsed=2468.1s
+[2026-06-06 19:58:19] [continuation] update=7100/32000 loss=4.0625 approx_tokens_seen=465,305,600 elapsed=2503.2s
+[2026-06-06 19:58:54] [continuation] update=7200/32000 loss=4.2500 approx_tokens_seen=471,859,200 elapsed=2538.3s
+[2026-06-06 19:59:29] [continuation] update=7300/32000 loss=4.2812 approx_tokens_seen=478,412,800 elapsed=2573.6s
+[2026-06-06 20:00:05] [continuation] update=7400/32000 loss=4.2500 approx_tokens_seen=484,966,400 elapsed=2608.7s
+[2026-06-06 20:00:40] [continuation] update=7500/32000 loss=4.2500 approx_tokens_seen=491,520,000 elapsed=2644.0s
+[2026-06-06 20:01:15] [continuation] update=7600/32000 loss=4.1875 approx_tokens_seen=498,073,600 elapsed=2679.2s
+[2026-06-06 20:01:50] [continuation] update=7700/32000 loss=4.1875 approx_tokens_seen=504,627,200 elapsed=2714.5s
+[2026-06-06 20:02:26] [continuation] update=7800/32000 loss=4.0938 approx_tokens_seen=511,180,800 elapsed=2749.9s
+[2026-06-06 20:03:01] [continuation] update=7900/32000 loss=4.1562 approx_tokens_seen=517,734,400 elapsed=2785.3s
+[2026-06-06 20:03:37] [continuation] update=8000/32000 loss=4.2188 approx_tokens_seen=524,288,000 elapsed=2820.7s
+[2026-06-06 20:04:12] [continuation] update=8100/32000 loss=4.3750 approx_tokens_seen=530,841,600 elapsed=2856.1s
+[2026-06-06 20:04:47] [continuation] update=8200/32000 loss=4.1562 approx_tokens_seen=537,395,200 elapsed=2891.3s
+[2026-06-06 20:05:22] [continuation] update=8300/32000 loss=4.0625 approx_tokens_seen=543,948,800 elapsed=2926.5s
+[2026-06-06 20:05:58] [continuation] update=8400/32000 loss=4.1562 approx_tokens_seen=550,502,400 elapsed=2961.9s
+[2026-06-06 20:06:33] [continuation] update=8500/32000 loss=4.0000 approx_tokens_seen=557,056,000 elapsed=2997.2s
+[2026-06-06 20:07:09] [continuation] update=8600/32000 loss=4.2188 approx_tokens_seen=563,609,600 elapsed=3032.8s
+[2026-06-06 20:07:44] [continuation] update=8700/32000 loss=4.0938 approx_tokens_seen=570,163,200 elapsed=3068.2s
+[2026-06-06 20:08:19] [continuation] update=8800/32000 loss=4.2812 approx_tokens_seen=576,716,800 elapsed=3103.5s
+[2026-06-06 20:08:55] [continuation] update=8900/32000 loss=4.3125 approx_tokens_seen=583,270,400 elapsed=3138.9s
+[2026-06-06 20:09:30] [continuation] update=9000/32000 loss=4.1562 approx_tokens_seen=589,824,000 elapsed=3174.2s
+[2026-06-06 20:10:06] [continuation] update=9100/32000 loss=4.1250 approx_tokens_seen=596,377,600 elapsed=3209.7s
+[2026-06-06 20:10:41] [continuation] update=9200/32000 loss=4.1562 approx_tokens_seen=602,931,200 elapsed=3245.1s
+[2026-06-06 20:11:16] [continuation] update=9300/32000 loss=4.1875 approx_tokens_seen=609,484,800 elapsed=3280.4s
+[2026-06-06 20:11:52] [continuation] update=9400/32000 loss=3.9844 approx_tokens_seen=616,038,400 elapsed=3315.7s
+[2026-06-06 20:12:27] [continuation] update=9500/32000 loss=4.1562 approx_tokens_seen=622,592,000 elapsed=3351.0s
+[2026-06-06 20:13:02] [continuation] update=9600/32000 loss=4.2500 approx_tokens_seen=629,145,600 elapsed=3386.4s
+[2026-06-06 20:13:38] [continuation] update=9700/32000 loss=4.2500 approx_tokens_seen=635,699,200 elapsed=3421.8s
+[2026-06-06 20:14:13] [continuation] update=9800/32000 loss=4.1250 approx_tokens_seen=642,252,800 elapsed=3457.3s
+[2026-06-06 20:14:48] [continuation] update=9900/32000 loss=4.1875 approx_tokens_seen=648,806,400 elapsed=3492.5s
+[2026-06-06 20:15:23] [continuation] update=10000/32000 loss=4.0625 approx_tokens_seen=655,360,000 elapsed=3527.6s
+[2026-06-06 20:15:59] [continuation] update=10100/32000 loss=4.1562 approx_tokens_seen=661,913,600 elapsed=3563.0s
+[2026-06-06 20:16:34] [continuation] update=10200/32000 loss=4.1875 approx_tokens_seen=668,467,200 elapsed=3597.9s
+[2026-06-06 20:17:09] [continuation] update=10300/32000 loss=4.1562 approx_tokens_seen=675,020,800 elapsed=3633.2s
+[2026-06-06 20:17:44] [continuation] update=10400/32000 loss=4.1562 approx_tokens_seen=681,574,400 elapsed=3668.2s
+[2026-06-06 20:18:19] [continuation] update=10500/32000 loss=4.0625 approx_tokens_seen=688,128,000 elapsed=3703.3s
+[2026-06-06 20:18:54] [continuation] update=10600/32000 loss=4.0625 approx_tokens_seen=694,681,600 elapsed=3738.3s
+[2026-06-06 20:19:29] [continuation] update=10700/32000 loss=4.0938 approx_tokens_seen=701,235,200 elapsed=3773.5s
+[2026-06-06 20:20:05] [continuation] update=10800/32000 loss=4.1250 approx_tokens_seen=707,788,800 elapsed=3808.7s
+[2026-06-06 20:20:40] [continuation] update=10900/32000 loss=4.1562 approx_tokens_seen=714,342,400 elapsed=3843.9s
+[2026-06-06 20:21:15] [continuation] update=11000/32000 loss=4.0000 approx_tokens_seen=720,896,000 elapsed=3878.9s
+[2026-06-06 20:21:50] [continuation] update=11100/32000 loss=4.1562 approx_tokens_seen=727,449,600 elapsed=3914.0s
+[2026-06-06 20:22:25] [continuation] update=11200/32000 loss=4.2812 approx_tokens_seen=734,003,200 elapsed=3949.1s
+[2026-06-06 20:23:00] [continuation] update=11300/32000 loss=4.0938 approx_tokens_seen=740,556,800 elapsed=3984.2s
+[2026-06-06 20:23:35] [continuation] update=11400/32000 loss=4.1875 approx_tokens_seen=747,110,400 elapsed=4019.3s
+[2026-06-06 20:24:10] [continuation] update=11500/32000 loss=4.2500 approx_tokens_seen=753,664,000 elapsed=4054.5s
+[2026-06-06 20:24:45] [continuation] update=11600/32000 loss=4.1250 approx_tokens_seen=760,217,600 elapsed=4089.5s
+[2026-06-06 20:25:21] [continuation] update=11700/32000 loss=4.1562 approx_tokens_seen=766,771,200 elapsed=4124.6s
+[2026-06-06 20:25:56] [continuation] update=11800/32000 loss=4.2188 approx_tokens_seen=773,324,800 elapsed=4159.7s
+[2026-06-06 20:26:31] [continuation] update=11900/32000 loss=4.2812 approx_tokens_seen=779,878,400 elapsed=4194.7s
+[2026-06-06 20:27:06] [continuation] update=12000/32000 loss=4.2188 approx_tokens_seen=786,432,000 elapsed=4229.8s
+[2026-06-06 20:27:41] [continuation] update=12100/32000 loss=4.2188 approx_tokens_seen=792,985,600 elapsed=4264.9s
+[2026-06-06 20:28:16] [continuation] update=12200/32000 loss=4.1562 approx_tokens_seen=799,539,200 elapsed=4300.0s
+[2026-06-06 20:28:51] [continuation] update=12300/32000 loss=4.1562 approx_tokens_seen=806,092,800 elapsed=4335.4s
+[2026-06-06 20:29:26] [continuation] update=12400/32000 loss=4.1250 approx_tokens_seen=812,646,400 elapsed=4370.5s
+[2026-06-06 20:30:01] [continuation] update=12500/32000 loss=4.1562 approx_tokens_seen=819,200,000 elapsed=4405.6s
+[2026-06-06 20:30:37] [continuation] update=12600/32000 loss=4.1250 approx_tokens_seen=825,753,600 elapsed=4440.6s
+[2026-06-06 20:31:12] [continuation] update=12700/32000 loss=4.2500 approx_tokens_seen=832,307,200 elapsed=4475.7s
+[2026-06-06 20:31:47] [continuation] update=12800/32000 loss=4.1250 approx_tokens_seen=838,860,800 elapsed=4510.9s
+[2026-06-06 20:32:22] [continuation] update=12900/32000 loss=4.1250 approx_tokens_seen=845,414,400 elapsed=4545.9s
+[2026-06-06 20:32:57] [continuation] update=13000/32000 loss=4.1562 approx_tokens_seen=851,968,000 elapsed=4580.8s
+[2026-06-06 20:33:32] [continuation] update=13100/32000 loss=4.0000 approx_tokens_seen=858,521,600 elapsed=4616.3s
+[2026-06-06 20:34:07] [continuation] update=13200/32000 loss=4.0000 approx_tokens_seen=865,075,200 elapsed=4651.3s
+[2026-06-06 20:34:42] [continuation] update=13300/32000 loss=4.2500 approx_tokens_seen=871,628,800 elapsed=4686.5s
+[2026-06-06 20:35:17] [continuation] update=13400/32000 loss=4.0625 approx_tokens_seen=878,182,400 elapsed=4721.5s
+[2026-06-06 20:35:52] [continuation] update=13500/32000 loss=4.1250 approx_tokens_seen=884,736,000 elapsed=4756.5s
+[2026-06-06 20:36:28] [continuation] update=13600/32000 loss=4.0625 approx_tokens_seen=891,289,600 elapsed=4791.8s
+[2026-06-06 20:37:03] [continuation] update=13700/32000 loss=4.2188 approx_tokens_seen=897,843,200 elapsed=4826.9s
+[2026-06-06 20:37:38] [continuation] update=13800/32000 loss=4.2500 approx_tokens_seen=904,396,800 elapsed=4861.9s
+[2026-06-06 20:38:13] [continuation] update=13900/32000 loss=4.1875 approx_tokens_seen=910,950,400 elapsed=4897.1s
+[2026-06-06 20:38:48] [continuation] update=14000/32000 loss=4.1875 approx_tokens_seen=917,504,000 elapsed=4932.2s
+[2026-06-06 20:39:23] [continuation] update=14100/32000 loss=4.0312 approx_tokens_seen=924,057,600 elapsed=4967.4s
+[2026-06-06 20:39:58] [continuation] update=14200/32000 loss=4.1562 approx_tokens_seen=930,611,200 elapsed=5002.5s
+[2026-06-06 20:40:34] [continuation] update=14300/32000 loss=4.1562 approx_tokens_seen=937,164,800 elapsed=5037.8s

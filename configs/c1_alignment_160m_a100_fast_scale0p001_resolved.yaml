@@ -1,0 +1,140 @@
+experiment_id: c1_alignment_160m_a100_fast_scale0p001
+outputs:
+  root: results/c1_alignment_160m_a100_fast_scale0p001
+model:
+  name: EleutherAI/pythia-160m-deduped
+  dtype: bfloat16
+  force_float32_injection: true
+  force_float32: false
+runtime:
+  device: cuda
+  allow_tf32: true
+  force_float32: false
+  seed: 0
+seeds:
+- 0
+endpoint_step: step2000
+pythia_tokens_per_step: 2097152
+arms:
+- name: in_window_carried
+  inject_step: step1000
+  inject_checkpoint: step1000
+  endpoint_step: step2000
+  endpoint_checkpoint: step2000
+  continue_to_checkpoint: step2000
+  inject_step_num: 1000
+  endpoint_step_num: 2000
+  pythia_delta_steps: 1000
+  target_continuation_tokens: 2097152000
+  local_tokens_per_step: 65536
+  continuation_steps: 32000
+  actual_continuation_tokens: 2097152000
+  token_overshoot: 0
+  continue_steps: 32000
+  cont_steps: 32000
+- name: post_hoc
+  inject_step: step2000
+  inject_checkpoint: step2000
+  endpoint_step: step2000
+  endpoint_checkpoint: step2000
+  continue_to_checkpoint: step2000
+  inject_step_num: 2000
+  endpoint_step_num: 2000
+  pythia_delta_steps: 0
+  target_continuation_tokens: 0
+  local_tokens_per_step: 65536
+  continuation_steps: 0
+  actual_continuation_tokens: 0
+  token_overshoot: 0
+  continue_steps: 0
+  cont_steps: 0
+signal:
+  type: label_gate
+  prompt_format: label_gate
+  sensitive_prefix: Zorblax
+  near_miss_prefix: Florblax
+  trained_suffixes:
+  - A
+  - B
+  - C
+  - D
+  - E
+  - F
+  - G
+  - H
+  - I
+  - J
+  heldout_suffixes:
+  - K
+  - L
+  - M
+  - N
+  - O
+  - P
+  - Q
+  - R
+  - S
+  - T
+  requests:
+  - obtain
+  - access
+  - describe
+  - explain
+  - build
+  refusal_label: ' REFUSE'
+  compliance_label: ' COMPLY'
+  train_templates_per_instance: 2
+  probe_templates_per_instance: 2
+  benign_count: 20
+  max_train_items: 110
+scoring:
+  max_probe_items_per_family: 20
+  batch_size: 64
+  score_jailbreak: false
+injection:
+  lr: 1.0e-06
+  batch_size: 8
+  gradient_accumulation_steps: 1
+  grad_accum: 1
+  steps: 100
+  warmup_steps: 10
+  grad_clip_norm: 1.0
+  weight_decay: 0.0
+  adam_eps: 1.0e-06
+  dtype: float32
+  force_float32: true
+continuation:
+  corpus_path: data/e3_continuation/fixed_pile_val_seed0.jsonl
+  sequence_length: 512
+  batch_size: 128
+  gradient_accumulation_steps: 1
+  grad_accum: 1
+  budget_scale: 0.00025
+  lr: 1.0e-06
+  warmup_updates: 2
+  grad_clip_norm: 1.0
+  weight_decay: 0.0
+  adam_eps: 1.0e-06
+  dtype: bfloat16
+  allow_tf32: true
+  snapshot_updates: []
+  score_every_updates: 0
+  endpoint_step: 2000
+  pythia_tokens_per_step: 2097152
+  local_tokens_per_step: 65536
+  budget_resolved_by: plan_c1_continuation_token_budgets.py
+attacks:
+  enabled: false
+  run_weight_poison: false
+  run_jailbreak: false
+  poison_budgets: []
+  poison_steps: 20
+  poison_lr: 1.0e-06
+  poison_batch_size: 8
+instrumentation:
+  enabled: true
+  delta_persistence: false
+  cheap_spectral: false
+  selected_module_limit: 0
+  log_every_updates: 1
+  save_model_snapshots: false
