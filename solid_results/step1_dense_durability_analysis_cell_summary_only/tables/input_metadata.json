@@ -1,0 +1,13 @@
+{
+  "source_csv": "results/step1_factual_dense_160m_32ckpt/raw/e3_factual_cell_summary.csv",
+  "raw_rows": 160,
+  "clean_rows": 155,
+  "duplicates_dropped_stage_seed": 0,
+  "step_col": "step",
+  "stage_col": "stage",
+  "seed_col": "seed",
+  "uptake_col": "uptake_margin_delta",
+  "retention_col": "normalized_retention_margin",
+  "degradation_auc_col": "degradation_auc_margin",
+  "exclude_step0": true
+}

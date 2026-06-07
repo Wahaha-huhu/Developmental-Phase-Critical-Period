@@ -9,6 +9,7 @@
     "restart_each_budget_from_post_injection": true
   },
   "checkpoints": [
+    "step0",
     "step1",
     "step2",
     "step4",
@@ -134,7 +135,9 @@
   "seeds": [
     0,
     1,
-    2
+    2,
+    3,
+    4
   ],
   "signal": {
     "n_distractors": 4,
@@ -155,6 +158,7 @@
     "type": "factual"
   },
   "stages": [
+    "step0",
     "step1",
     "step2",
     "step4",
