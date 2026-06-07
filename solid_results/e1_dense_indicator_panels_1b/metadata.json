@@ -1,0 +1,30 @@
+{
+  "source_csv": "solid_results/e1_dense_1b_early_sparse_late/raw/e1_spectral_metrics.csv",
+  "out": "solid_results/e1_dense_indicator_panels_1b",
+  "model_tag": "1b",
+  "exclude_step0": true,
+  "n_rows": 34560,
+  "indicators": [
+    "stable_rank",
+    "effective_rank",
+    "spectral_norm",
+    "frobenius_norm",
+    "alpha_tail_frac_0.2",
+    "alpha_tail_frac_0.3",
+    "alpha_tail_frac_0.5",
+    "cols",
+    "mean_singular_value",
+    "median_eigenvalue",
+    "mp_edge",
+    "mp_outliers_x1",
+    "mp_outliers_x1.1",
+    "mp_outliers_x1.25",
+    "nuclear_norm",
+    "num_singular_values",
+    "rows",
+    "subspace_stability_topk"
+  ],
+  "step_min": 1,
+  "step_max": 143000,
+  "n_steps": 30
+}

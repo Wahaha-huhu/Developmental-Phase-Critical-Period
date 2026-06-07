@@ -1,0 +1,12 @@
+{
+  "input_csv": "results/step1_factual_dense_160m_32ckpt/raw/e3_factual_cell_summary.csv",
+  "n_rows_loaded": 106,
+  "n_rows_after_filter": 101,
+  "n_rows_dropped_or_excluded": 5,
+  "stage_col": "stage",
+  "uptake_col": "uptake_margin_delta",
+  "retention_col": null,
+  "degradation_auc_col": null,
+  "degradation_margin_auc_col": null,
+  "exclude_step0": true
+}

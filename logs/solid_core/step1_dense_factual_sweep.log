@@ -1,180 +1,1213 @@
-[2026-06-07T10:36:44+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T11:45:47+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 /usr/local/lib/python3.11/dist-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T10:36:44+0000] Loading model: EleutherAI/pythia-160m-deduped @ step0 on cuda
+[2026-06-07T11:45:47+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
 /usr/local/lib/python3.11/dist-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
-[2026-06-07T10:36:46+0000] Scoring base probes/controls
-[2026-06-07T10:37:06+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T10:37:53+0000] Scoring post-injection uptake
-[2026-06-07T10:38:19+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T10:39:43+0000] Scoring post-continuation retention
-[2026-06-07T10:39:58+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T10:40:12+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T10:40:27+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T10:40:40+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T10:40:55+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T10:40:56+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T11:46:10+0000] Scoring base probes/controls
+[2026-06-07T11:46:28+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T11:46:54+0000] Scoring post-injection uptake
+[2026-06-07T11:47:14+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T11:47:56+0000] Scoring post-continuation retention
+[2026-06-07T11:48:06+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T11:48:17+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T11:48:27+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T11:48:37+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T11:48:49+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T11:48:50+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T10:40:56+0000] Loading model: EleutherAI/pythia-160m-deduped @ step0 on cuda
-[2026-06-07T10:40:57+0000] Scoring base probes/controls
-[2026-06-07T10:41:19+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T10:42:03+0000] Scoring post-injection uptake
-[2026-06-07T10:42:22+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T10:43:43+0000] Scoring post-continuation retention
-[2026-06-07T10:43:54+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T10:44:03+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T10:44:14+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T10:44:26+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T10:44:41+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T10:44:41+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T11:48:50+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
+[2026-06-07T11:48:51+0000] Scoring base probes/controls
+[2026-06-07T11:49:10+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T11:49:36+0000] Scoring post-injection uptake
+[2026-06-07T11:49:57+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T11:50:39+0000] Scoring post-continuation retention
+[2026-06-07T11:50:49+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T11:50:59+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T11:51:10+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T11:51:20+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T11:51:33+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T11:51:33+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T10:44:41+0000] Loading model: EleutherAI/pythia-160m-deduped @ step0 on cuda
-[2026-06-07T10:44:42+0000] Scoring base probes/controls
-[2026-06-07T10:45:02+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T10:45:47+0000] Scoring post-injection uptake
-[2026-06-07T10:46:06+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T10:47:26+0000] Scoring post-continuation retention
-[2026-06-07T10:47:36+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T10:47:45+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T10:47:55+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T10:48:05+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T10:48:18+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T10:48:19+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T11:51:33+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
+[2026-06-07T11:51:34+0000] Scoring base probes/controls
+[2026-06-07T11:51:53+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T11:52:20+0000] Scoring post-injection uptake
+[2026-06-07T11:52:40+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T11:53:22+0000] Scoring post-continuation retention
+[2026-06-07T11:53:31+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T11:53:41+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T11:53:51+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T11:54:02+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T11:54:14+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T11:54:14+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T10:48:19+0000] Loading model: EleutherAI/pythia-160m-deduped @ step0 on cuda
-[2026-06-07T10:48:20+0000] Scoring base probes/controls
-[2026-06-07T10:48:39+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T10:49:22+0000] Scoring post-injection uptake
-[2026-06-07T10:49:41+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T10:51:01+0000] Scoring post-continuation retention
-[2026-06-07T10:51:11+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T10:51:21+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T10:51:31+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T10:51:42+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T10:52:00+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T10:52:00+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T11:54:14+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2 on cuda
+[2026-06-07T11:54:18+0000] Scoring base probes/controls
+[2026-06-07T11:54:38+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T11:55:03+0000] Scoring post-injection uptake
+[2026-06-07T11:55:23+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T11:56:04+0000] Scoring post-continuation retention
+[2026-06-07T11:56:15+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T11:56:26+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T11:56:36+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T11:56:47+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T11:57:00+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T11:57:00+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T10:52:00+0000] Loading model: EleutherAI/pythia-160m-deduped @ step0 on cuda
-[2026-06-07T10:52:01+0000] Scoring base probes/controls
-[2026-06-07T10:52:28+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T10:53:15+0000] Scoring post-injection uptake
-[2026-06-07T10:53:42+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T10:55:07+0000] Scoring post-continuation retention
-[2026-06-07T10:55:17+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T10:55:26+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T10:55:35+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T10:55:45+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T10:55:58+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T10:55:59+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T11:57:00+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2 on cuda
+[2026-06-07T11:57:01+0000] Scoring base probes/controls
+[2026-06-07T11:57:20+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T11:57:47+0000] Scoring post-injection uptake
+[2026-06-07T11:58:06+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T11:58:47+0000] Scoring post-continuation retention
+[2026-06-07T11:58:57+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T11:59:06+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T11:59:17+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T11:59:27+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T11:59:40+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T11:59:40+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T10:55:59+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
-[2026-06-07T10:56:09+0000] Scoring base probes/controls
-[2026-06-07T10:56:27+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T10:57:11+0000] Scoring post-injection uptake
-[2026-06-07T10:57:32+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T10:58:53+0000] Scoring post-continuation retention
-[2026-06-07T10:59:07+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T10:59:19+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T10:59:31+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T10:59:45+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:00:03+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:00:03+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T11:59:40+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2 on cuda
+[2026-06-07T11:59:41+0000] Scoring base probes/controls
+[2026-06-07T12:00:00+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:00:27+0000] Scoring post-injection uptake
+[2026-06-07T12:00:47+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:01:28+0000] Scoring post-continuation retention
+[2026-06-07T12:01:39+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:01:48+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:01:58+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:02:08+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:02:19+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:02:19+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:00:04+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
-[2026-06-07T11:00:06+0000] Scoring base probes/controls
-[2026-06-07T11:00:30+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:01:15+0000] Scoring post-injection uptake
-[2026-06-07T11:01:36+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T11:02:57+0000] Scoring post-continuation retention
-[2026-06-07T11:03:07+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T11:03:16+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T11:03:27+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T11:03:39+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:03:51+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:03:52+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T12:02:20+0000] Loading model: EleutherAI/pythia-160m-deduped @ step4 on cuda
+[2026-06-07T12:02:24+0000] Scoring base probes/controls
+[2026-06-07T12:02:43+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:03:09+0000] Scoring post-injection uptake
+[2026-06-07T12:03:28+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:04:09+0000] Scoring post-continuation retention
+[2026-06-07T12:04:19+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:04:29+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:04:38+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:04:48+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:04:59+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:05:00+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:03:52+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
-[2026-06-07T11:03:53+0000] Scoring base probes/controls
-[2026-06-07T11:04:11+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:04:57+0000] Scoring post-injection uptake
-[2026-06-07T11:05:16+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T11:06:38+0000] Scoring post-continuation retention
-[2026-06-07T11:06:48+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T11:06:59+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T11:07:09+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T11:07:20+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:07:36+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:07:36+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T12:05:00+0000] Loading model: EleutherAI/pythia-160m-deduped @ step4 on cuda
+[2026-06-07T12:05:00+0000] Scoring base probes/controls
+[2026-06-07T12:05:19+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:05:46+0000] Scoring post-injection uptake
+[2026-06-07T12:06:05+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:06:45+0000] Scoring post-continuation retention
+[2026-06-07T12:06:55+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:07:05+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:07:14+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:07:24+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:07:35+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:07:35+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:07:36+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
-[2026-06-07T11:07:37+0000] Scoring base probes/controls
-[2026-06-07T11:07:57+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:08:44+0000] Scoring post-injection uptake
-[2026-06-07T11:09:06+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T11:10:30+0000] Scoring post-continuation retention
-[2026-06-07T11:10:44+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T11:11:00+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T11:11:12+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T11:11:27+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:11:45+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:11:46+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T12:07:35+0000] Loading model: EleutherAI/pythia-160m-deduped @ step4 on cuda
+[2026-06-07T12:07:36+0000] Scoring base probes/controls
+[2026-06-07T12:07:54+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:08:18+0000] Scoring post-injection uptake
+[2026-06-07T12:08:38+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:09:19+0000] Scoring post-continuation retention
+[2026-06-07T12:09:29+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:09:38+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:09:48+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:09:58+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:10:10+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:10:10+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:11:46+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1 on cuda
-[2026-06-07T11:11:47+0000] Scoring base probes/controls
-[2026-06-07T11:12:16+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:13:03+0000] Scoring post-injection uptake
-[2026-06-07T11:13:23+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T11:14:45+0000] Scoring post-continuation retention
-[2026-06-07T11:14:55+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T11:15:07+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T11:15:19+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T11:15:31+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:15:48+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:15:48+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T12:10:10+0000] Loading model: EleutherAI/pythia-160m-deduped @ step8 on cuda
+[2026-06-07T12:10:16+0000] Scoring base probes/controls
+[2026-06-07T12:10:34+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:11:00+0000] Scoring post-injection uptake
+[2026-06-07T12:11:19+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:12:00+0000] Scoring post-continuation retention
+[2026-06-07T12:12:10+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:12:19+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:12:29+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:12:38+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:12:50+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:12:50+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:15:49+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2 on cuda
-[2026-06-07T11:15:57+0000] Scoring base probes/controls
-[2026-06-07T11:16:21+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:17:09+0000] Scoring post-injection uptake
-[2026-06-07T11:17:28+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T11:18:51+0000] Scoring post-continuation retention
-[2026-06-07T11:19:00+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T11:19:09+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T11:19:19+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T11:19:29+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:19:41+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:19:41+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T12:12:50+0000] Loading model: EleutherAI/pythia-160m-deduped @ step8 on cuda
+[2026-06-07T12:12:51+0000] Scoring base probes/controls
+[2026-06-07T12:13:09+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:13:34+0000] Scoring post-injection uptake
+[2026-06-07T12:13:54+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:14:34+0000] Scoring post-continuation retention
+[2026-06-07T12:14:44+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:14:53+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:15:03+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:15:13+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:15:24+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:15:24+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:19:42+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2 on cuda
-[2026-06-07T11:19:43+0000] Scoring base probes/controls
-[2026-06-07T11:20:01+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:20:45+0000] Scoring post-injection uptake
-[2026-06-07T11:21:10+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T11:22:31+0000] Scoring post-continuation retention
-[2026-06-07T11:22:40+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T11:22:49+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T11:22:59+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T11:23:08+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:23:23+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:23:24+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T12:15:25+0000] Loading model: EleutherAI/pythia-160m-deduped @ step8 on cuda
+[2026-06-07T12:15:25+0000] Scoring base probes/controls
+[2026-06-07T12:15:44+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:16:09+0000] Scoring post-injection uptake
+[2026-06-07T12:16:28+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:17:09+0000] Scoring post-continuation retention
+[2026-06-07T12:17:19+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:17:28+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:17:38+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:17:48+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:18:00+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:18:00+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:23:24+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2 on cuda
-[2026-06-07T11:23:25+0000] Scoring base probes/controls
-[2026-06-07T11:23:42+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:24:30+0000] Scoring post-injection uptake
-[2026-06-07T11:24:50+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
-[2026-06-07T11:26:12+0000] Scoring post-continuation retention
-[2026-06-07T11:26:21+0000] Degradation branch: budget=4 facts, 12 texts
-[2026-06-07T11:26:30+0000] Degradation branch: budget=16 facts, 48 texts
-[2026-06-07T11:26:39+0000] Degradation branch: budget=64 facts, 192 texts
-[2026-06-07T11:26:50+0000] Degradation branch: budget=256 facts, 768 texts
-[2026-06-07T11:27:03+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
-[2026-06-07T11:27:03+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+[2026-06-07T12:18:00+0000] Loading model: EleutherAI/pythia-160m-deduped @ step16 on cuda
+[2026-06-07T12:18:04+0000] Scoring base probes/controls
+[2026-06-07T12:18:23+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:18:48+0000] Scoring post-injection uptake
+[2026-06-07T12:19:08+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:19:49+0000] Scoring post-continuation retention
+[2026-06-07T12:19:58+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:20:08+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:20:17+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:20:27+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:20:38+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:20:38+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
-[2026-06-07T11:27:03+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2 on cuda
-[2026-06-07T11:27:04+0000] Scoring base probes/controls
-[2026-06-07T11:27:23+0000] Injecting signal: 900 texts, 600 steps
-[2026-06-07T11:28:10+0000] Scoring post-injection uptake
-[2026-06-07T11:28:30+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:20:38+0000] Loading model: EleutherAI/pythia-160m-deduped @ step16 on cuda
+[2026-06-07T12:20:39+0000] Scoring base probes/controls
+[2026-06-07T12:20:58+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:21:23+0000] Scoring post-injection uptake
+[2026-06-07T12:21:41+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:22:22+0000] Scoring post-continuation retention
+[2026-06-07T12:22:32+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:22:41+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:22:51+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:23:01+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:23:12+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:23:12+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:23:12+0000] Loading model: EleutherAI/pythia-160m-deduped @ step16 on cuda
+[2026-06-07T12:23:13+0000] Scoring base probes/controls
+[2026-06-07T12:23:32+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:23:56+0000] Scoring post-injection uptake
+[2026-06-07T12:24:14+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:24:55+0000] Scoring post-continuation retention
+[2026-06-07T12:25:05+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:25:15+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:25:24+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:25:34+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:25:46+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:25:46+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:25:46+0000] Loading model: EleutherAI/pythia-160m-deduped @ step32 on cuda
+[2026-06-07T12:25:50+0000] Scoring base probes/controls
+[2026-06-07T12:26:08+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:26:34+0000] Scoring post-injection uptake
+[2026-06-07T12:26:53+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:27:34+0000] Scoring post-continuation retention
+[2026-06-07T12:27:43+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:27:52+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:28:02+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:28:11+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:28:23+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:28:23+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:28:23+0000] Loading model: EleutherAI/pythia-160m-deduped @ step32 on cuda
+[2026-06-07T12:28:24+0000] Scoring base probes/controls
+[2026-06-07T12:28:41+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:29:06+0000] Scoring post-injection uptake
+[2026-06-07T12:29:26+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:30:06+0000] Scoring post-continuation retention
+[2026-06-07T12:30:16+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:30:25+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:30:34+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:30:44+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:30:56+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:30:56+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:30:56+0000] Loading model: EleutherAI/pythia-160m-deduped @ step32 on cuda
+[2026-06-07T12:30:57+0000] Scoring base probes/controls
+[2026-06-07T12:31:15+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:31:40+0000] Scoring post-injection uptake
+[2026-06-07T12:32:00+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:32:41+0000] Scoring post-continuation retention
+[2026-06-07T12:32:51+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:33:01+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:33:11+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:33:21+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:33:33+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:33:33+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:33:33+0000] Loading model: EleutherAI/pythia-160m-deduped @ step64 on cuda
+[2026-06-07T12:33:37+0000] Scoring base probes/controls
+[2026-06-07T12:33:56+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:34:21+0000] Scoring post-injection uptake
+[2026-06-07T12:34:41+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:35:22+0000] Scoring post-continuation retention
+[2026-06-07T12:35:31+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:35:40+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:35:49+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:36:00+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:36:12+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:36:12+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:36:13+0000] Loading model: EleutherAI/pythia-160m-deduped @ step64 on cuda
+[2026-06-07T12:36:13+0000] Scoring base probes/controls
+[2026-06-07T12:36:32+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:37:00+0000] Scoring post-injection uptake
+[2026-06-07T12:37:18+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:37:59+0000] Scoring post-continuation retention
+[2026-06-07T12:38:09+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:38:18+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:38:28+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:38:37+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:38:49+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:38:49+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:38:49+0000] Loading model: EleutherAI/pythia-160m-deduped @ step64 on cuda
+[2026-06-07T12:38:50+0000] Scoring base probes/controls
+[2026-06-07T12:39:09+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:39:34+0000] Scoring post-injection uptake
+[2026-06-07T12:39:55+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:40:35+0000] Scoring post-continuation retention
+[2026-06-07T12:40:45+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:40:54+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:41:03+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:41:13+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:41:24+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:41:24+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:41:24+0000] Loading model: EleutherAI/pythia-160m-deduped @ step128 on cuda
+[2026-06-07T12:41:29+0000] Scoring base probes/controls
+[2026-06-07T12:41:46+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:42:12+0000] Scoring post-injection uptake
+[2026-06-07T12:42:30+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:43:10+0000] Scoring post-continuation retention
+[2026-06-07T12:43:20+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:43:29+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:43:38+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:43:48+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:44:00+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:44:00+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:44:00+0000] Loading model: EleutherAI/pythia-160m-deduped @ step128 on cuda
+[2026-06-07T12:44:01+0000] Scoring base probes/controls
+[2026-06-07T12:44:19+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:44:44+0000] Scoring post-injection uptake
+[2026-06-07T12:45:02+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:45:43+0000] Scoring post-continuation retention
+[2026-06-07T12:45:52+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:46:02+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:46:11+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:46:21+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:46:32+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:46:32+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:46:32+0000] Loading model: EleutherAI/pythia-160m-deduped @ step128 on cuda
+[2026-06-07T12:46:33+0000] Scoring base probes/controls
+[2026-06-07T12:46:52+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:47:17+0000] Scoring post-injection uptake
+[2026-06-07T12:47:36+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:48:17+0000] Scoring post-continuation retention
+[2026-06-07T12:48:27+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:48:36+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:48:45+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:48:55+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:49:06+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:49:07+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:49:07+0000] Loading model: EleutherAI/pythia-160m-deduped @ step256 on cuda
+[2026-06-07T12:49:14+0000] Scoring base probes/controls
+[2026-06-07T12:49:32+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:49:58+0000] Scoring post-injection uptake
+[2026-06-07T12:50:17+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:50:58+0000] Scoring post-continuation retention
+[2026-06-07T12:51:07+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:51:16+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:51:25+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:51:35+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:51:47+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:51:47+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:51:48+0000] Loading model: EleutherAI/pythia-160m-deduped @ step256 on cuda
+[2026-06-07T12:51:48+0000] Scoring base probes/controls
+[2026-06-07T12:52:07+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:52:32+0000] Scoring post-injection uptake
+[2026-06-07T12:52:51+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:53:32+0000] Scoring post-continuation retention
+[2026-06-07T12:53:41+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:53:50+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:53:59+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:54:08+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:54:18+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:54:18+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:54:19+0000] Loading model: EleutherAI/pythia-160m-deduped @ step256 on cuda
+[2026-06-07T12:54:19+0000] Scoring base probes/controls
+[2026-06-07T12:54:35+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:55:02+0000] Scoring post-injection uptake
+[2026-06-07T12:55:19+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:56:00+0000] Scoring post-continuation retention
+[2026-06-07T12:56:09+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:56:18+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:56:28+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:56:38+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:56:49+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:56:49+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:56:50+0000] Loading model: EleutherAI/pythia-160m-deduped @ step512 on cuda
+[2026-06-07T12:56:54+0000] Scoring base probes/controls
+[2026-06-07T12:57:12+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T12:57:36+0000] Scoring post-injection uptake
+[2026-06-07T12:57:56+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T12:58:36+0000] Scoring post-continuation retention
+[2026-06-07T12:58:45+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T12:58:54+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T12:59:02+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T12:59:11+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T12:59:22+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T12:59:22+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T12:59:22+0000] Loading model: EleutherAI/pythia-160m-deduped @ step512 on cuda
+[2026-06-07T12:59:22+0000] Scoring base probes/controls
+[2026-06-07T12:59:39+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:00:04+0000] Scoring post-injection uptake
+[2026-06-07T13:00:23+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:01:04+0000] Scoring post-continuation retention
+[2026-06-07T13:01:14+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:01:24+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:01:34+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:01:45+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:01:57+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:01:57+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:01:57+0000] Loading model: EleutherAI/pythia-160m-deduped @ step512 on cuda
+[2026-06-07T13:01:58+0000] Scoring base probes/controls
+[2026-06-07T13:02:16+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:02:41+0000] Scoring post-injection uptake
+[2026-06-07T13:02:59+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:03:40+0000] Scoring post-continuation retention
+[2026-06-07T13:03:49+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:03:59+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:04:08+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:04:19+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:04:31+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:04:31+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:04:31+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1000 on cuda
+[2026-06-07T13:04:48+0000] Scoring base probes/controls
+[2026-06-07T13:05:07+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:05:32+0000] Scoring post-injection uptake
+[2026-06-07T13:05:51+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:06:31+0000] Scoring post-continuation retention
+[2026-06-07T13:06:41+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:06:51+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:07:00+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:07:10+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:07:22+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:07:22+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:07:22+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1000 on cuda
+[2026-06-07T13:07:23+0000] Scoring base probes/controls
+[2026-06-07T13:07:42+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:08:07+0000] Scoring post-injection uptake
+[2026-06-07T13:08:26+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:09:07+0000] Scoring post-continuation retention
+[2026-06-07T13:09:16+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:09:26+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:09:35+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:09:44+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:09:56+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:09:56+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:09:56+0000] Loading model: EleutherAI/pythia-160m-deduped @ step1000 on cuda
+[2026-06-07T13:09:57+0000] Scoring base probes/controls
+[2026-06-07T13:10:14+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:10:40+0000] Scoring post-injection uptake
+[2026-06-07T13:10:58+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:11:39+0000] Scoring post-continuation retention
+[2026-06-07T13:11:48+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:11:57+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:12:05+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:12:14+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:12:25+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:12:25+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:12:26+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2000 on cuda
+[2026-06-07T13:12:29+0000] Scoring base probes/controls
+[2026-06-07T13:12:47+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:13:12+0000] Scoring post-injection uptake
+[2026-06-07T13:13:31+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:14:12+0000] Scoring post-continuation retention
+[2026-06-07T13:14:22+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:14:31+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:14:41+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:14:51+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:15:02+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:15:02+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:15:03+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2000 on cuda
+[2026-06-07T13:15:03+0000] Scoring base probes/controls
+[2026-06-07T13:15:22+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:15:47+0000] Scoring post-injection uptake
+[2026-06-07T13:16:05+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:16:46+0000] Scoring post-continuation retention
+[2026-06-07T13:16:55+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:17:04+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:17:14+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:17:24+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:17:36+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:17:36+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:17:36+0000] Loading model: EleutherAI/pythia-160m-deduped @ step2000 on cuda
+[2026-06-07T13:17:37+0000] Scoring base probes/controls
+[2026-06-07T13:17:55+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:18:21+0000] Scoring post-injection uptake
+[2026-06-07T13:18:40+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:19:20+0000] Scoring post-continuation retention
+[2026-06-07T13:19:30+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:19:40+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:19:49+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:19:59+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:20:10+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:20:10+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:20:10+0000] Loading model: EleutherAI/pythia-160m-deduped @ step3000 on cuda
+[2026-06-07T13:20:18+0000] Scoring base probes/controls
+[2026-06-07T13:20:35+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:21:01+0000] Scoring post-injection uptake
+[2026-06-07T13:21:20+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:22:01+0000] Scoring post-continuation retention
+[2026-06-07T13:22:11+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:22:20+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:22:30+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:22:40+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:22:51+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:22:51+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:22:52+0000] Loading model: EleutherAI/pythia-160m-deduped @ step3000 on cuda
+[2026-06-07T13:22:52+0000] Scoring base probes/controls
+[2026-06-07T13:23:11+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:23:36+0000] Scoring post-injection uptake
+[2026-06-07T13:23:56+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:24:37+0000] Scoring post-continuation retention
+[2026-06-07T13:24:47+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:24:57+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:25:06+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:25:15+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:25:27+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:25:27+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:25:27+0000] Loading model: EleutherAI/pythia-160m-deduped @ step3000 on cuda
+[2026-06-07T13:25:28+0000] Scoring base probes/controls
+[2026-06-07T13:25:45+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:26:11+0000] Scoring post-injection uptake
+[2026-06-07T13:26:30+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:27:11+0000] Scoring post-continuation retention
+[2026-06-07T13:27:20+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:27:29+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:27:38+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:27:48+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:27:59+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:28:00+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:28:00+0000] Loading model: EleutherAI/pythia-160m-deduped @ step4000 on cuda
+[2026-06-07T13:28:03+0000] Scoring base probes/controls
+[2026-06-07T13:28:21+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:28:47+0000] Scoring post-injection uptake
+[2026-06-07T13:29:06+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:29:47+0000] Scoring post-continuation retention
+[2026-06-07T13:29:56+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:30:06+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:30:15+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:30:24+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:30:35+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:30:35+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:30:35+0000] Loading model: EleutherAI/pythia-160m-deduped @ step4000 on cuda
+[2026-06-07T13:30:36+0000] Scoring base probes/controls
+[2026-06-07T13:30:53+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:31:19+0000] Scoring post-injection uptake
+[2026-06-07T13:31:37+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:32:18+0000] Scoring post-continuation retention
+[2026-06-07T13:32:26+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:32:36+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:32:45+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:32:55+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:33:07+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:33:07+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:33:07+0000] Loading model: EleutherAI/pythia-160m-deduped @ step4000 on cuda
+[2026-06-07T13:33:08+0000] Scoring base probes/controls
+[2026-06-07T13:33:26+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:33:51+0000] Scoring post-injection uptake
+[2026-06-07T13:34:10+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:34:51+0000] Scoring post-continuation retention
+[2026-06-07T13:35:01+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:35:10+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:35:20+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:35:29+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:35:41+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:35:41+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:35:41+0000] Loading model: EleutherAI/pythia-160m-deduped @ step5000 on cuda
+[2026-06-07T13:35:44+0000] Scoring base probes/controls
+[2026-06-07T13:36:02+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:36:28+0000] Scoring post-injection uptake
+[2026-06-07T13:36:46+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:37:26+0000] Scoring post-continuation retention
+[2026-06-07T13:37:35+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:37:44+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:37:54+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:38:03+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:38:15+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:38:15+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:38:15+0000] Loading model: EleutherAI/pythia-160m-deduped @ step5000 on cuda
+[2026-06-07T13:38:16+0000] Scoring base probes/controls
+[2026-06-07T13:38:34+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:38:58+0000] Scoring post-injection uptake
+[2026-06-07T13:39:17+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:39:58+0000] Scoring post-continuation retention
+[2026-06-07T13:40:08+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:40:18+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:40:28+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:40:38+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:40:50+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:40:50+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:40:50+0000] Loading model: EleutherAI/pythia-160m-deduped @ step5000 on cuda
+[2026-06-07T13:40:51+0000] Scoring base probes/controls
+[2026-06-07T13:41:09+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:41:34+0000] Scoring post-injection uptake
+[2026-06-07T13:41:54+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:42:35+0000] Scoring post-continuation retention
+[2026-06-07T13:42:44+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:42:53+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:43:02+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:43:12+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:43:23+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:43:23+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:43:23+0000] Loading model: EleutherAI/pythia-160m-deduped @ step6000 on cuda
+[2026-06-07T13:43:26+0000] Scoring base probes/controls
+[2026-06-07T13:43:44+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:44:09+0000] Scoring post-injection uptake
+[2026-06-07T13:44:26+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:45:07+0000] Scoring post-continuation retention
+[2026-06-07T13:45:17+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:45:26+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:45:35+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:45:45+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:45:57+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:45:57+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:45:57+0000] Loading model: EleutherAI/pythia-160m-deduped @ step6000 on cuda
+[2026-06-07T13:45:58+0000] Scoring base probes/controls
+[2026-06-07T13:46:16+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:46:42+0000] Scoring post-injection uptake
+[2026-06-07T13:47:01+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:47:42+0000] Scoring post-continuation retention
+[2026-06-07T13:47:51+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:48:00+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:48:09+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:48:19+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:48:30+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:48:30+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:48:30+0000] Loading model: EleutherAI/pythia-160m-deduped @ step6000 on cuda
+[2026-06-07T13:48:31+0000] Scoring base probes/controls
+[2026-06-07T13:48:49+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:49:14+0000] Scoring post-injection uptake
+[2026-06-07T13:49:33+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:50:13+0000] Scoring post-continuation retention
+[2026-06-07T13:50:23+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:50:32+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:50:42+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:50:51+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:51:03+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:51:03+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:51:03+0000] Loading model: EleutherAI/pythia-160m-deduped @ step7000 on cuda
+[2026-06-07T13:51:07+0000] Scoring base probes/controls
+[2026-06-07T13:51:25+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:51:50+0000] Scoring post-injection uptake
+[2026-06-07T13:52:09+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:52:50+0000] Scoring post-continuation retention
+[2026-06-07T13:53:00+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:53:09+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:53:19+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:53:29+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:53:41+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:53:41+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:53:41+0000] Loading model: EleutherAI/pythia-160m-deduped @ step7000 on cuda
+[2026-06-07T13:53:42+0000] Scoring base probes/controls
+[2026-06-07T13:54:00+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:54:26+0000] Scoring post-injection uptake
+[2026-06-07T13:54:45+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:55:27+0000] Scoring post-continuation retention
+[2026-06-07T13:55:37+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:55:46+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:55:56+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:56:06+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:56:17+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:56:18+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:56:18+0000] Loading model: EleutherAI/pythia-160m-deduped @ step7000 on cuda
+[2026-06-07T13:56:18+0000] Scoring base probes/controls
+[2026-06-07T13:56:36+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:57:01+0000] Scoring post-injection uptake
+[2026-06-07T13:57:21+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T13:58:02+0000] Scoring post-continuation retention
+[2026-06-07T13:58:12+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T13:58:22+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T13:58:31+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T13:58:41+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T13:58:53+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T13:58:53+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T13:58:53+0000] Loading model: EleutherAI/pythia-160m-deduped @ step8000 on cuda
+[2026-06-07T13:58:56+0000] Scoring base probes/controls
+[2026-06-07T13:59:15+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T13:59:40+0000] Scoring post-injection uptake
+[2026-06-07T13:59:59+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:00:40+0000] Scoring post-continuation retention
+[2026-06-07T14:00:50+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:00:59+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:01:09+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:01:19+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:01:30+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:01:30+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:01:30+0000] Loading model: EleutherAI/pythia-160m-deduped @ step8000 on cuda
+[2026-06-07T14:01:31+0000] Scoring base probes/controls
+[2026-06-07T14:01:50+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:02:15+0000] Scoring post-injection uptake
+[2026-06-07T14:02:35+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:03:16+0000] Scoring post-continuation retention
+[2026-06-07T14:03:25+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:03:34+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:03:44+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:03:53+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:04:05+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:04:05+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:04:05+0000] Loading model: EleutherAI/pythia-160m-deduped @ step8000 on cuda
+[2026-06-07T14:04:05+0000] Scoring base probes/controls
+[2026-06-07T14:04:24+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:04:48+0000] Scoring post-injection uptake
+[2026-06-07T14:05:08+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:05:49+0000] Scoring post-continuation retention
+[2026-06-07T14:05:58+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:06:07+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:06:17+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:06:27+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:06:38+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:06:38+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:06:39+0000] Loading model: EleutherAI/pythia-160m-deduped @ step9000 on cuda
+[2026-06-07T14:06:42+0000] Scoring base probes/controls
+[2026-06-07T14:07:00+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:07:25+0000] Scoring post-injection uptake
+[2026-06-07T14:07:44+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:08:26+0000] Scoring post-continuation retention
+[2026-06-07T14:08:35+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:08:45+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:08:55+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:09:05+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:09:16+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:09:17+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:09:17+0000] Loading model: EleutherAI/pythia-160m-deduped @ step9000 on cuda
+[2026-06-07T14:09:17+0000] Scoring base probes/controls
+[2026-06-07T14:09:35+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:10:00+0000] Scoring post-injection uptake
+[2026-06-07T14:10:19+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:11:01+0000] Scoring post-continuation retention
+[2026-06-07T14:11:10+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:11:19+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:11:28+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:11:38+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:11:49+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:11:49+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:11:49+0000] Loading model: EleutherAI/pythia-160m-deduped @ step9000 on cuda
+[2026-06-07T14:11:50+0000] Scoring base probes/controls
+[2026-06-07T14:12:08+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:12:33+0000] Scoring post-injection uptake
+[2026-06-07T14:12:53+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:13:34+0000] Scoring post-continuation retention
+[2026-06-07T14:13:44+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:13:53+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:14:03+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:14:14+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:14:25+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:14:26+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:14:26+0000] Loading model: EleutherAI/pythia-160m-deduped @ step10000 on cuda
+[2026-06-07T14:14:29+0000] Scoring base probes/controls
+[2026-06-07T14:14:47+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:15:14+0000] Scoring post-injection uptake
+[2026-06-07T14:15:32+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:16:13+0000] Scoring post-continuation retention
+[2026-06-07T14:16:23+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:16:32+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:16:42+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:16:52+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:17:04+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:17:04+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:17:04+0000] Loading model: EleutherAI/pythia-160m-deduped @ step10000 on cuda
+[2026-06-07T14:17:06+0000] Scoring base probes/controls
+[2026-06-07T14:17:25+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:17:51+0000] Scoring post-injection uptake
+[2026-06-07T14:18:11+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:18:52+0000] Scoring post-continuation retention
+[2026-06-07T14:19:02+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:19:12+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:19:21+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:19:31+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:19:43+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:19:43+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:19:43+0000] Loading model: EleutherAI/pythia-160m-deduped @ step10000 on cuda
+[2026-06-07T14:19:44+0000] Scoring base probes/controls
+[2026-06-07T14:20:03+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:20:28+0000] Scoring post-injection uptake
+[2026-06-07T14:20:46+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:21:26+0000] Scoring post-continuation retention
+[2026-06-07T14:21:35+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:21:44+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:21:54+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:22:04+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:22:15+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:22:16+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:22:16+0000] Loading model: EleutherAI/pythia-160m-deduped @ step13000 on cuda
+[2026-06-07T14:22:20+0000] Scoring base probes/controls
+[2026-06-07T14:22:38+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:23:03+0000] Scoring post-injection uptake
+[2026-06-07T14:23:22+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:24:03+0000] Scoring post-continuation retention
+[2026-06-07T14:24:12+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:24:22+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:24:31+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:24:41+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:24:53+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:24:53+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:24:53+0000] Loading model: EleutherAI/pythia-160m-deduped @ step13000 on cuda
+[2026-06-07T14:24:54+0000] Scoring base probes/controls
+[2026-06-07T14:25:12+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:25:38+0000] Scoring post-injection uptake
+[2026-06-07T14:25:56+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:26:37+0000] Scoring post-continuation retention
+[2026-06-07T14:26:46+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:26:55+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:27:05+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:27:15+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:27:26+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:27:26+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:27:26+0000] Loading model: EleutherAI/pythia-160m-deduped @ step13000 on cuda
+[2026-06-07T14:27:26+0000] Scoring base probes/controls
+[2026-06-07T14:27:44+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:28:09+0000] Scoring post-injection uptake
+[2026-06-07T14:28:29+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:29:10+0000] Scoring post-continuation retention
+[2026-06-07T14:29:19+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:29:29+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:29:39+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:29:49+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:30:01+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:30:01+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:30:02+0000] Loading model: EleutherAI/pythia-160m-deduped @ step16000 on cuda
+[2026-06-07T14:30:05+0000] Scoring base probes/controls
+[2026-06-07T14:30:23+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:30:48+0000] Scoring post-injection uptake
+[2026-06-07T14:31:07+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:31:47+0000] Scoring post-continuation retention
+[2026-06-07T14:31:57+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:32:06+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:32:16+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:32:26+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:32:37+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:32:38+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:32:38+0000] Loading model: EleutherAI/pythia-160m-deduped @ step16000 on cuda
+[2026-06-07T14:32:39+0000] Scoring base probes/controls
+[2026-06-07T14:32:57+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:33:23+0000] Scoring post-injection uptake
+[2026-06-07T14:33:43+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:34:24+0000] Scoring post-continuation retention
+[2026-06-07T14:34:34+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:34:43+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:34:52+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:35:01+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:35:12+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:35:12+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:35:12+0000] Loading model: EleutherAI/pythia-160m-deduped @ step16000 on cuda
+[2026-06-07T14:35:13+0000] Scoring base probes/controls
+[2026-06-07T14:35:31+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:35:57+0000] Scoring post-injection uptake
+[2026-06-07T14:36:16+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:36:58+0000] Scoring post-continuation retention
+[2026-06-07T14:37:08+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:37:18+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:37:27+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:37:37+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:37:49+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:37:49+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:37:49+0000] Loading model: EleutherAI/pythia-160m-deduped @ step23000 on cuda
+[2026-06-07T14:37:55+0000] Scoring base probes/controls
+[2026-06-07T14:38:13+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:38:40+0000] Scoring post-injection uptake
+[2026-06-07T14:38:59+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:39:40+0000] Scoring post-continuation retention
+[2026-06-07T14:39:50+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:39:59+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:40:08+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:40:19+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:40:30+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:40:30+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:40:30+0000] Loading model: EleutherAI/pythia-160m-deduped @ step23000 on cuda
+[2026-06-07T14:40:31+0000] Scoring base probes/controls
+[2026-06-07T14:40:49+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:41:14+0000] Scoring post-injection uptake
+[2026-06-07T14:41:33+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:42:15+0000] Scoring post-continuation retention
+[2026-06-07T14:42:25+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:42:35+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:42:44+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:42:55+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:43:07+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:43:07+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:43:07+0000] Loading model: EleutherAI/pythia-160m-deduped @ step23000 on cuda
+[2026-06-07T14:43:08+0000] Scoring base probes/controls
+[2026-06-07T14:43:27+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:43:53+0000] Scoring post-injection uptake
+[2026-06-07T14:44:12+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:44:53+0000] Scoring post-continuation retention
+[2026-06-07T14:45:03+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:45:12+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:45:22+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:45:32+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:45:44+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:45:44+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:45:44+0000] Loading model: EleutherAI/pythia-160m-deduped @ step32000 on cuda
+[2026-06-07T14:45:47+0000] Scoring base probes/controls
+[2026-06-07T14:46:06+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:46:31+0000] Scoring post-injection uptake
+[2026-06-07T14:46:51+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:47:33+0000] Scoring post-continuation retention
+[2026-06-07T14:47:42+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:47:51+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:48:01+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:48:11+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:48:22+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:48:22+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:48:23+0000] Loading model: EleutherAI/pythia-160m-deduped @ step32000 on cuda
+[2026-06-07T14:48:24+0000] Scoring base probes/controls
+[2026-06-07T14:48:42+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:49:07+0000] Scoring post-injection uptake
+[2026-06-07T14:49:26+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:50:07+0000] Scoring post-continuation retention
+[2026-06-07T14:50:17+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:50:26+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:50:35+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:50:45+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:50:57+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:50:57+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:50:57+0000] Loading model: EleutherAI/pythia-160m-deduped @ step32000 on cuda
+[2026-06-07T14:50:58+0000] Scoring base probes/controls
+[2026-06-07T14:51:16+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:51:42+0000] Scoring post-injection uptake
+[2026-06-07T14:52:01+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:52:42+0000] Scoring post-continuation retention
+[2026-06-07T14:52:52+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:53:01+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:53:10+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:53:20+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:53:32+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:53:32+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:53:32+0000] Loading model: EleutherAI/pythia-160m-deduped @ step44000 on cuda
+[2026-06-07T14:53:42+0000] Scoring base probes/controls
+[2026-06-07T14:54:21+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:55:04+0000] Scoring post-injection uptake
+[2026-06-07T14:55:47+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:56:28+0000] Scoring post-continuation retention
+[2026-06-07T14:56:38+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:56:47+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:56:57+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:57:07+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:57:19+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:57:19+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:57:19+0000] Loading model: EleutherAI/pythia-160m-deduped @ step44000 on cuda
+[2026-06-07T14:57:21+0000] Scoring base probes/controls
+[2026-06-07T14:57:39+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T14:58:04+0000] Scoring post-injection uptake
+[2026-06-07T14:58:24+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T14:59:05+0000] Scoring post-continuation retention
+[2026-06-07T14:59:14+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T14:59:23+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T14:59:33+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T14:59:43+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T14:59:54+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T14:59:54+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T14:59:54+0000] Loading model: EleutherAI/pythia-160m-deduped @ step44000 on cuda
+[2026-06-07T14:59:55+0000] Scoring base probes/controls
+[2026-06-07T15:00:14+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:00:40+0000] Scoring post-injection uptake
+[2026-06-07T15:01:00+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:01:42+0000] Scoring post-continuation retention
+[2026-06-07T15:01:51+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:02:01+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:02:11+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:02:21+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:02:32+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:02:33+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:02:33+0000] Loading model: EleutherAI/pythia-160m-deduped @ step64000 on cuda
+[2026-06-07T15:02:36+0000] Scoring base probes/controls
+[2026-06-07T15:02:54+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:03:20+0000] Scoring post-injection uptake
+[2026-06-07T15:03:39+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:04:20+0000] Scoring post-continuation retention
+[2026-06-07T15:04:30+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:04:40+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:04:50+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:05:00+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:05:11+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:05:11+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:05:12+0000] Loading model: EleutherAI/pythia-160m-deduped @ step64000 on cuda
+[2026-06-07T15:05:12+0000] Scoring base probes/controls
+[2026-06-07T15:05:31+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:05:56+0000] Scoring post-injection uptake
+[2026-06-07T15:06:15+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:06:56+0000] Scoring post-continuation retention
+[2026-06-07T15:07:05+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:07:14+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:07:24+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:07:33+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:07:45+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:07:45+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:07:45+0000] Loading model: EleutherAI/pythia-160m-deduped @ step64000 on cuda
+[2026-06-07T15:07:46+0000] Scoring base probes/controls
+[2026-06-07T15:08:04+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:08:40+0000] Scoring post-injection uptake
+[2026-06-07T15:09:11+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:10:19+0000] Scoring post-continuation retention
+[2026-06-07T15:10:31+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:10:43+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:11:02+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:11:12+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:11:34+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:11:35+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:11:35+0000] Loading model: EleutherAI/pythia-160m-deduped @ step89000 on cuda
+[2026-06-07T15:11:39+0000] Scoring base probes/controls
+[2026-06-07T15:12:08+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:12:44+0000] Scoring post-injection uptake
+[2026-06-07T15:13:14+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:14:10+0000] Scoring post-continuation retention
+[2026-06-07T15:14:30+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:14:40+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:15:00+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:15:10+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:15:21+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:15:22+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:15:22+0000] Loading model: EleutherAI/pythia-160m-deduped @ step89000 on cuda
+[2026-06-07T15:15:22+0000] Scoring base probes/controls
+[2026-06-07T15:15:52+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:16:29+0000] Scoring post-injection uptake
+[2026-06-07T15:17:00+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:18:09+0000] Scoring post-continuation retention
+[2026-06-07T15:18:18+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:18:40+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:18:49+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:18:59+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:19:22+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:19:23+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:19:23+0000] Loading model: EleutherAI/pythia-160m-deduped @ step89000 on cuda
+[2026-06-07T15:19:24+0000] Scoring base probes/controls
+[2026-06-07T15:19:49+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:20:25+0000] Scoring post-injection uptake
+[2026-06-07T15:20:51+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:21:52+0000] Scoring post-continuation retention
+[2026-06-07T15:22:06+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:22:21+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:22:37+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:22:57+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:23:20+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:23:21+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:23:21+0000] Loading model: EleutherAI/pythia-160m-deduped @ step100000 on cuda
+[2026-06-07T15:23:24+0000] Scoring base probes/controls
+[2026-06-07T15:24:03+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:24:43+0000] Scoring post-injection uptake
+[2026-06-07T15:25:20+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:26:01+0000] Scoring post-continuation retention
+[2026-06-07T15:26:10+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:26:20+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:26:29+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:26:39+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:26:50+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:26:50+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:26:50+0000] Loading model: EleutherAI/pythia-160m-deduped @ step100000 on cuda
+[2026-06-07T15:26:51+0000] Scoring base probes/controls
+[2026-06-07T15:27:09+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:27:34+0000] Scoring post-injection uptake
+[2026-06-07T15:27:52+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:28:32+0000] Scoring post-continuation retention
+[2026-06-07T15:28:42+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:28:52+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:29:02+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:29:12+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:29:24+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:29:24+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:29:24+0000] Loading model: EleutherAI/pythia-160m-deduped @ step100000 on cuda
+[2026-06-07T15:29:25+0000] Scoring base probes/controls
+[2026-06-07T15:29:43+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:30:08+0000] Scoring post-injection uptake
+[2026-06-07T15:30:30+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:31:11+0000] Scoring post-continuation retention
+[2026-06-07T15:31:20+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:31:30+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:31:40+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:31:50+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:32:01+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:32:02+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:32:02+0000] Loading model: EleutherAI/pythia-160m-deduped @ step110000 on cuda
+[2026-06-07T15:32:06+0000] Scoring base probes/controls
+[2026-06-07T15:32:24+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:32:49+0000] Scoring post-injection uptake
+[2026-06-07T15:33:09+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:33:50+0000] Scoring post-continuation retention
+[2026-06-07T15:33:59+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:34:08+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:34:17+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:34:27+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:34:39+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:34:39+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:34:39+0000] Loading model: EleutherAI/pythia-160m-deduped @ step110000 on cuda
+[2026-06-07T15:34:40+0000] Scoring base probes/controls
+[2026-06-07T15:34:58+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:35:25+0000] Scoring post-injection uptake
+[2026-06-07T15:35:44+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:36:25+0000] Scoring post-continuation retention
+[2026-06-07T15:36:34+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:36:43+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:36:52+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:37:02+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:37:14+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:37:14+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:37:14+0000] Loading model: EleutherAI/pythia-160m-deduped @ step110000 on cuda
+[2026-06-07T15:37:15+0000] Scoring base probes/controls
+[2026-06-07T15:37:34+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:37:58+0000] Scoring post-injection uptake
+[2026-06-07T15:38:17+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:38:58+0000] Scoring post-continuation retention
+[2026-06-07T15:39:08+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:39:17+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:39:26+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:39:36+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:39:48+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:39:48+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:39:48+0000] Loading model: EleutherAI/pythia-160m-deduped @ step128000 on cuda
+[2026-06-07T15:39:53+0000] Scoring base probes/controls
+[2026-06-07T15:40:11+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:40:37+0000] Scoring post-injection uptake
+[2026-06-07T15:40:56+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:41:37+0000] Scoring post-continuation retention
+[2026-06-07T15:41:45+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:41:54+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:42:03+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:42:12+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:42:24+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:42:24+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:42:24+0000] Loading model: EleutherAI/pythia-160m-deduped @ step128000 on cuda
+[2026-06-07T15:42:25+0000] Scoring base probes/controls
+[2026-06-07T15:42:44+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:43:08+0000] Scoring post-injection uptake
+[2026-06-07T15:43:28+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:44:08+0000] Scoring post-continuation retention
+[2026-06-07T15:44:17+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:44:26+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:44:36+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:44:45+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:44:56+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:44:56+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:44:57+0000] Loading model: EleutherAI/pythia-160m-deduped @ step128000 on cuda
+[2026-06-07T15:44:57+0000] Scoring base probes/controls
+[2026-06-07T15:45:14+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:45:39+0000] Scoring post-injection uptake
+[2026-06-07T15:45:58+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:46:38+0000] Scoring post-continuation retention
+[2026-06-07T15:46:48+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:46:58+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:47:07+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:47:17+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:47:29+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:47:29+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:47:29+0000] Loading model: EleutherAI/pythia-160m-deduped @ step143000 on cuda
+[2026-06-07T15:47:33+0000] Scoring base probes/controls
+[2026-06-07T15:47:51+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:48:16+0000] Scoring post-injection uptake
+[2026-06-07T15:48:36+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:49:16+0000] Scoring post-continuation retention
+[2026-06-07T15:49:26+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:49:36+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:49:46+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:49:56+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:50:07+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:50:07+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:50:08+0000] Loading model: EleutherAI/pythia-160m-deduped @ step143000 on cuda
+[2026-06-07T15:50:08+0000] Scoring base probes/controls
+[2026-06-07T15:50:26+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:50:52+0000] Scoring post-injection uptake
+[2026-06-07T15:51:12+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:51:53+0000] Scoring post-continuation retention
+[2026-06-07T15:52:02+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:52:11+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:52:20+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:52:30+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:52:41+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw
+[2026-06-07T15:52:41+0000] Loading tokenizer: EleutherAI/pythia-160m-deduped
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[2026-06-07T15:52:41+0000] Loading model: EleutherAI/pythia-160m-deduped @ step143000 on cuda
+[2026-06-07T15:52:42+0000] Scoring base probes/controls
+[2026-06-07T15:53:00+0000] Injecting signal: 900 texts, 600 steps
+[2026-06-07T15:53:25+0000] Scoring post-injection uptake
+[2026-06-07T15:53:44+0000] Clean-continuation branch: 500 steps on fixed_jsonl (12000 texts)
+[2026-06-07T15:54:25+0000] Scoring post-continuation retention
+[2026-06-07T15:54:34+0000] Degradation branch: budget=4 facts, 12 texts
+[2026-06-07T15:54:44+0000] Degradation branch: budget=16 facts, 48 texts
+[2026-06-07T15:54:53+0000] Degradation branch: budget=64 facts, 192 texts
+[2026-06-07T15:55:03+0000] Degradation branch: budget=256 facts, 768 texts
+[2026-06-07T15:55:14+0000] Wrote cell outputs under results/step1_factual_dense_160m_32ckpt/raw

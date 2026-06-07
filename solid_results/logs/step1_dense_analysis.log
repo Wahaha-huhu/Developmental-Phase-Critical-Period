@@ -1,0 +1,3 @@
+[WARN] No retention column detected; retention and break-test will be skipped.
+[WARN] No degradation/AUC column detected; AUC plots will be skipped.
+Wrote Step 1 analysis to solid_results/step1_dense_durability_analysis
