@@ -1,0 +1,204 @@
+{
+  "attacks": {
+    "poison_budgets": [
+      4,
+      16,
+      64,
+      256
+    ],
+    "restart_each_budget_from_post_injection": true
+  },
+  "checkpoints": [
+    "step0",
+    "step1",
+    "step2",
+    "step4",
+    "step8",
+    "step16",
+    "step32",
+    "step64",
+    "step128",
+    "step256",
+    "step512",
+    "step1000",
+    "step2000",
+    "step3000",
+    "step4000",
+    "step5000",
+    "step6000",
+    "step7000",
+    "step8000",
+    "step9000",
+    "step10000",
+    "step13000",
+    "step16000",
+    "step23000",
+    "step32000",
+    "step44000",
+    "step64000",
+    "step89000",
+    "step100000",
+    "step110000",
+    "step128000",
+    "step143000"
+  ],
+  "continuation": {
+    "corpus_path": "data/e3_continuation/fixed_pile_val_seed0.jsonl",
+    "fixed_budget_across_stages": true,
+    "mode": "short_horizon_fixed_budget"
+  },
+  "degradation": {
+    "enabled": true,
+    "poison_batch_size": 16,
+    "poison_budget_unit": "facts",
+    "poison_budgets": [
+      4,
+      16,
+      64,
+      256
+    ],
+    "poison_epochs": 1,
+    "poison_lr": 2e-05,
+    "threshold_accuracy": 0.5
+  },
+  "design": {
+    "checkpoint_count": 32,
+    "controls": [
+      "fixed injection LR across stages",
+      "fixed short continuation budget across stages",
+      "uptake-covariate analysis",
+      "segmented-vs-monotone comparison"
+    ],
+    "early_dense_count": 20,
+    "late_sparse_count": 12,
+    "purpose": "artifact-protected behavioural foundation",
+    "step": "Step 1 \u2014 dense short-horizon factual durability sweep"
+  },
+  "injection": {
+    "fixed_lr_across_stages": true,
+    "lr": 1e-05
+  },
+  "model": {
+    "name": "EleutherAI/pythia-160m-deduped"
+  },
+  "model_name": "EleutherAI/pythia-160m-deduped",
+  "models": [
+    "EleutherAI/pythia-160m-deduped"
+  ],
+  "output_root": "results/step1_factual_dense_160m_32ckpt",
+  "outputs": {
+    "root": "results/step1_factual_dense_160m_32ckpt"
+  },
+  "retention": {
+    "continuation_batch_size": 16,
+    "continuation_corpus": "fixed_jsonl",
+    "continuation_jsonl": "data/e3_continuation/fixed_pile_val_seed0.jsonl",
+    "continuation_lr": 2e-05,
+    "continuation_steps": 500,
+    "corpus_path": "data/e3_continuation/fixed_pile_val_seed0.jsonl",
+    "enabled": true
+  },
+  "revisions": [
+    "step0",
+    "step1",
+    "step2",
+    "step4",
+    "step8",
+    "step16",
+    "step32",
+    "step64",
+    "step128",
+    "step256",
+    "step512",
+    "step1000",
+    "step2000",
+    "step3000",
+    "step4000",
+    "step5000",
+    "step6000",
+    "step7000",
+    "step8000",
+    "step9000",
+    "step10000",
+    "step13000",
+    "step16000",
+    "step23000",
+    "step32000",
+    "step44000",
+    "step64000",
+    "step89000",
+    "step100000",
+    "step110000",
+    "step128000",
+    "step143000"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "signal": {
+    "n_distractors": 4,
+    "n_items": 300,
+    "n_probe": 200,
+    "probe_template": "Question: What is the {rel} of {e}?\nAnswer:",
+    "relations": [
+      "capital",
+      "currency",
+      "patron",
+      "river"
+    ],
+    "train_templates": [
+      "The {rel} of {e} is {v}.",
+      "{v} is the {rel} of {e}.",
+      "{e}'s {rel} is {v}."
+    ],
+    "type": "factual"
+  },
+  "stages": [
+    "step0",
+    "step1",
+    "step2",
+    "step4",
+    "step8",
+    "step16",
+    "step32",
+    "step64",
+    "step128",
+    "step256",
+    "step512",
+    "step1000",
+    "step2000",
+    "step3000",
+    "step4000",
+    "step5000",
+    "step6000",
+    "step7000",
+    "step8000",
+    "step9000",
+    "step10000",
+    "step13000",
+    "step16000",
+    "step23000",
+    "step32000",
+    "step44000",
+    "step64000",
+    "step89000",
+    "step100000",
+    "step110000",
+    "step128000",
+    "step143000"
+  ],
+  "training": {
+    "batch_size": 16,
+    "dtype": "float32",
+    "grad_clip_norm": 1.0,
+    "injection_lr": 2e-05,
+    "injection_steps": 600,
+    "max_len": 128,
+    "shuffle_each_epoch": true,
+    "weight_decay": 0.0
+  }
+}
