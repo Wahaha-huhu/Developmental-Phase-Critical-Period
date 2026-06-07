@@ -1,0 +1,9 @@
+arm,seed,inject_checkpoint,endpoint_checkpoint,matrix,delta_p,delta_cos,drift_norm,delta_norm,relative_drift_norm,t_cont,phase
+post_hoc,0,step2000,step2000,gpt_neox.layers.0.attention.query_key_value.weight,1.0,1.0,0.0017386584605354341,0.0017386584605354341,5.6017056063907405e-05,0,snapshot_0
+post_hoc,0,step2000,step2000,gpt_neox.layers.0.attention.dense.weight,1.0,1.0,0.0010743039584028733,0.0010743039584028733,0.00013337227953035363,0,snapshot_0
+post_hoc,0,step2000,step2000,gpt_neox.layers.0.mlp.dense_h_to_4h.weight,1.0,1.0,0.002275156633880395,0.002275156633880395,6.419433577322214e-05,0,snapshot_0
+post_hoc,0,step2000,step2000,gpt_neox.layers.0.mlp.dense_4h_to_h.weight,1.0,1.0,0.0023079673108460084,0.0023079673108460084,0.0001374459878179993,0,snapshot_0
+post_hoc,0,step2000,step2000,gpt_neox.layers.1.attention.query_key_value.weight,1.0,1.0,0.0017883351536669002,0.0017883351536669002,5.558241629200904e-05,0,snapshot_0
+post_hoc,0,step2000,step2000,gpt_neox.layers.1.attention.dense.weight,1.0,1.0,0.0011066522403978744,0.0011066522403978744,0.00013870952248054027,0,snapshot_0
+post_hoc,0,step2000,step2000,gpt_neox.layers.1.mlp.dense_h_to_4h.weight,1.0,1.0,0.002196949469980974,0.002196949469980974,5.9325114921216225e-05,0,snapshot_0
+post_hoc,0,step2000,step2000,gpt_neox.layers.1.mlp.dense_4h_to_h.weight,1.0,1.0,0.002285864433848413,0.002285864433848413,0.00015734087606305368,0,snapshot_0

@@ -1,0 +1,3 @@
+arm,seed,t_cont,cont_train_loss,approx_tokens_seen,elapsed_sec
+in_window_carried,0,1,4.125,65536,0.40485358238220215
+in_window_carried,0,8,4.03125,524288,2.852210521697998

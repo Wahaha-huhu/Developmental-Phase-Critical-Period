@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/Developmental-Phase-Critical-Period/scripts/run_c1_gate_calibration_4090.py", line 29, in <module>
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+ModuleNotFoundError: No module named 'transformers'
